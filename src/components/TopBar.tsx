@@ -1,4 +1,4 @@
-import { Heart, Zap } from 'lucide-react';
+import { Heart, Zap, Flame } from 'lucide-react';
 import { useUserStats } from '../hooks/useUserStats';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -6,34 +6,55 @@ export default function TopBar() {
   const { stats } = useUserStats();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 mx-auto max-w-screen-sm bg-white/80 backdrop-blur border-b">
-      <div className="flex items-center justify-between px-4 py-3">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src="/assets/logo.svg" alt="Relingo" className="w-12 h-12" />
-          <span className="font-display font-bold text-xl text-brand">Relingo</span>
-        </div>
-
-        {/* Stats and Language */}
-        <div className="flex items-center gap-2">
-          {/* XP */}
-          <div className="flex items-center gap-1.5 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200">
-            <Zap className="w-4 h-4 text-amber-600 fill-amber-600" />
-            <span className="font-semibold text-sm text-amber-900">
-              {stats?.xp || 0}
-            </span>
+    <header className="sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-soft">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+          {/* Logo */}
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <div className="relative">
+              <img src="/assets/logo.svg" alt="Relingo" className="w-12 h-12 lg:w-14 lg:h-14 group-hover:scale-110 transition-transform" />
+              <div className="absolute inset-0 bg-brand/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            <div className="hidden sm:block">
+              <span className="font-display font-bold text-2xl text-brand">Relingo</span>
+              <p className="text-xs text-gray-500 -mt-1">Lær om religioner</p>
+            </div>
           </div>
 
-          {/* Hearts */}
-          <div className="flex items-center gap-1.5 bg-red-50 px-3 py-1.5 rounded-full border border-red-200">
-            <Heart className="w-4 h-4 text-red-600 fill-red-600" />
-            <span className="font-semibold text-sm text-red-900">
-              {stats?.hearts || 0}
-            </span>
-          </div>
+          {/* Stats and Language */}
+          <div className="flex items-center gap-2 lg:gap-3">
+            {/* Streak - Hidden on mobile, shown on tablet+ */}
+            <div className="hidden md:flex items-center gap-2 bg-gradient-to-br from-orange-50 to-orange-100 px-4 py-2.5 rounded-xl border border-orange-200 shadow-soft hover:shadow-md transition-all">
+              <Flame className="w-5 h-5 text-orange-600" />
+              <div className="flex flex-col">
+                <span className="font-bold text-lg text-orange-900 leading-none">{stats?.streak || 0}</span>
+                <span className="text-[10px] text-orange-700">dager</span>
+              </div>
+            </div>
 
-          {/* Language Switcher */}
-          <LanguageSwitcher />
+            {/* XP */}
+            <div className="flex items-center gap-2 bg-gradient-to-br from-amber-50 to-amber-100 px-3 lg:px-4 py-2 lg:py-2.5 rounded-xl border border-amber-200 shadow-soft hover:shadow-md transition-all group">
+              <Zap className="w-4 h-4 lg:w-5 lg:h-5 text-amber-600 fill-amber-600 group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col">
+                <span className="font-bold text-base lg:text-lg text-amber-900 leading-none">{stats?.xp || 0}</span>
+                <span className="text-[10px] text-amber-700 hidden lg:block">XP</span>
+              </div>
+            </div>
+
+            {/* Hearts */}
+            <div className="flex items-center gap-2 bg-gradient-to-br from-red-50 to-red-100 px-3 lg:px-4 py-2 lg:py-2.5 rounded-xl border border-red-200 shadow-soft hover:shadow-md transition-all group">
+              <Heart className="w-4 h-4 lg:w-5 lg:h-5 text-red-600 fill-red-600 group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col">
+                <span className="font-bold text-base lg:text-lg text-red-900 leading-none">{stats?.hearts || 0}</span>
+                <span className="text-[10px] text-red-700 hidden lg:block">liv</span>
+              </div>
+            </div>
+
+            {/* Language Switcher */}
+            <div className="hidden sm:block">
+              <LanguageSwitcher />
+            </div>
+          </div>
         </div>
       </div>
     </header>
