@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#F5F3FF"/>
+  
+  <defs>
+    <radialGradient id="bg4">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.03"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#bg4)"/>
+  
+  <!-- Christmas star (representing holidays) -->
+  <g transform="translate(100, 70)">
+    <!-- Large central star -->
+    <path d="M 0 -25 L 6 -8 L 24 -8 L 10 3 L 16 20 L 0 10 L -16 20 L -10 3 L -24 -8 L -6 -8 Z"
+          fill="#F59E0B" stroke="#F97316" stroke-width="2" opacity="0.9"/>
+    <!-- Inner glow -->
+    <circle cx="0" cy="0" r="8" fill="#FEF3C7" opacity="0.6"/>
+    <circle cx="0" cy="0" r="4" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  
+  <!-- Calendar pages -->
+  <g transform="translate(70, 130)">
+    <!-- Back page -->
+    <rect x="5" y="5" width="30" height="35" rx="3" fill="#C4B5FD" opacity="0.5"/>
+    <!-- Front page -->
+    <rect x="0" y="0" width="30" height="35" rx="3" fill="#DDD6FE" stroke="#8B5CF6" stroke-width="2"/>
+    <!-- Calendar header -->
+    <rect x="0" y="0" width="30" height="8" rx="3" fill="#8B5CF6"/>
+    <!-- Date numbers -->
+    <circle cx="8" cy="18" r="2" fill="#8B5CF6" opacity="0.4"/>
+    <circle cx="15" cy="18" r="2" fill="#8B5CF6" opacity="0.4"/>
+    <circle cx="22" cy="18" r="2" fill="#8B5CF6" opacity="0.4"/>
+    <circle cx="15" cy="25" r="3" fill="#F59E0B"/>
+  </g>
+  
+  <!-- Easter lily -->
+  <g transform="translate(130, 130)">
+    <!-- Stem -->
+    <line x1="0" y1="40" x2="0" y2="10" stroke="#10B981" stroke-width="2"/>
+    <!-- Petals -->
+    <ellipse cx="-3" cy="8" rx="4" ry="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5" opacity="0.9" transform="rotate(-30 -3 8)"/>
+    <ellipse cx="3" cy="8" rx="4" ry="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5" opacity="0.9" transform="rotate(30 3 8)"/>
+    <ellipse cx="0" cy="5" rx="4" ry="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5" opacity="0.9"/>
+    <!-- Center -->
+    <circle cx="0" cy="8" r="2" fill="#F59E0B"/>
+  </g>
+</svg>
+

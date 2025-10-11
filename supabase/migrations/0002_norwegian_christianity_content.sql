@@ -1,25 +1,25 @@
 -- Norwegian Christianity Content Migration
 -- Add comprehensive lessons and quizzes about Christianity in Norwegian
 
--- First, let's add more detailed lessons for Christianity
+-- First, let's add more detailed lessons for Christianity with unique thumbnails
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'kristendom-opprinnelse', 'Opprinnelse og historisk bakgrunn', 'Lær om kristendommens begynnelse i det første århundre', 1, '/assets/lessons/christianity_intro.svg', 1, true
+SELECT id, 'kristendom-opprinnelse', 'Opprinnelse og historisk bakgrunn', 'Lær om kristendommens begynnelse i det første århundre', 1, '/assets/lessons/christianity_origins.svg', 1, true
 FROM public.religions WHERE slug = 'christianity';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'kristendom-tro', 'Grunnleggende tro og læresetninger', 'Utforsk de sentrale trosprinsippene i kristendommen', 2, '/assets/lessons/christianity_intro.svg', 2, true
+SELECT id, 'kristendom-tro', 'Grunnleggende tro og læresetninger', 'Utforsk de sentrale trosprinsippene i kristendommen', 2, '/assets/lessons/christianity_beliefs.svg', 2, true
 FROM public.religions WHERE slug = 'christianity';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'kristendom-praksis', 'Viktige praksiser og ritualer', 'Oppdag kristne ritualer og daglige praksiser', 2, '/assets/lessons/christianity_intro.svg', 3, true
+SELECT id, 'kristendom-praksis', 'Viktige praksiser og ritualer', 'Oppdag kristne ritualer og daglige praksiser', 2, '/assets/lessons/christianity_practices.svg', 3, true
 FROM public.religions WHERE slug = 'christianity';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'kristendom-hoytider', 'Høytider og merkedager', 'Utforsk kristne høytider som jul, påske og pinse', 2, '/assets/lessons/christianity_intro.svg', 4, true
+SELECT id, 'kristendom-hoytider', 'Høytider og merkedager', 'Utforsk kristne høytider som jul, påske og pinse', 2, '/assets/lessons/christianity_holidays.svg', 4, true
 FROM public.religions WHERE slug = 'christianity';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'kristendom-tekster', 'Hellige tekster og symboler', 'Lær om Bibelen og kristne symboler', 2, '/assets/lessons/christianity_intro.svg', 5, true
+SELECT id, 'kristendom-tekster', 'Hellige tekster og symboler', 'Lær om Bibelen og kristne symboler', 2, '/assets/lessons/christianity_texts.svg', 5, true
 FROM public.religions WHERE slug = 'christianity';
 
 -- Quiz 1: Opprinnelse og historisk bakgrunn

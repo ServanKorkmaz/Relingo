@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#F5F3FF"/>
+  
+  <defs>
+    <radialGradient id="bg3">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.03"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#bg3)"/>
+  
+  <!-- Praying hands -->
+  <g transform="translate(100, 100)">
+    <!-- Left hand -->
+    <path d="M -15 -10 Q -20 -20, -15 -30 L -15 10 Q -15 15, -10 15 L -5 15 L -5 -25 Q -5 -28, -8 -30 Q -12 -30, -15 -27 Z"
+          fill="#DDD6FE" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- Right hand -->
+    <path d="M 15 -10 Q 20 -20, 15 -30 L 15 10 Q 15 15, 10 15 L 5 15 L 5 -25 Q 5 -28, 8 -30 Q 12 -30, 15 -27 Z"
+          fill="#DDD6FE" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- Highlight -->
+    <path d="M -10 -25 L -10 10" stroke="#FFFFFF" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 10 -25 L 10 10" stroke="#FFFFFF" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  
+  <!-- Chalice (Communion) -->
+  <g transform="translate(100, 50)" opacity="0.6">
+    <path d="M -10 -5 Q -10 -15, 0 -15 Q 10 -15, 10 -5 L 8 5 Q 7 10, 0 10 Q -7 10, -8 5 Z"
+          fill="#C4B5FD" stroke="#8B5CF6" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-15" rx="10" ry="2" fill="#8B5CF6" opacity="0.5"/>
+  </g>
+  
+  <!-- Holy light rays -->
+  <g opacity="0.15">
+    <path d="M 100 30 L 90 50" stroke="#8B5CF6" stroke-width="2"/>
+    <path d="M 100 30 L 100 50" stroke="#8B5CF6" stroke-width="2"/>
+    <path d="M 100 30 L 110 50" stroke="#8B5CF6" stroke-width="2"/>
+  </g>
+  
+  <!-- Decorative circles -->
+  <circle cx="45" cy="45" r="4" fill="#8B5CF6" opacity="0.2"/>
+  <circle cx="155" cy="45" r="4" fill="#8B5CF6" opacity="0.2"/>
+  <circle cx="45" cy="155" r="4" fill="#8B5CF6" opacity="0.2"/>
+  <circle cx="155" cy="155" r="4" fill="#8B5CF6" opacity="0.2"/>
+</svg>
+

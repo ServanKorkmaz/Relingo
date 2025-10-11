@@ -1,27 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
   <!-- Background circle -->
-  <circle cx="60" cy="60" r="58" fill="#0EA5E9" opacity="0.1"/>
+  <defs>
+    <linearGradient id="islamBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.05"/>
+    </linearGradient>
+    <radialGradient id="crescentGrad" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </radialGradient>
+  </defs>
   
-  <!-- Mosque dome -->
-  <ellipse cx="60" cy="55" rx="22" ry="12" fill="#0EA5E9" opacity="0.9"/>
-  <rect x="45" y="55" width="30" height="25" fill="#0EA5E9" opacity="0.85"/>
+  <circle cx="60" cy="60" r="56" fill="url(#islamBg)"/>
   
-  <!-- Minarets -->
-  <rect x="35" y="50" width="6" height="30" fill="#0EA5E9" opacity="0.7" rx="1"/>
-  <circle cx="38" cy="48" r="3" fill="#0EA5E9" opacity="0.8"/>
+  <!-- Decorative pattern -->
+  <g opacity="0.15">
+    <circle cx="30" cy="30" r="8" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+    <circle cx="90" cy="30" r="8" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+    <circle cx="30" cy="90" r="8" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+    <circle cx="90" cy="90" r="8" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+  </g>
   
-  <rect x="79" y="50" width="6" height="30" fill="#0EA5E9" opacity="0.7" rx="1"/>
-  <circle cx="82" cy="48" r="3" fill="#0EA5E9" opacity="0.8"/>
+  <!-- Beautiful crescent moon with star -->
+  <g filter="drop-shadow(0 4px 8px rgba(14, 165, 233, 0.3))">
+    <!-- Crescent moon -->
+    <path d="M 55 35 Q 48 45, 48 60 Q 48 75, 55 85 Q 65 80, 65 60 Q 65 40, 55 35 Z"
+          fill="url(#crescentGrad)"/>
+    
+    <!-- Inner highlight -->
+    <path d="M 53 40 Q 50 48, 50 60 Q 50 72, 53 80 Q 60 76, 60 60 Q 60 44, 53 40 Z"
+          fill="#FFFFFF" opacity="0.3"/>
+    
+    <!-- 5-pointed star -->
+    <g transform="translate(75, 55)">
+      <path d="M 0 -8 L 2.4 -2.4 L 8.7 -2.4 L 3.6 1.2 L 6 7.2 L 0 3.6 L -6 7.2 L -3.6 1.2 L -8.7 -2.4 L -2.4 -2.4 Z"
+            fill="url(#crescentGrad)"/>
+      <path d="M 0 -6 L 1.8 -1.8 L 6.5 -1.8 L 2.7 0.9 L 4.5 5.4 L 0 2.7 L -4.5 5.4 L -2.7 0.9 L -6.5 -1.8 L -1.8 -1.8 Z"
+            fill="#FFFFFF" opacity="0.4"/>
+    </g>
+  </g>
   
-  <!-- Crescent moon on top -->
-  <path d="M 58 42 Q 56 35 58 28 Q 63 30 64 35 Q 63 40 58 42 Z" fill="#F59E0B"/>
+  <!-- Decorative geometric pattern -->
+  <g opacity="0.2" stroke="#0EA5E9" stroke-width="1.5" fill="none">
+    <rect x="35" y="35" width="15" height="15" transform="rotate(45 42.5 42.5)"/>
+    <rect x="70" y="35" width="15" height="15" transform="rotate(45 77.5 42.5)"/>
+  </g>
   
-  <!-- Star -->
-  <path d="M 66 33 L 67 36 L 70 36 L 68 38 L 69 41 L 66 39 L 63 41 L 64 38 L 62 36 L 65 36 Z" fill="#F59E0B"/>
-  
-  <!-- Archway -->
-  <path d="M 52 72 Q 52 68 55 68 L 65 68 Q 68 68 68 72 L 68 80 L 52 80 Z" fill="#FFFFFF" opacity="0.4"/>
-  
-  <!-- Decorative border -->
-  <circle cx="60" cy="60" r="56" stroke="#0EA5E9" stroke-width="2" fill="none" opacity="0.2"/>
+  <!-- Outer decorative ring -->
+  <circle cx="60" cy="60" r="54" stroke="#0EA5E9" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 6"/>
 </svg>

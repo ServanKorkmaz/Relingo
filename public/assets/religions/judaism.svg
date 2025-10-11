@@ -1,36 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <!-- Background circle -->
-  <circle cx="60" cy="60" r="58" fill="#14B8A6" opacity="0.1"/>
+  <!-- Background -->
+  <defs>
+    <linearGradient id="judaismBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0D9488" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
   
-  <!-- Star of David (Magen David) -->
-  <path d="M 60 35 L 75 60 L 45 60 Z" fill="none" stroke="#14B8A6" stroke-width="4" stroke-linejoin="miter"/>
-  <path d="M 60 85 L 45 60 L 75 60 Z" fill="none" stroke="#14B8A6" stroke-width="4" stroke-linejoin="miter"/>
+  <circle cx="60" cy="60" r="56" fill="url(#judaismBg)"/>
   
-  <!-- Menorah (7-armed candelabrum) -->
-  <line x1="35" y1="90" x2="85" y2="90" stroke="#14B8A6" stroke-width="3"/>
-  <line x1="60" y1="90" x2="60" y2="80" stroke="#14B8A6" stroke-width="2.5"/>
+  <!-- Decorative elements -->
+  <g opacity="0.15">
+    <line x1="30" y1="30" x2="90" y2="30" stroke="#14B8A6" stroke-width="2"/>
+    <line x1="30" y1="90" x2="90" y2="90" stroke="#14B8A6" stroke-width="2"/>
+    <line x1="30" y1="30" x2="30" y2="90" stroke="#14B8A6" stroke-width="2"/>
+    <line x1="90" y1="30" x2="90" y2="90" stroke="#14B8A6" stroke-width="2"/>
+  </g>
   
-  <!-- Candles -->
-  <line x1="35" y1="90" x2="35" y2="83" stroke="#14B8A6" stroke-width="2"/>
-  <circle cx="35" cy="82" r="1.5" fill="#F59E0B"/>
+  <!-- Star of David with depth -->
+  <g transform="translate(60, 60)" filter="drop-shadow(0 4px 8px rgba(20, 184, 166, 0.3))">
+    <!-- Upper triangle -->
+    <path d="M 0 -22 L 19 8 L -19 8 Z" 
+          fill="url(#starGrad)" stroke="#14B8A6" stroke-width="2.5"/>
+    
+    <!-- Lower triangle -->
+    <path d="M 0 22 L -19 -8 L 19 -8 Z" 
+          fill="url(#starGrad)" stroke="#14B8A6" stroke-width="2.5"/>
+    
+    <!-- Inner highlights -->
+    <path d="M 0 -18 L 15 6 L -15 6 Z" 
+          fill="#FFFFFF" opacity="0.25"/>
+    <path d="M 0 18 L -15 -6 L 15 -6 Z" 
+          fill="#FFFFFF" opacity="0.25"/>
+    
+    <!-- Center hexagon -->
+    <path d="M 0 -7 L 6 -3.5 L 6 3.5 L 0 7 L -6 3.5 L -6 -3.5 Z"
+          fill="#14B8A6" opacity="0.4"/>
+  </g>
   
-  <line x1="45" y1="90" x2="45" y2="85" stroke="#14B8A6" stroke-width="2"/>
-  <circle cx="45" cy="84" r="1.5" fill="#F59E0B"/>
+  <!-- Menorah silhouette at bottom -->
+  <g transform="translate(60, 95)" opacity="0.3">
+    <rect x="-1" y="-8" width="2" height="10" fill="#14B8A6"/>
+    <circle cx="-8" cy="-8" r="2" fill="#14B8A6"/>
+    <circle cx="-4" cy="-10" r="2" fill="#14B8A6"/>
+    <circle cx="0" cy="-12" r="2.5" fill="#14B8A6"/>
+    <circle cx="4" cy="-10" r="2" fill="#14B8A6"/>
+    <circle cx="8" cy="-8" r="2" fill="#14B8A6"/>
+  </g>
   
-  <line x1="53" y1="90" x2="53" y2="86" stroke="#14B8A6" stroke-width="2"/>
-  <circle cx="53" cy="85" r="1.5" fill="#F59E0B"/>
+  <!-- Decorative corner elements -->
+  <circle cx="35" cy="35" r="3" fill="#14B8A6" opacity="0.4"/>
+  <circle cx="85" cy="35" r="3" fill="#14B8A6" opacity="0.4"/>
+  <circle cx="35" cy="85" r="3" fill="#14B8A6" opacity="0.4"/>
+  <circle cx="85" cy="85" r="3" fill="#14B8A6" opacity="0.4"/>
   
-  <circle cx="60" cy="79" r="1.5" fill="#F59E0B"/>
-  
-  <line x1="67" y1="90" x2="67" y2="86" stroke="#14B8A6" stroke-width="2"/>
-  <circle cx="67" cy="85" r="1.5" fill="#F59E0B"/>
-  
-  <line x1="75" y1="90" x2="75" y2="85" stroke="#14B8A6" stroke-width="2"/>
-  <circle cx="75" cy="84" r="1.5" fill="#F59E0B"/>
-  
-  <line x1="85" y1="90" x2="85" y2="83" stroke="#14B8A6" stroke-width="2"/>
-  <circle cx="85" cy="82" r="1.5" fill="#F59E0B"/>
-  
-  <!-- Decorative border -->
-  <circle cx="60" cy="60" r="56" stroke="#14B8A6" stroke-width="2" fill="none" opacity="0.2"/>
+  <!-- Outer ring -->
+  <circle cx="60" cy="60" r="54" stroke="#14B8A6" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 6"/>
 </svg>

@@ -1,27 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <!-- Background circle -->
-  <circle cx="60" cy="60" r="58" fill="#F59E0B" opacity="0.1"/>
+  <!-- Background -->
+  <defs>
+    <linearGradient id="hinduBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0.05"/>
+    </radialGradient>
+    <radialGradient id="omGrad" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </radialGradient>
+  </defs>
   
-  <!-- Temple base -->
-  <rect x="40" y="70" width="40" height="20" fill="#F59E0B" opacity="0.8" rx="2"/>
+  <circle cx="60" cy="60" r="56" fill="url(#hinduBg)"/>
   
-  <!-- Temple roof/shikhara -->
-  <path d="M 35 70 L 60 35 L 85 70 Z" fill="#F59E0B" opacity="0.9"/>
-  <path d="M 45 70 L 60 48 L 75 70 Z" fill="#F59E0B" opacity="0.6"/>
+  <!-- Decorative rangoli pattern -->
+  <g opacity="0.15">
+    <circle cx="60" cy="60" r="40" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="60" cy="60" r="30" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M 60 20 L 60 40" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M 60 80 L 60 100" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M 20 60 L 40 60" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M 80 60 L 100 60" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  
+  <!-- Lotus flower -->
+  <g transform="translate(60, 85)">
+    <!-- Petals -->
+    <ellipse cx="-12" cy="0" rx="8" ry="14" fill="#FCD34D" opacity="0.8" transform="rotate(-30 -12 0)"/>
+    <ellipse cx="12" cy="0" rx="8" ry="14" fill="#FCD34D" opacity="0.8" transform="rotate(30 12 0)"/>
+    <ellipse cx="-6" cy="-3" rx="7" ry="13" fill="#FBBF24" opacity="0.9" transform="rotate(-15 -6 -3)"/>
+    <ellipse cx="6" cy="-3" rx="7" ry="13" fill="#FBBF24" opacity="0.9" transform="rotate(15 6 -3)"/>
+    <ellipse cx="0" cy="-5" rx="7" ry="14" fill="#F59E0B" opacity="0.95"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="4" fill="#F59E0B"/>
+  </g>
   
   <!-- Om symbol -->
-  <text x="60" y="68" font-size="28" text-anchor="middle" fill="#FFFFFF" font-family="serif" font-weight="bold" opacity="0.9">ॐ</text>
+  <g transform="translate(60, 50)" filter="drop-shadow(0 4px 8px rgba(245, 158, 11, 0.3))">
+    <text x="0" y="0" font-size="32" text-anchor="middle" fill="url(#omGrad)" font-family="serif" font-weight="bold">
+      ॐ
+    </text>
+  </g>
   
-  <!-- Decorative spires -->
-  <circle cx="48" cy="68" r="3" fill="#F59E0B"/>
-  <circle cx="60" cy="32" r="4" fill="#F59E0B"/>
-  <circle cx="72" cy="68" r="3" fill="#F59E0B"/>
+  <!-- Decorative dots -->
+  <circle cx="35" cy="35" r="3" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="85" cy="35" r="3" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="35" cy="85" r="3" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="85" cy="85" r="3" fill="#F59E0B" opacity="0.4"/>
   
-  <!-- Lotus petals at bottom -->
-  <ellipse cx="50" cy="90" rx="6" ry="3" fill="#F59E0B" opacity="0.5"/>
-  <ellipse cx="60" cy="91" rx="7" ry="3.5" fill="#F59E0B" opacity="0.6"/>
-  <ellipse cx="70" cy="90" rx="6" ry="3" fill="#F59E0B" opacity="0.5"/>
-  
-  <!-- Decorative border -->
-  <circle cx="60" cy="60" r="56" stroke="#F59E0B" stroke-width="2" fill="none" opacity="0.2"/>
+  <!-- Outer decorative ring -->
+  <circle cx="60" cy="60" r="54" stroke="#F59E0B" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 6"/>
 </svg>

@@ -6,7 +6,6 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getPublishedLessons, getReligions } from '../../db/queries';
 import LessonNode from '../../features/learn/LessonNode';
-import LessonPath from '../../features/learn/LessonPath';
 import { getReligionColor } from '../../utils/colors';
 
 export default function LearnScreen() {
@@ -190,27 +189,27 @@ export default function LearnScreen() {
                     className="overflow-hidden"
                   >
                     <div
-                      className="px-5 pb-5 pt-2"
+                      className="px-5 pb-6 pt-4"
                       style={{ backgroundColor: `${color}05` }}
                     >
-                      {/* Lessons for this religion */}
-                      <div className="space-y-0">
-                        {group.lessons.map((lesson, index) => {
+                      {/* Lessons grid */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {group.lessons.map((lesson) => {
                           const isLocked = false;
 
                           return (
-                            <div key={lesson.id}>
-                              <div className="flex justify-center">
-                                <LessonNode
-                                  lesson={lesson}
-                                  isLocked={isLocked}
-                                  onClick={() => handleLessonClick(lesson.id, isLocked)}
-                                />
-                              </div>
-                              {index < group.lessons.length - 1 && (
-                                <LessonPath color={`${color}40`} />
-                              )}
-                            </div>
+                            <motion.div
+                              key={lesson.id}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <LessonNode
+                                lesson={lesson}
+                                isLocked={isLocked}
+                                onClick={() => handleLessonClick(lesson.id, isLocked)}
+                              />
+                            </motion.div>
                           );
                         })}
                       </div>

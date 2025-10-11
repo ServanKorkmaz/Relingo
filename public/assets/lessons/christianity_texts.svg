@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#F5F3FF"/>
+  
+  <defs>
+    <radialGradient id="bg5">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.03"/>
+    </radialGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DDD6FE"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#bg5)"/>
+  
+  <!-- Open Bible -->
+  <g transform="translate(100, 100)">
+    <!-- Book shadow -->
+    <ellipse cx="0" cy="35" rx="45" ry="8" fill="#8B5CF6" opacity="0.1"/>
+    
+    <!-- Left page -->
+    <path d="M -40 -25 Q -40 -30, -35 -30 L -2 -30 L -2 25 L -35 25 Q -40 25, -40 20 Z"
+          fill="url(#bookGrad)" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- Right page -->
+    <path d="M 2 -30 L 35 -30 Q 40 -30, 40 -25 L 40 20 Q 40 25, 35 25 L 2 25 Z"
+          fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- Center binding -->
+    <rect x="-2" y="-30" width="4" height="55" fill="#8B5CF6"/>
+    
+    <!-- Text lines on left page -->
+    <line x1="-32" y1="-20" x2="-8" y2="-20" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-32" y1="-12" x2="-8" y2="-12" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-32" y1="-4" x2="-8" y2="-4" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-32" y1="4" x2="-8" y2="4" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Text lines on right page -->
+    <line x1="8" y1="-20" x2="32" y2="-20" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="8" y1="-12" x2="32" y2="-12" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="8" y1="-4" x2="32" y2="-4" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    <line x1="8" y1="4" x2="32" y2="4" stroke="#8B5CF6" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Bookmark ribbon -->
+    <path d="M 0 -30 L 0 -15 L -4 -18 L 0 -21 L 4 -18 L 0 -15 Z"
+          fill="#F59E0B"/>
+  </g>
+  
+  <!-- Cross bookmark -->
+  <g transform="translate(100, 50)" opacity="0.5">
+    <rect x="-1.5" y="-8" width="3" height="16" rx="1" fill="#8B5CF6"/>
+    <rect x="-6" y="-3" width="12" height="3" rx="1" fill="#8B5CF6"/>
+  </g>
+</svg>
+

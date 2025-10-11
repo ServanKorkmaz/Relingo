@@ -1,24 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#F5F3FF"/>
+  
   <defs>
-    <linearGradient id="christianGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.2" />
-      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.05" />
+    <radialGradient id="introBg">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.05"/>
+    </radialGradient>
+    <linearGradient id="crossGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
   </defs>
-  <rect width="200" height="150" fill="url(#christianGrad)" rx="12"/>
-  <!-- Church building -->
-  <rect x="70" y="55" width="60" height="50" fill="#8B5CF6" opacity="0.8"/>
-  <!-- Church roof -->
-  <path d="M 65 55 L 100 30 L 135 55 Z" fill="#8B5CF6" opacity="0.9"/>
-  <!-- Cross on top -->
-  <rect x="97" y="15" width="6" height="18" rx="3" fill="#8B5CF6"/>
-  <rect x="90" y="22" width="20" height="6" rx="3" fill="#8B5CF6"/>
-  <!-- Windows -->
-  <rect x="85" y="70" width="12" height="18" rx="2" fill="#FFFFFF" opacity="0.6"/>
-  <rect x="103" y="70" width="12" height="18" rx="2" fill="#FFFFFF" opacity="0.6"/>
-  <!-- Door -->
-  <path d="M 95 90 Q 95 88 97 88 L 103 88 Q 105 88 105 90 L 105 105 L 95 105 Z" fill="#FFFFFF" opacity="0.5"/>
-  <!-- Title area -->
-  <rect x="30" y="110" width="140" height="30" rx="8" fill="#8B5CF6" opacity="0.15"/>
-  <text x="100" y="130" font-size="18" text-anchor="middle" fill="#8B5CF6" font-weight="700">Christianity</text>
+  
+  <!-- Radial background -->
+  <circle cx="100" cy="100" r="90" fill="url(#introBg)"/>
+  
+  <!-- Large decorative cross with glow -->
+  <g filter="drop-shadow(0 8px 16px rgba(139, 92, 246, 0.4))">
+    <rect x="90" y="50" width="20" height="100" rx="4" fill="url(#crossGradient)"/>
+    <rect x="60" y="80" width="80" height="20" rx="4" fill="url(#crossGradient)"/>
+    
+    <!-- Inner highlights -->
+    <rect x="94" y="54" width="4" height="92" rx="2" fill="#FFFFFF" opacity="0.3"/>
+    <rect x="64" y="84" width="72" height="4" rx="2" fill="#FFFFFF" opacity="0.3"/>
+    
+    <!-- Decorative gems at cross ends -->
+    <circle cx="100" cy="50" r="6" fill="#F59E0B" opacity="0.9"/>
+    <circle cx="100" cy="150" r="6" fill="#F59E0B" opacity="0.9"/>
+    <circle cx="60" cy="90" r="6" fill="#F59E0B" opacity="0.9"/>
+    <circle cx="140" cy="90" r="6" fill="#F59E0B" opacity="0.9"/>
+  </g>
+  
+  <!-- Stained glass effect - colored circles -->
+  <circle cx="40" cy="40" r="8" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="160" cy="40" r="8" fill="#EC4899" opacity="0.4"/>
+  <circle cx="40" cy="160" r="8" fill="#10B981" opacity="0.4"/>
+  <circle cx="160" cy="160" r="8" fill="#3B82F6" opacity="0.4"/>
+  
+  <!-- Light rays emanating from center -->
+  <g opacity="0.15" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round">
+    <line x1="100" y1="90" x2="70" y2="60"/>
+    <line x1="100" y1="90" x2="100" y2="55"/>
+    <line x1="100" y1="90" x2="130" y2="60"/>
+    <line x1="100" y1="90" x2="135" y2="90"/>
+    <line x1="100" y1="90" x2="130" y2="120"/>
+    <line x1="100" y1="90" x2="100" y2="125"/>
+    <line x1="100" y1="90" x2="70" y2="120"/>
+    <line x1="100" y1="90" x2="65" y2="90"/>
+  </g>
 </svg>
