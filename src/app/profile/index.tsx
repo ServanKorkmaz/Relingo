@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LogOut, Zap, Heart, Flame, Trophy, Star } from 'lucide-react';
+import { LogOut, Zap, Heart, Flame, Trophy, Star, Camera } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../../lib/supabase';
 import { useUserStats } from '../../hooks/useUserStats';
 import { getUserProgress } from '../../db/queries';
+import ProfileImageUpload from '../../components/ProfileImageUpload';
 
 export default function ProfileScreen() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { stats } = useUserStats();
+  const [showImageUpload, setShowImageUpload] = useState(false);
 
   const { data: user } = useQuery({
     queryKey: ['auth-user'],
@@ -44,12 +47,21 @@ export default function ProfileScreen() {
       >
         <div className="flex items-center gap-6 mb-6">
           {/* Avatar */}
-          <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
-            <img
-              src="/assets/avatars/avatar1.svg"
-              alt="Avatar"
-              className="w-20 h-20 rounded-full"
-            />
+          <div className="relative group">
+            <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur flex items-center justify-center overflow-hidden">
+              <img
+                src={user?.user_metadata?.avatar_url || '/assets/avatars/avatar1.svg'}
+                alt="Avatar"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Camera Overlay */}
+            <button
+              onClick={() => setShowImageUpload(true)}
+              className="absolute inset-0 w-24 h-24 rounded-full bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <Camera className="w-6 h-6 text-white" />
+            </button>
           </div>
 
           {/* Info */}
@@ -153,6 +165,15 @@ export default function ProfileScreen() {
           </div>
         </button>
       </motion.div>
+
+      {/* Profile Image Upload Modal */}
+      {showImageUpload && user && (
+        <ProfileImageUpload
+          currentImageUrl={user.user_metadata?.avatar_url}
+          userId={user.id}
+          onClose={() => setShowImageUpload(false)}
+        />
+      )}
     </div>
   );
 }
