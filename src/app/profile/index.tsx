@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   LogOut, Zap, Heart, Flame, Trophy, Star, Camera, 
-  Award, Target, TrendingUp, ChevronRight 
+  Award, Target, TrendingUp, ChevronRight, Calendar,
+  BookOpen, Settings, Share2, Download
 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +12,8 @@ import { supabase } from '../../lib/supabase';
 import { useUserStats } from '../../hooks/useUserStats';
 import { getUserProgress } from '../../db/queries';
 import ProfileImageUpload from '../../components/ProfileImageUpload';
+import StreakCalendar from '../../components/StreakCalendar';
+import ProgressChart from '../../components/ProgressChart';
 
 export default function ProfileScreen() {
   const navigate = useNavigate();
@@ -200,23 +203,25 @@ export default function ProfileScreen() {
             </motion.div>
           </div>
 
-          {/* Achievements Section */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-white rounded-3xl p-8 lg:p-10 shadow-medium border border-gray-100"
-          >
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8">
-              <h2 className="font-display text-2xl lg:text-3xl font-bold flex items-center gap-3 mb-4 sm:mb-0">
-                <Trophy className="w-7 h-7 lg:w-8 lg:h-8 text-amber-500" />
-                {t('profile.achievements')}
-              </h2>
-              <button className="text-brand hover:text-brand-dark font-semibold flex items-center gap-1 transition-colors group">
-                Se alle
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
+          {/* Two Column Layout on Desktop */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Left Column - Achievements (2/3 width) */}
+            <motion.div
+              variants={itemVariants}
+              className="lg:col-span-2 bg-white rounded-3xl p-8 lg:p-10 shadow-medium border border-gray-100"
+            >
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8">
+                <h2 className="font-display text-2xl lg:text-3xl font-bold flex items-center gap-3 mb-4 sm:mb-0">
+                  <Trophy className="w-7 h-7 lg:w-8 lg:h-8 text-amber-500" />
+                  {t('profile.achievements')}
+                </h2>
+                <button className="text-brand hover:text-brand-dark font-semibold flex items-center gap-1 transition-colors group">
+                  Se alle
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-2 gap-6">
               {/* Hearts */}
               <div className="bg-gradient-to-br from-red-50 to-red-100/50 rounded-2xl p-6 hover:shadow-md transition-all cursor-default group">
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:shadow-lg group-hover:scale-110 transition-all">
@@ -258,6 +263,112 @@ export default function ProfileScreen() {
                 <p className="text-sm font-semibold text-gray-700 mb-2">{t('profile.lessons')}</p>
                 <p className="text-xs text-gray-600">Fullført</p>
               </div>
+            </div>
+            </motion.div>
+
+            {/* Right Column - Streak Calendar & Chart (1/3 width) */}
+            <motion.div variants={itemVariants} className="space-y-6">
+              <StreakCalendar streak={stats?.streak || 0} />
+              <ProgressChart xp={stats?.xp || 0} />
+            </motion.div>
+          </div>
+
+          {/* Recent Activity */}
+          <motion.div
+            variants={itemVariants}
+            className="bg-white rounded-3xl p-8 lg:p-10 shadow-medium border border-gray-100"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="font-display text-2xl lg:text-3xl font-bold flex items-center gap-3">
+                <Calendar className="w-7 h-7 lg:w-8 lg:h-8 text-brand" />
+                Nylig Aktivitet
+              </h2>
+            </div>
+
+            {userProgress.length > 0 ? (
+              <div className="space-y-3">
+                {userProgress
+                  .sort((a, b) => {
+                    const dateA = a.last_completed_at ? new Date(a.last_completed_at).getTime() : 0;
+                    const dateB = b.last_completed_at ? new Date(b.last_completed_at).getTime() : 0;
+                    return dateB - dateA;
+                  })
+                  .slice(0, 5)
+                  .map((progress, index) => (
+                    <motion.div
+                      key={progress.id}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group"
+                    >
+                      <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center group-hover:bg-brand/20 transition-colors">
+                        <BookOpen className="w-6 h-6 text-brand" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-gray-900">Leksjon fullført</p>
+                        <p className="text-sm text-gray-600">
+                          {progress.stars} {progress.stars === 1 ? 'stjerne' : 'stjerner'} • {progress.best_score}%
+                        </p>
+                      </div>
+                      <div className="flex gap-1">
+                        {[...Array(3)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-5 h-5 ${
+                              i < progress.stars
+                                ? 'text-amber-400 fill-amber-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+                <p className="text-gray-600">Ingen aktivitet ennå</p>
+                <p className="text-sm text-gray-500 mt-1">Start en leksjon for å se fremgangen din her!</p>
+              </div>
+            )}
+          </motion.div>
+
+          {/* Quick Actions */}
+          <motion.div
+            variants={itemVariants}
+            className="bg-white rounded-3xl p-8 lg:p-10 shadow-medium border border-gray-100"
+          >
+            <h2 className="font-display text-2xl lg:text-3xl font-bold mb-6">Hurtighandlinger</h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Share Progress */}
+              <button className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-md transition-all group">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                  <Share2 className="w-7 h-7 text-blue-600" />
+                </div>
+                <span className="font-semibold text-gray-900">Del fremgang</span>
+              </button>
+
+              {/* Download Certificate */}
+              <button className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-md transition-all group">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                  <Download className="w-7 h-7 text-purple-600" />
+                </div>
+                <span className="font-semibold text-gray-900">Last ned sertifikat</span>
+              </button>
+
+              {/* Settings */}
+              <button 
+                onClick={() => navigate('/app/settings')}
+                className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-md transition-all group"
+              >
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                  <Settings className="w-7 h-7 text-gray-700 group-hover:rotate-90 transition-transform duration-300" />
+                </div>
+                <span className="font-semibold text-gray-900">Innstillinger</span>
+              </button>
             </div>
           </motion.div>
 
