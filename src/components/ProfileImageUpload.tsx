@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Camera, Upload, X, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabase';
@@ -17,9 +17,84 @@ export default function ProfileImageUpload({
 }: ProfileImageUploadProps) {
   const [uploading, setUploading] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
+  const [showCamera, setShowCamera] = useState(false);
+  const [stream, setStream] = useState<MediaStream | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const cameraInputRef = useRef<HTMLInputElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const queryClient = useQueryClient();
+
+  // Cleanup camera stream when component unmounts or camera closes
+  useEffect(() => {
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [stream]);
+
+  const startCamera = async () => {
+    try {
+      const mediaStream = await navigator.mediaDevices.getUserMedia({
+        video: { width: 1280, height: 720, facingMode: 'user' },
+        audio: false,
+      });
+      
+      setStream(mediaStream);
+      setShowCamera(true);
+      
+      // Wait for next tick to ensure video element is rendered
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.srcObject = mediaStream;
+        }
+      }, 100);
+    } catch (error) {
+      console.error('Error accessing camera:', error);
+      alert('Kunne ikke få tilgang til kameraet. Sjekk at du har gitt tillatelse til kamera i nettleseren.');
+    }
+  };
+
+  const stopCamera = () => {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      setStream(null);
+    }
+    setShowCamera(false);
+  };
+
+  const capturePhoto = () => {
+    if (!videoRef.current || !canvasRef.current) return;
+
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+
+    if (!context) return;
+
+    // Set canvas size to match video
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    // Draw current video frame to canvas
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // Convert canvas to blob
+    canvas.toBlob((blob) => {
+      if (blob) {
+        // Create a file from the blob
+        const file = new File([blob], `camera-${Date.now()}.jpg`, {
+          type: 'image/jpeg',
+        });
+        
+        // Stop camera
+        stopCamera();
+        
+        // Upload the captured image
+        uploadImage(file);
+      }
+    }, 'image/jpeg', 0.95);
+  };
 
   const uploadImage = async (file: File) => {
     try {
@@ -151,74 +226,99 @@ export default function ProfileImageUpload({
             </div>
           )}
 
-          {/* Upload Options */}
-          <div className="space-y-3">
-            {/* Camera Input - works on both mobile and desktop */}
-            <input
-              ref={cameraInputRef}
-              type="file"
-              accept="image/*"
-              capture="user"
-              onChange={handleFileSelect}
-              className="hidden"
-              disabled={uploading}
-            />
+          {/* Camera View */}
+          {showCamera ? (
+            <div className="space-y-4">
+              <div className="relative bg-black rounded-xl overflow-hidden">
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  playsInline
+                  className="w-full h-64 object-cover"
+                />
+                <canvas ref={canvasRef} className="hidden" />
+              </div>
 
-            {/* File Input - for selecting from files */}
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              onChange={handleFileSelect}
-              className="hidden"
-              disabled={uploading}
-            />
-
-            {/* Take Photo Button - shows on all platforms */}
-            <button
-              onClick={() => cameraInputRef.current?.click()}
-              disabled={uploading}
-              className="w-full py-4 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {uploading ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  Laster opp...
-                </>
-              ) : (
-                <>
+              <div className="flex gap-3">
+                <button
+                  onClick={stopCamera}
+                  className="flex-1 py-3 border border-gray-300 text-gray-700 font-medium rounded-xl hover:bg-gray-50 transition-colors"
+                >
+                  Avbryt
+                </button>
+                <button
+                  onClick={capturePhoto}
+                  disabled={uploading}
+                  className="flex-1 py-3 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                >
                   <Camera className="w-5 h-5" />
-                  Ta bilde med kamera
-                </>
-              )}
-            </button>
+                  Ta bilde
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Upload Options */}
+              <div className="space-y-3">
+                {/* File Input - for selecting from files */}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                  disabled={uploading}
+                />
 
-            {/* Choose from Files Button */}
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              disabled={uploading}
-              className="w-full py-4 bg-gray-100 text-gray-900 font-semibold rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {uploading ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  Laster opp...
-                </>
-              ) : (
-                <>
-                  <Upload className="w-5 h-5" />
-                  Velg fra filer
-                </>
-              )}
-            </button>
-          </div>
+                {/* Take Photo Button - opens webcam */}
+                <button
+                  onClick={startCamera}
+                  disabled={uploading}
+                  className="w-full py-4 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {uploading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Laster opp...
+                    </>
+                  ) : (
+                    <>
+                      <Camera className="w-5 h-5" />
+                      Åpne kamera
+                    </>
+                  )}
+                </button>
+
+                {/* Choose from Files Button */}
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={uploading}
+                  className="w-full py-4 bg-gray-100 text-gray-900 font-semibold rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {uploading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Laster opp...
+                    </>
+                  ) : (
+                    <>
+                      <Upload className="w-5 h-5" />
+                      Velg fra filer
+                    </>
+                  )}
+                </button>
+              </div>
+            </>
+          )}
 
           {/* Info Text */}
-          <p className="text-sm text-gray-500 text-center mt-4">
-            Ta bilde direkte eller velg fra filer
-            <br />
-            Maks filstørrelse: 5MB • JPG, PNG, GIF
-          </p>
+          {!showCamera && (
+            <p className="text-sm text-gray-500 text-center mt-4">
+              Åpne webkamera eller velg fra filer
+              <br />
+              Maks filstørrelse: 5MB • JPG, PNG, GIF
+            </p>
+          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>
