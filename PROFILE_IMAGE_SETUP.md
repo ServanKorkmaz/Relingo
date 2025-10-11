@@ -67,16 +67,18 @@ Gå til Supabase Dashboard → SQL Editor og kjør:
 1. Gå til profilsiden
 2. Hover over profilbildet
 3. Klikk på kamera-ikonet
-4. Velg enten:
-   - "Ta bilde" (hvis kamera er tilgjengelig)
-   - "Velg fra filer"
+4. Klikk "Velg bilde" for å velge fra datamaskinen
+
+**Merk:** På desktop vises kun filvelger siden `capture` attributtet ikke fungerer konsistent på desktop-browsere.
 
 #### Mobil:
 1. Gå til profilsiden
 2. Trykk på profilbildet
 3. Velg enten:
-   - "Ta bilde" (åpner kamera)
-   - "Velg fra filer" (åpner bildebibliotek)
+   - **"Ta bilde"** - åpner kamera direkte
+   - **"Velg fra bibliotek"** - åpner bildebibliotek/galleri
+
+**Merk:** På mobil detekteres enhetstype automatisk og kamera-knappen vises bare på mobile enheter.
 
 ## Tekniske Detaljer
 
