@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
 import { getDailyXPLog } from '../db/queries';
 
 interface ProgressChartProps {
@@ -9,6 +10,7 @@ interface ProgressChartProps {
 }
 
 export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
+  const { t } = useTranslation();
   // Fetch actual daily XP data
   const { data: dailyXPData = [] } = useQuery({
     queryKey: ['daily-xp-log', userId],
@@ -48,7 +50,7 @@ export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
     <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-soft transition-colors duration-300">
       <div className="flex items-center gap-2 mb-6">
         <TrendingUp className="w-5 h-5 text-brand dark:text-brand-light" />
-        <h3 className="font-bold text-lg text-gray-900 dark:text-white">Ukentlig Fremgang</h3>
+        <h3 className="font-bold text-lg text-gray-900 dark:text-white">{t('progressChart.title')}</h3>
       </div>
 
       {/* Chart */}
@@ -83,9 +85,9 @@ export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
       {/* Summary */}
       <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
         <div className="flex justify-between items-center">
-          <span className="text-sm text-gray-600 dark:text-gray-400">Gjennomsnitt</span>
+          <span className="text-sm text-gray-600 dark:text-gray-400">{t('progressChart.average')}</span>
           <span className="text-sm font-bold text-brand dark:text-brand-light">
-            {Math.floor(chartData.reduce((sum, d) => sum + d.value, 0) / 7)} XP/dag
+            {Math.floor(chartData.reduce((sum, d) => sum + d.value, 0) / 7)} {t('progressChart.perDay')}
           </span>
         </div>
       </div>

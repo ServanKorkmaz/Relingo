@@ -17,7 +17,7 @@ import {
 
 export default function SettingsScreen() {
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const queryClient = useQueryClient();
   const { isDarkMode, setDarkMode: setDarkModeContext } = useDarkMode();
 
@@ -143,19 +143,19 @@ export default function SettingsScreen() {
 
   const settingsSections = [
     {
-      title: 'Varslinger',
+      titleKey: 'settings.notifications.title',
       icon: Bell,
       items: [
         {
-          label: 'Push-varslinger',
-          description: 'Få påminnelser om daglige mål',
+          labelKey: 'settings.notifications.push',
+          descKey: 'settings.notifications.pushDesc',
           type: 'toggle',
           value: notifications,
           onChange: handleNotificationsChange,
         },
         {
-          label: 'E-postvarslinger',
-          description: 'Ukentlig fremdriftsrapport',
+          labelKey: 'settings.notifications.email',
+          descKey: 'settings.notifications.emailDesc',
           type: 'toggle',
           value: emailNotifications,
           onChange: handleEmailNotificationsChange,
@@ -163,19 +163,19 @@ export default function SettingsScreen() {
       ],
     },
     {
-      title: 'Utseende',
+      titleKey: 'settings.appearance.title',
       icon: Palette,
       items: [
         {
-          label: 'Mørk modus',
-          description: 'Reduser øyebelastning',
+          labelKey: 'settings.appearance.darkMode',
+          descKey: 'settings.appearance.darkModeDesc',
           type: 'toggle',
           value: isDarkMode,
           onChange: handleDarkModeChange,
         },
         {
-          label: 'Lydeffekter',
-          description: 'Spill av lyder ved fullføring',
+          labelKey: 'settings.appearance.soundEffects',
+          descKey: 'settings.appearance.soundEffectsDesc',
           type: 'toggle',
           value: soundEffects,
           onChange: handleSoundEffectsChange,
@@ -183,12 +183,12 @@ export default function SettingsScreen() {
       ],
     },
     {
-      title: 'Språk',
+      titleKey: 'settings.language.title',
       icon: Globe,
       items: [
         {
-          label: 'Grensesnittspråk',
-          description: 'Endre språket for appen',
+          labelKey: 'settings.language.interface',
+          descKey: 'settings.language.interfaceDesc',
           type: 'select',
           value: i18n.language,
           options: [
@@ -201,19 +201,19 @@ export default function SettingsScreen() {
       ],
     },
     {
-      title: 'Personvern',
+      titleKey: 'settings.privacy.title',
       icon: Shield,
       items: [
         {
-          label: 'Eksporter data',
-          description: 'Last ned alle dine data',
+          labelKey: 'settings.privacy.exportData',
+          descKey: 'settings.privacy.exportDataDesc',
           type: 'button',
           icon: Download,
           action: handleExportData,
         },
         {
-          label: 'Slett konto',
-          description: 'Permanent slett kontoen din',
+          labelKey: 'settings.privacy.deleteAccount',
+          descKey: 'settings.privacy.deleteAccountDesc',
           type: 'button',
           icon: Trash2,
           danger: true,
@@ -237,13 +237,13 @@ export default function SettingsScreen() {
             className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-brand dark:hover:text-brand-light mb-4 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">Tilbake til profil</span>
+            <span className="font-medium">{t('settings.backToProfile')}</span>
           </button>
           
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">
-            Innstillinger
+            {t('settings.title')}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">Tilpass opplevelsen din</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">{t('settings.subtitle')}</p>
         </motion.div>
 
         {/* Settings Sections */}
@@ -253,7 +253,7 @@ export default function SettingsScreen() {
             
             return (
               <motion.div
-                key={section.title}
+                key={section.titleKey}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: sectionIndex * 0.1 }}
@@ -264,7 +264,7 @@ export default function SettingsScreen() {
                     <SectionIcon className="w-5 h-5 text-brand dark:text-brand-light" />
                   </div>
                   <h2 className="font-display text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
-                    {section.title}
+                    {t(section.titleKey)}
                   </h2>
                 </div>
 
@@ -275,8 +275,12 @@ export default function SettingsScreen() {
                       className="flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-gray-900 dark:text-white">{item.label}</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+                        <p className="font-semibold text-gray-900 dark:text-white">
+                          {t('labelKey' in item ? item.labelKey : '')}
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          {t('descKey' in item ? item.descKey : '')}
+                        </p>
                       </div>
 
                       {item.type === 'toggle' && 'onChange' in item && 'value' in item && typeof item.value === 'boolean' && (
@@ -322,7 +326,7 @@ export default function SettingsScreen() {
                           `}
                         >
                           {'icon' in item && item.icon && <item.icon className="w-4 h-4" />}
-                          Utfør
+                          {t('settings.privacy.execute')}
                         </button>
                       )}
                     </div>
@@ -341,13 +345,13 @@ export default function SettingsScreen() {
           >
             <HelpCircle className="w-12 h-12 text-brand dark:text-brand-light mx-auto mb-4" />
             <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Trenger du hjelp?
+              {t('settings.help.title')}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Vi er her for å hjelpe deg med eventuelle spørsmål
+              {t('settings.help.description')}
             </p>
             <button className="px-6 py-3 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors shadow-md hover:shadow-lg">
-              Kontakt support
+              {t('settings.help.contactSupport')}
             </button>
           </motion.div>
         </div>

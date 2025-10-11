@@ -196,7 +196,99 @@
     "christianity": "Kristendom",
     "islam": "Islam",
     "hinduism": "Hinduisme",
-    "judaism": "Jødedom"
+    "judaism": "Jødedom",
+    "buddhism": "Buddhisme"
+  },
+  "sidebar": {
+    "home": "Hjem",
+    "learn": "Lær",
+    "quests": "Quests",
+    "achievements": "Prestasjoner",
+    "profile": "Profil",
+    "quickStats": "Hurtigstatistikk",
+    "dailyGoal": "Dagens mål",
+    "quote": "Kunnskap er nøkkelen til forståelse og toleranse.",
+    "settings": "Innstillinger",
+    "logout": "Logg ut"
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "subtitle": "Tilpass opplevelsen din",
+    "backToProfile": "Tilbake til profil",
+    "notifications": {
+      "title": "Varslinger",
+      "push": "Push-varslinger",
+      "pushDesc": "Få påminnelser om daglige mål",
+      "email": "E-postvarslinger",
+      "emailDesc": "Ukentlig fremdriftsrapport"
+    },
+    "appearance": {
+      "title": "Utseende",
+      "darkMode": "Mørk modus",
+      "darkModeDesc": "Reduser øyebelastning",
+      "soundEffects": "Lydeffekter",
+      "soundEffectsDesc": "Spill av lyder ved fullføring"
+    },
+    "language": {
+      "title": "Språk",
+      "interface": "Grensesnittspråk",
+      "interfaceDesc": "Endre språket for appen"
+    },
+    "privacy": {
+      "title": "Personvern",
+      "exportData": "Eksporter data",
+      "exportDataDesc": "Last ned alle dine data",
+      "deleteAccount": "Slett konto",
+      "deleteAccountDesc": "Permanent slett kontoen din",
+      "execute": "Utfør"
+    },
+    "help": {
+      "title": "Trenger du hjelp?",
+      "description": "Vi er her for å hjelpe deg med eventuelle spørsmål",
+      "contactSupport": "Kontakt support"
+    }
+  },
+  "profileExtended": {
+    "level": "Level",
+    "progressToLevel": "Fremgang til Level",
+    "xpToNext": "XP til neste level",
+    "totalXP": "Total XP",
+    "daysStreak": "Dagers Streak",
+    "keepGoing": "Hold det gående!",
+    "lessons": "Leksjoner",
+    "completed": "Fullført",
+    "stars": "Stjerner",
+    "collected": "Samlet",
+    "seeAll": "Se alle",
+    "hearts": "Hjerter",
+    "remainingLives": "Gjenværende liv",
+    "xp": "Erfaringspoeng",
+    "perfect": "Perfekte",
+    "threeStars": "3 stjerner",
+    "recentActivity": "Nylig Aktivitet",
+    "lessonCompleted": "Leksjon fullført",
+    "star": "stjerne",
+    "stars_plural": "stjerner",
+    "noActivity": "Ingen aktivitet ennå",
+    "noActivityDesc": "Start en leksjon for å se fremgangen din her!",
+    "quickActions": "Hurtighandlinger",
+    "shareProgress": "Del fremgang",
+    "downloadCertificate": "Last ned sertifikat",
+    "signOutDesc": "Logg ut av kontoen din",
+    "changePhoto": "Endre bilde"
+  },
+  "streakCalendar": {
+    "title": "Aktivitetskalender",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "today": "I dag",
+    "daysStreak": "dagers streak!",
+    "keepGoing": "Hold det gående for å nå nye milepæler!"
+  },
+  "progressChart": {
+    "title": "Ukentlig Fremgang",
+    "average": "Gjennomsnitt",
+    "perDay": "XP/dag"
   }
 }
 

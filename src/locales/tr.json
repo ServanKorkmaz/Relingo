@@ -196,7 +196,99 @@
     "christianity": "Hıristiyanlık",
     "islam": "İslam",
     "hinduism": "Hinduizm",
-    "judaism": "Yahudilik"
+    "judaism": "Yahudilik",
+    "buddhism": "Budizm"
+  },
+  "sidebar": {
+    "home": "Ana sayfa",
+    "learn": "Öğren",
+    "quests": "Görevler",
+    "achievements": "Başarılar",
+    "profile": "Profil",
+    "quickStats": "Hızlı İstatistikler",
+    "dailyGoal": "Günlük hedef",
+    "quote": "Bilgi, anlayış ve hoşgörünün anahtarıdır.",
+    "settings": "Ayarlar",
+    "logout": "Çıkış yap"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "subtitle": "Deneyiminizi özelleştirin",
+    "backToProfile": "Profile geri dön",
+    "notifications": {
+      "title": "Bildirimler",
+      "push": "Push bildirimleri",
+      "pushDesc": "Günlük hedefler hakkında hatırlatıcılar alın",
+      "email": "E-posta bildirimleri",
+      "emailDesc": "Haftalık ilerleme raporu"
+    },
+    "appearance": {
+      "title": "Görünüm",
+      "darkMode": "Karanlık mod",
+      "darkModeDesc": "Göz yorgunluğunu azaltın",
+      "soundEffects": "Ses efektleri",
+      "soundEffectsDesc": "Tamamlandığında ses çal"
+    },
+    "language": {
+      "title": "Dil",
+      "interface": "Arayüz dili",
+      "interfaceDesc": "Uygulama dilini değiştirin"
+    },
+    "privacy": {
+      "title": "Gizlilik",
+      "exportData": "Verileri dışa aktar",
+      "exportDataDesc": "Tüm verilerinizi indirin",
+      "deleteAccount": "Hesabı sil",
+      "deleteAccountDesc": "Hesabınızı kalıcı olarak silin",
+      "execute": "Yürüt"
+    },
+    "help": {
+      "title": "Yardıma mı ihtiyacınız var?",
+      "description": "Sorularınız için buradayız",
+      "contactSupport": "Destek ile iletişime geçin"
+    }
+  },
+  "profileExtended": {
+    "level": "Seviye",
+    "progressToLevel": "Seviye ilerlemesi",
+    "xpToNext": "Sonraki seviyeye XP",
+    "totalXP": "Toplam XP",
+    "daysStreak": "Gün serisi",
+    "keepGoing": "Devam et!",
+    "lessons": "Dersler",
+    "completed": "Tamamlandı",
+    "stars": "Yıldızlar",
+    "collected": "Toplanan",
+    "seeAll": "Tümünü gör",
+    "hearts": "Kalpler",
+    "remainingLives": "Kalan canlar",
+    "xp": "Deneyim puanları",
+    "perfect": "Mükemmel",
+    "threeStars": "3 yıldız",
+    "recentActivity": "Son Aktivite",
+    "lessonCompleted": "Ders tamamlandı",
+    "star": "yıldız",
+    "stars_plural": "yıldız",
+    "noActivity": "Henüz aktivite yok",
+    "noActivityDesc": "İlerlemenizi görmek için bir ders başlatın!",
+    "quickActions": "Hızlı İşlemler",
+    "shareProgress": "İlerlemeyi paylaş",
+    "downloadCertificate": "Sertifika indir",
+    "signOutDesc": "Hesabınızdan çıkış yapın",
+    "changePhoto": "Fotoğrafı değiştir"
+  },
+  "streakCalendar": {
+    "title": "Aktivite Takvimi",
+    "active": "Aktif",
+    "inactive": "İnaktif",
+    "today": "Bugün",
+    "daysStreak": "günlük seri!",
+    "keepGoing": "Yeni kilometre taşlarına ulaşmak için devam edin!"
+  },
+  "progressChart": {
+    "title": "Haftalık İlerleme",
+    "average": "Ortalama",
+    "perDay": "XP/gün"
   }
 }
 

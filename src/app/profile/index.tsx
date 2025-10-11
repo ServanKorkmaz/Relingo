@@ -144,7 +144,7 @@ export default function ProfileScreen() {
                     className="absolute inset-0 w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer"
                   >
                     <Camera className="w-8 h-8 text-white mb-2" />
-                    <span className="text-white font-semibold text-sm">Endre bilde</span>
+                    <span className="text-white font-semibold text-sm">{t('profileExtended.changePhoto')}</span>
                   </button>
                 </div>
 
@@ -158,13 +158,13 @@ export default function ProfileScreen() {
                   {/* Level Badge */}
                   <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-5 py-2.5 rounded-full border border-white/30 shadow-md">
                     <Trophy className="w-5 h-5 text-amber-300" />
-                    <span className="font-bold text-lg">Level {userLevel}</span>
+                    <span className="font-bold text-lg">{t('profileExtended.level')} {userLevel}</span>
                   </div>
 
                   {/* XP Progress */}
                   <div className="mt-6 max-w-md mx-auto lg:mx-0">
                     <div className="flex justify-between text-sm mb-2">
-                      <span className="text-white/80">Fremgang til Level {userLevel + 1}</span>
+                      <span className="text-white/80">{t('profileExtended.progressToLevel')} {userLevel + 1}</span>
                       <span className="font-semibold">{xpProgress}/100 XP</span>
                     </div>
                     <div className="h-3 bg-white/20 rounded-full overflow-hidden backdrop-blur">
@@ -175,7 +175,7 @@ export default function ProfileScreen() {
                         className="h-full bg-gradient-to-r from-amber-300 to-amber-500 rounded-full shadow-glow"
                       />
                     </div>
-                    <p className="text-white/70 text-xs mt-2">{xpToNextLevel} XP til neste level</p>
+                    <p className="text-white/70 text-xs mt-2">{xpToNextLevel} {t('profileExtended.xpToNext')}</p>
                   </div>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function ProfileScreen() {
                 <Zap className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
               </div>
               <p className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">{stats?.xp || 0}</p>
-              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">Total XP</p>
+              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">{t('profileExtended.totalXP')}</p>
               <div className="mt-4 h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-amber-400 to-amber-600 rounded-full" style={{ width: `${xpProgress}%` }} />
               </div>
@@ -208,8 +208,8 @@ export default function ProfileScreen() {
                 <Flame className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
               </div>
               <p className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">{stats?.streak || 0}</p>
-              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">Dagers Streak</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">🔥 Hold det gående!</p>
+              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">{t('profileExtended.daysStreak')}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">🔥 {t('profileExtended.keepGoing')}</p>
             </motion.div>
 
             {/* Lessons */}
@@ -221,8 +221,8 @@ export default function ProfileScreen() {
                 <Award className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
               </div>
               <p className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">{totalLessonsCompleted}</p>
-              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">Leksjoner</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Fullført</p>
+              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">{t('profileExtended.lessons')}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{t('profileExtended.completed')}</p>
             </motion.div>
 
             {/* Stars */}
@@ -234,8 +234,8 @@ export default function ProfileScreen() {
                 <Star className="w-7 h-7 lg:w-8 lg:h-8 text-white fill-white" />
               </div>
               <p className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">{totalStars}</p>
-              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">Stjerner</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Samlet</p>
+              <p className="text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">{t('profileExtended.stars')}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{t('profileExtended.collected')}</p>
             </motion.div>
           </div>
 
@@ -252,7 +252,7 @@ export default function ProfileScreen() {
                   {t('profile.achievements')}
                 </h2>
                 <button className="text-brand dark:text-brand-light hover:text-brand-dark dark:hover:text-brand font-semibold flex items-center gap-1 transition-colors group">
-                  Se alle
+                  {t('profileExtended.seeAll')}
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -265,7 +265,7 @@ export default function ProfileScreen() {
                 </div>
                 <p className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-1">{stats?.hearts || 0}</p>
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">{t('profile.hearts')}</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Gjenværende liv</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{t('profileExtended.remainingLives')}</p>
               </div>
 
               {/* XP */}
@@ -275,7 +275,7 @@ export default function ProfileScreen() {
                 </div>
                 <p className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-1">{stats?.xp || 0}</p>
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">{t('profile.xp')}</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Erfaringspoeng</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{t('profileExtended.xp')}</p>
               </div>
 
               {/* Perfect Scores */}
@@ -286,8 +286,8 @@ export default function ProfileScreen() {
                 <p className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-1">
                   {userProgress.filter(p => p.stars === 3).length}
                 </p>
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Perfekte</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">3 stjerner</p>
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">{t('profileExtended.perfect')}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{t('profileExtended.threeStars')}</p>
               </div>
 
               {/* Lessons */}
@@ -297,7 +297,7 @@ export default function ProfileScreen() {
                 </div>
                 <p className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-1">{totalLessonsCompleted}</p>
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">{t('profile.lessons')}</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Fullført</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{t('profileExtended.completed')}</p>
               </div>
             </div>
             </motion.div>
@@ -317,7 +317,7 @@ export default function ProfileScreen() {
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-display text-2xl lg:text-3xl font-bold flex items-center gap-3 text-gray-900 dark:text-white">
                 <Calendar className="w-7 h-7 lg:w-8 lg:h-8 text-brand dark:text-brand-light" />
-                Nylig Aktivitet
+                {t('profileExtended.recentActivity')}
               </h2>
             </div>
 
@@ -342,9 +342,9 @@ export default function ProfileScreen() {
                         <BookOpen className="w-6 h-6 text-brand dark:text-brand-light" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-gray-900 dark:text-white">Leksjon fullført</p>
+                        <p className="font-semibold text-gray-900 dark:text-white">{t('profileExtended.lessonCompleted')}</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {progress.stars} {progress.stars === 1 ? 'stjerne' : 'stjerner'} • {progress.best_score}%
+                          {progress.stars} {progress.stars === 1 ? t('profileExtended.star') : t('profileExtended.stars_plural')} • {progress.best_score}%
                         </p>
                       </div>
                       <div className="flex gap-1">
@@ -365,8 +365,8 @@ export default function ProfileScreen() {
             ) : (
               <div className="text-center py-8">
                 <BookOpen className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-3" />
-                <p className="text-gray-600 dark:text-gray-400">Ingen aktivitet ennå</p>
-                <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Start en leksjon for å se fremgangen din her!</p>
+                <p className="text-gray-600 dark:text-gray-400">{t('profileExtended.noActivity')}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">{t('profileExtended.noActivityDesc')}</p>
               </div>
             )}
           </motion.div>
@@ -376,7 +376,7 @@ export default function ProfileScreen() {
             variants={itemVariants}
             className="bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-10 shadow-medium border border-gray-100 dark:border-gray-700 transition-colors duration-300"
           >
-            <h2 className="font-display text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Hurtighandlinger</h2>
+            <h2 className="font-display text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white">{t('profileExtended.quickActions')}</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {/* Share Progress */}
@@ -387,7 +387,7 @@ export default function ProfileScreen() {
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                   <Share2 className="w-7 h-7 text-blue-600" />
                 </div>
-                <span className="font-semibold text-gray-900">Del fremgang</span>
+                <span className="font-semibold text-gray-900">{t('profileExtended.shareProgress')}</span>
               </button>
 
               {/* Download Certificate */}
@@ -398,7 +398,7 @@ export default function ProfileScreen() {
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                   <Download className="w-7 h-7 text-purple-600" />
                 </div>
-                <span className="font-semibold text-gray-900">Last ned sertifikat</span>
+                <span className="font-semibold text-gray-900">{t('profileExtended.downloadCertificate')}</span>
               </button>
 
               {/* Settings */}
@@ -409,7 +409,7 @@ export default function ProfileScreen() {
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                   <Settings className="w-7 h-7 text-gray-700 group-hover:rotate-90 transition-transform duration-300" />
                 </div>
-                <span className="font-semibold text-gray-900">Innstillinger</span>
+                <span className="font-semibold text-gray-900">{t('sidebar.settings')}</span>
               </button>
             </div>
           </motion.div>
@@ -429,7 +429,7 @@ export default function ProfileScreen() {
                 </div>
                 <div className="text-left">
                   <span className="font-semibold text-lg text-red-600 dark:text-red-400 block">{t('profile.signOut')}</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Logg ut av kontoen din</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">{t('profileExtended.signOutDesc')}</span>
                 </div>
               </div>
               <ChevronRight className="w-6 h-6 text-red-600 dark:text-red-400 group-hover:translate-x-1 transition-transform" />

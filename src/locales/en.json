@@ -196,7 +196,99 @@
     "christianity": "Christianity",
     "islam": "Islam",
     "hinduism": "Hinduism",
-    "judaism": "Judaism"
+    "judaism": "Judaism",
+    "buddhism": "Buddhism"
+  },
+  "sidebar": {
+    "home": "Home",
+    "learn": "Learn",
+    "quests": "Quests",
+    "achievements": "Achievements",
+    "profile": "Profile",
+    "quickStats": "Quick Stats",
+    "dailyGoal": "Daily goal",
+    "quote": "Knowledge is the key to understanding and tolerance.",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Customize your experience",
+    "backToProfile": "Back to profile",
+    "notifications": {
+      "title": "Notifications",
+      "push": "Push notifications",
+      "pushDesc": "Get reminders about daily goals",
+      "email": "Email notifications",
+      "emailDesc": "Weekly progress report"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "darkMode": "Dark mode",
+      "darkModeDesc": "Reduce eye strain",
+      "soundEffects": "Sound effects",
+      "soundEffectsDesc": "Play sounds on completion"
+    },
+    "language": {
+      "title": "Language",
+      "interface": "Interface language",
+      "interfaceDesc": "Change the app language"
+    },
+    "privacy": {
+      "title": "Privacy",
+      "exportData": "Export data",
+      "exportDataDesc": "Download all your data",
+      "deleteAccount": "Delete account",
+      "deleteAccountDesc": "Permanently delete your account",
+      "execute": "Execute"
+    },
+    "help": {
+      "title": "Need help?",
+      "description": "We're here to help you with any questions",
+      "contactSupport": "Contact support"
+    }
+  },
+  "profileExtended": {
+    "level": "Level",
+    "progressToLevel": "Progress to Level",
+    "xpToNext": "XP to next level",
+    "totalXP": "Total XP",
+    "daysStreak": "Day Streak",
+    "keepGoing": "Keep it going!",
+    "lessons": "Lessons",
+    "completed": "Completed",
+    "stars": "Stars",
+    "collected": "Collected",
+    "seeAll": "See all",
+    "hearts": "Hearts",
+    "remainingLives": "Remaining lives",
+    "xp": "Experience points",
+    "perfect": "Perfect",
+    "threeStars": "3 stars",
+    "recentActivity": "Recent Activity",
+    "lessonCompleted": "Lesson completed",
+    "star": "star",
+    "stars_plural": "stars",
+    "noActivity": "No activity yet",
+    "noActivityDesc": "Start a lesson to see your progress here!",
+    "quickActions": "Quick Actions",
+    "shareProgress": "Share progress",
+    "downloadCertificate": "Download certificate",
+    "signOutDesc": "Log out of your account",
+    "changePhoto": "Change photo"
+  },
+  "streakCalendar": {
+    "title": "Activity Calendar",
+    "active": "Active",
+    "inactive": "Inactive",
+    "today": "Today",
+    "daysStreak": "day streak!",
+    "keepGoing": "Keep it going to reach new milestones!"
+  },
+  "progressChart": {
+    "title": "Weekly Progress",
+    "average": "Average",
+    "perDay": "XP/day"
   }
 }
 
