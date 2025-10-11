@@ -206,6 +206,122 @@
     "judaism": "Yahudilik",
     "buddhism": "Budizm"
   },
+  "lessons": {
+    "christianity": {
+      "intro": {
+        "title": "Hıristiyanlığa Giriş",
+        "description": "Temel terimler ve uygulamalar"
+      },
+      "origins": {
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "Hıristiyanlığın birinci yüzyıldaki başlangıcını öğrenin"
+      },
+      "beliefs": {
+        "title": "Temel İnançlar ve Öğretiler",
+        "description": "Hıristiyan inancının temel ilkelerini keşfedin"
+      },
+      "practices": {
+        "title": "Önemli Uygulamalar ve Ritüeller",
+        "description": "Hıristiyan ritüellerini ve günlük uygulamaları keşfedin"
+      },
+      "holidays": {
+        "title": "Tatiller ve Kutlamalar",
+        "description": "Noel, Paskalya ve Pentikost gibi Hıristiyan bayramlarını keşfedin"
+      },
+      "texts": {
+        "title": "Kutsal Metinler ve Semboller",
+        "description": "İncil ve Hıristiyan sembollerini öğrenin"
+      }
+    },
+    "islam": {
+      "intro": {
+        "title": "İslam'a Giriş",
+        "description": "Temel terimler ve uygulamalar"
+      },
+      "origins": {
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "İslam'ın eski köklerini öğrenin"
+      },
+      "beliefs": {
+        "title": "Temel İnançlar ve Öğretiler",
+        "description": "Beş şartı ve temel ilkeleri keşfedin"
+      },
+      "practices": {
+        "title": "Önemli Uygulamalar ve Ritüeller",
+        "description": "Namaz, oruç ve günlük ibadeti keşfedin"
+      },
+      "holidays": {
+        "title": "Tatiller ve Kutlamalar",
+        "description": "Ramazan, Kurban ve diğer festivalleri keşfedin"
+      },
+      "texts": {
+        "title": "Kutsal Metinler ve Semboller",
+        "description": "Kuran ve İslami sembolleri öğrenin"
+      }
+    },
+    "hinduism": {
+      "intro": {
+        "title": "Hinduizm'e Giriş",
+        "description": "Temel terimler ve uygulamalar"
+      },
+      "origins": {
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "Hinduizm'in eski köklerini öğrenin"
+      },
+      "beliefs": {
+        "title": "Temel İnançlar ve Öğretiler",
+        "description": "Karma, reenkarnasyon ve moksha'yı keşfedin"
+      },
+      "practices": {
+        "title": "Önemli Uygulamalar ve Ritüeller",
+        "description": "Puja, tapınaklar ve günlük ibadeti keşfedin"
+      },
+      "holidays": {
+        "title": "Tatiller ve Kutlamalar",
+        "description": "Diwali, Holi ve diğer festivalleri keşfedin"
+      },
+      "texts": {
+        "title": "Kutsal Metinler ve Semboller",
+        "description": "Vedalar, Bhagavad Gita ve Om sembolünü öğrenin"
+      },
+      "modern": {
+        "title": "Modern İfade ve Çeşitlilik",
+        "description": "Günümüz dünyasında Hinduizm'i keşfedin"
+      }
+    },
+    "judaism": {
+      "intro": {
+        "title": "Yahudiliğe Giriş",
+        "description": "Temel terimler ve uygulamalar"
+      },
+      "origins": {
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "Yahudiliğin eski köklerini öğrenin"
+      },
+      "beliefs": {
+        "title": "Temel İnançlar ve Öğretiler",
+        "description": "Yahudi inancının temel ilkelerini keşfedin"
+      },
+      "practices": {
+        "title": "Önemli Uygulamalar ve Ritüeller",
+        "description": "Şabat, koşer ve günlük uygulamaları keşfedin"
+      },
+      "holidays": {
+        "title": "Tatiller ve Kutlamalar",
+        "description": "Hanuka, Pesah ve diğer bayramları keşfedin"
+      },
+      "texts": {
+        "title": "Kutsal Metinler ve Semboller",
+        "description": "Tevrat, Talmud ve Yahudi sembollerini öğrenin"
+      }
+    },
+    "buddhism": {
+      "intro": {
+        "title": "Budizm'e Giriş",
+        "description": "Temel terimler ve uygulamalar"
+      }
+    }
+  },
   "sidebar": {
     "home": "Ana sayfa",
     "learn": "Öğren",

@@ -12,7 +12,9 @@ export interface Lesson {
   religion_id: string;
   slug: string;
   title: string;
+  title_key?: string;
   description?: string;
+  description_key?: string;
   difficulty: number;
   thumbnail_url?: string;
   order_index: number;

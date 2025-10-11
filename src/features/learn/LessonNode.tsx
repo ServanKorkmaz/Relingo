@@ -91,12 +91,12 @@ export default function LessonNode({ lesson, isLocked, onClick }: LessonNodeProp
         {/* Content Section */}
         <div className="p-4">
           <h3 className="font-bold text-base text-gray-900 dark:text-white mb-2 line-clamp-2 text-left">
-            {lesson.title}
+            {lesson.title_key ? t(lesson.title_key) : lesson.title}
           </h3>
           
-          {lesson.description && (
+          {(lesson.description_key || lesson.description) && (
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 text-left">
-              {lesson.description}
+              {lesson.description_key ? t(lesson.description_key) : lesson.description}
             </p>
           )}
 

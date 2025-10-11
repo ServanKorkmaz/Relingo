@@ -206,6 +206,122 @@
     "judaism": "Jødedom",
     "buddhism": "Buddhisme"
   },
+  "lessons": {
+    "christianity": {
+      "intro": {
+        "title": "Introduksjon til kristendommen",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om kristendommens begynnelse i det første århundre"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk de sentrale trosprinsippene i kristendommen"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag kristne ritualer og daglige praksiser"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk kristne høytider som jul, påske og pinse"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Bibelen og kristne symboler"
+      }
+    },
+    "islam": {
+      "intro": {
+        "title": "Introduksjon til islam",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om islams eldgamle røtter"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk de fem søylene og kjerneprinsippene"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag bønn, faste og daglig tilbedelse"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk Ramadan, Eid og andre festivaler"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Koranen og islamske symboler"
+      }
+    },
+    "hinduism": {
+      "intro": {
+        "title": "Introduksjon til hinduismen",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om hinduismens eldgamle røtter"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk karma, reinkarnasjon og moksha"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag puja, templer og daglig tilbedelse"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk Divali, Holi og andre festivaler"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Vedaene, Bhagavad Gita og Om-symbolet"
+      },
+      "modern": {
+        "title": "Moderne uttrykk og mangfold",
+        "description": "Utforsk hinduisme i dagens verden"
+      }
+    },
+    "judaism": {
+      "intro": {
+        "title": "Introduksjon til jødedommen",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om jødedommens eldgamle røtter"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk sentrale prinsipper i jødisk tro"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag shabbat, kosher og daglige praksiser"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk Hanukkah, påske og andre høytider"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Tora, Talmud og jødiske symboler"
+      }
+    },
+    "buddhism": {
+      "intro": {
+        "title": "Introduksjon til buddhismen",
+        "description": "Grunnleggende begreper og praksiser"
+      }
+    }
+  },
   "sidebar": {
     "home": "Hjem",
     "learn": "Lær",
