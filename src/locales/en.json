@@ -180,7 +180,8 @@
   "nav": {
     "learn": "Learn",
     "quests": "Quests",
-    "profile": "Profile"
+    "profile": "Profile",
+    "settings": "Settings"
   },
   "common": {
     "loading": "Loading...",

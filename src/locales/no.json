@@ -180,7 +180,8 @@
   "nav": {
     "learn": "Lær",
     "quests": "Oppdrag",
-    "profile": "Profil"
+    "profile": "Profil",
+    "settings": "Innstillinger"
   },
   "common": {
     "loading": "Laster...",

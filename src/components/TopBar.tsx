@@ -52,10 +52,8 @@ export default function TopBar() {
               </div>
             </div>
 
-            {/* Language Switcher */}
-            <div className="hidden sm:block">
-              <LanguageSwitcher />
-            </div>
+            {/* Language Switcher - Always visible */}
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Target, User } from 'lucide-react';
+import { Home, Target, User, Settings } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function MobileNav() {
@@ -9,11 +9,12 @@ export default function MobileNav() {
     { to: '/app/learn', labelKey: 'nav.learn', icon: Home },
     { to: '/app/quests', labelKey: 'nav.quests', icon: Target },
     { to: '/app/profile', labelKey: 'nav.profile', icon: User },
+    { to: '/app/settings', labelKey: 'nav.settings', icon: Settings },
   ];
 
   return (
     <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 shadow-strong transition-colors duration-300">
-      <ul className="grid grid-cols-3 max-w-md mx-auto">
+      <ul className="grid grid-cols-4 max-w-2xl mx-auto">
         {tabs.map(({ to, labelKey, icon: Icon }) => (
           <li key={to}>
             <NavLink

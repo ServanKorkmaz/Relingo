@@ -180,7 +180,8 @@
   "nav": {
     "learn": "Öğren",
     "quests": "Görevler",
-    "profile": "Profil"
+    "profile": "Profil",
+    "settings": "Ayarlar"
   },
   "common": {
     "loading": "Yükleniyor...",
