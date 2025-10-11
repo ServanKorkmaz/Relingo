@@ -153,7 +153,18 @@ export default function ProfileImageUpload({
 
           {/* Upload Options */}
           <div className="space-y-3">
-            {/* File Input (works for both camera and files on mobile) */}
+            {/* Camera Input - works on both mobile and desktop */}
+            <input
+              ref={cameraInputRef}
+              type="file"
+              accept="image/*"
+              capture="user"
+              onChange={handleFileSelect}
+              className="hidden"
+              disabled={uploading}
+            />
+
+            {/* File Input - for selecting from files */}
             <input
               ref={fileInputRef}
               type="file"
@@ -163,41 +174,9 @@ export default function ProfileImageUpload({
               disabled={uploading}
             />
 
-            {/* Camera Input (mobile only) */}
-            <input
-              ref={cameraInputRef}
-              type="file"
-              accept="image/*"
-              capture="environment"
-              onChange={handleFileSelect}
-              className="hidden"
-              disabled={uploading}
-            />
-
-            {/* Take Photo Button (shows on mobile) */}
-            {/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && (
-              <button
-                onClick={() => cameraInputRef.current?.click()}
-                disabled={uploading}
-                className="w-full py-4 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {uploading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Laster opp...
-                  </>
-                ) : (
-                  <>
-                    <Camera className="w-5 h-5" />
-                    Ta bilde
-                  </>
-                )}
-              </button>
-            )}
-
-            {/* Choose from Files Button */}
+            {/* Take Photo Button - shows on all platforms */}
             <button
-              onClick={() => fileInputRef.current?.click()}
+              onClick={() => cameraInputRef.current?.click()}
               disabled={uploading}
               className="w-full py-4 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -208,10 +187,27 @@ export default function ProfileImageUpload({
                 </>
               ) : (
                 <>
+                  <Camera className="w-5 h-5" />
+                  Ta bilde med kamera
+                </>
+              )}
+            </button>
+
+            {/* Choose from Files Button */}
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading}
+              className="w-full py-4 bg-gray-100 text-gray-900 font-semibold rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {uploading ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  Laster opp...
+                </>
+              ) : (
+                <>
                   <Upload className="w-5 h-5" />
-                  {/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-                    ? 'Velg fra bibliotek'
-                    : 'Velg bilde'}
+                  Velg fra filer
                 </>
               )}
             </button>
@@ -219,19 +215,9 @@ export default function ProfileImageUpload({
 
           {/* Info Text */}
           <p className="text-sm text-gray-500 text-center mt-4">
-            {/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ? (
-              <>
-                Ta bilde med kamera eller velg fra biblioteket
-                <br />
-                Maks filstørrelse: 5MB
-              </>
-            ) : (
-              <>
-                Velg et bilde fra datamaskinen din
-                <br />
-                Maks filstørrelse: 5MB • JPG, PNG, GIF
-              </>
-            )}
+            Ta bilde direkte eller velg fra filer
+            <br />
+            Maks filstørrelse: 5MB • JPG, PNG, GIF
           </p>
         </motion.div>
       </motion.div>
