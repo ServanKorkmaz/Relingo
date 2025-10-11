@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FEF3C7"/>
+  
+  <defs>
+    <radialGradient id="hinduHolidayBg">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.03"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#hinduHolidayBg)"/>
+  
+  <!-- Divali lamp (main) -->
+  <g transform="translate(100, 90)">
+    <!-- Flame -->
+    <ellipse cx="0" cy="-15" rx="10" ry="18" fill="#FCD34D" opacity="0.9"/>
+    <ellipse cx="0" cy="-15" rx="6" ry="12" fill="#FBBF24" opacity="0.9"/>
+    <ellipse cx="0" cy="-15" rx="4" ry="8" fill="#F59E0B"/>
+    <path d="M 0 -33 Q -3 -37, 0 -40 Q 3 -37, 0 -33 Z" fill="#FEF3C7"/>
+    
+    <!-- Lamp -->
+    <ellipse cx="0" cy="0" rx="30" ry="10" fill="#FBBF24"/>
+    <path d="M -30 0 Q -30 10, -20 15 L 20 15 Q 30 10, 30 0 Z" fill="#F59E0B" opacity="0.8"/>
+    <ellipse cx="0" cy="15" rx="25" ry="5" fill="#D97706" opacity="0.7"/>
+  </g>
+  
+  <!-- Holi colors (color powder) -->
+  <g transform="translate(50, 130)">
+    <!-- Pink pile -->
+    <ellipse cx="0" cy="0" rx="15" ry="8" fill="#EC4899" opacity="0.7"/>
+    <ellipse cx="0" cy="-3" rx="12" ry="5" fill="#F472B6" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(100, 140)">
+    <!-- Yellow pile -->
+    <ellipse cx="0" cy="0" rx="15" ry="8" fill="#FBBF24" opacity="0.7"/>
+    <ellipse cx="0" cy="-3" rx="12" ry="5" fill="#FCD34D" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(150, 130)">
+    <!-- Green pile -->
+    <ellipse cx="0" cy="0" rx="15" ry="8" fill="#10B981" opacity="0.7"/>
+    <ellipse cx="0" cy="-3" rx="12" ry="5" fill="#34D399" opacity="0.8"/>
+  </g>
+  
+  <!-- Decorative rangoli pattern -->
+  <g transform="translate(100, 40)" opacity="0.4">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#F59E0B"/>
+    <circle cx="8" cy="0" r="2" fill="#EC4899"/>
+    <circle cx="-8" cy="0" r="2" fill="#10B981"/>
+    <circle cx="0" cy="8" r="2" fill="#3B82F6"/>
+    <circle cx="0" cy="-8" r="2" fill="#FBBF24"/>
+  </g>
+</svg>
+

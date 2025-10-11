@@ -1,29 +1,29 @@
 -- Norwegian Hinduism Content Migration
 -- Add comprehensive lessons and quizzes about Hinduism in Norwegian
 
--- Add detailed lessons for Hinduism
+-- Add detailed lessons for Hinduism with unique thumbnails
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'hinduisme-opprinnelse', 'Opprinnelse og historisk bakgrunn', 'Lær om hinduismens eldgamle røtter', 1, '/assets/religions/hinduism.svg', 1, true
+SELECT id, 'hinduisme-opprinnelse', 'Opprinnelse og historisk bakgrunn', 'Lær om hinduismens eldgamle røtter', 1, '/assets/lessons/hinduism_origins.svg', 1, true
 FROM public.religions WHERE slug = 'hinduism';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'hinduisme-tro', 'Grunnleggende tro og læresetninger', 'Utforsk karma, reinkarnasjon og moksha', 2, '/assets/religions/hinduism.svg', 2, true
+SELECT id, 'hinduisme-tro', 'Grunnleggende tro og læresetninger', 'Utforsk karma, reinkarnasjon og moksha', 2, '/assets/lessons/hinduism_beliefs.svg', 2, true
 FROM public.religions WHERE slug = 'hinduism';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'hinduisme-praksis', 'Viktige praksiser og ritualer', 'Oppdag puja, templer og daglig tilbedelse', 2, '/assets/religions/hinduism.svg', 3, true
+SELECT id, 'hinduisme-praksis', 'Viktige praksiser og ritualer', 'Oppdag puja, templer og daglig tilbedelse', 2, '/assets/lessons/hinduism_practices.svg', 3, true
 FROM public.religions WHERE slug = 'hinduism';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'hinduisme-hoytider', 'Høytider og merkedager', 'Utforsk Divali, Holi og andre festivaler', 2, '/assets/religions/hinduism.svg', 4, true
+SELECT id, 'hinduisme-hoytider', 'Høytider og merkedager', 'Utforsk Divali, Holi og andre festivaler', 2, '/assets/lessons/hinduism_holidays.svg', 4, true
 FROM public.religions WHERE slug = 'hinduism';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'hinduisme-tekster', 'Hellige tekster og symboler', 'Lær om Vedaene, Bhagavad Gita og Om-symbolet', 2, '/assets/religions/hinduism.svg', 5, true
+SELECT id, 'hinduisme-tekster', 'Hellige tekster og symboler', 'Lær om Vedaene, Bhagavad Gita og Om-symbolet', 2, '/assets/lessons/hinduism_texts.svg', 5, true
 FROM public.religions WHERE slug = 'hinduism';
 
 INSERT INTO public.lessons (religion_id, slug, title, description, difficulty, thumbnail_url, order_index, published)
-SELECT id, 'hinduisme-moderne', 'Moderne uttrykk og mangfold', 'Utforsk hinduisme i dagens verden', 3, '/assets/religions/hinduism.svg', 6, true
+SELECT id, 'hinduisme-moderne', 'Moderne uttrykk og mangfold', 'Utforsk hinduisme i dagens verden', 3, '/assets/lessons/hinduism_modern.svg', 6, true
 FROM public.religions WHERE slug = 'hinduism';
 
 -- Quiz 1: Opprinnelse og historisk bakgrunn

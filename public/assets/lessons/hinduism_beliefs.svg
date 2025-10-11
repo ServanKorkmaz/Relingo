@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FEF3C7"/>
+  
+  <defs>
+    <radialGradient id="hinduBeliefBg">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.03"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#hinduBeliefBg)"/>
+  
+  <!-- Wheel of Dharma/Karma (circular lifecycle) -->
+  <g transform="translate(100, 90)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.7"/>
+    
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="12" fill="#F59E0B" opacity="0.8"/>
+    
+    <!-- 8 spokes representing paths/karma -->
+    <line x1="0" y1="-50" x2="0" y2="-15" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    <line x1="0" y1="15" x2="0" y2="50" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    <line x1="-50" y1="0" x2="-15" y2="0" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    <line x1="15" y1="0" x2="50" y2="0" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    
+    <line x1="-35" y1="-35" x2="-11" y2="-11" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    <line x1="11" y1="11" x2="35" y2="35" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    <line x1="35" y1="-35" x2="11" y2="-11" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+    <line x1="-11" y1="11" x2="-35" y2="35" stroke="#F59E0B" stroke-width="2.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Om symbol at top -->
+  <text x="100" y="35" font-size="28" text-anchor="middle" fill="#F59E0B" font-family="serif" font-weight="bold" opacity="0.7">
+    ॐ
+  </text>
+  
+  <!-- Moksha symbol (liberation - ascending soul) -->
+  <g transform="translate(100, 160)" opacity="0.4">
+    <path d="M 0 10 Q -5 5, 0 0 Q 5 5, 0 10 Z" fill="#F59E0B"/>
+    <path d="M -3 -5 L 0 -15 L 3 -5" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="30" cy="30" r="4" fill="#F59E0B" opacity="0.3"/>
+  <circle cx="170" cy="30" r="4" fill="#F59E0B" opacity="0.3"/>
+</svg>
+

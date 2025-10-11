@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FEF3C7"/>
+  
+  <defs>
+    <radialGradient id="hinduTextBg">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.03"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#hinduTextBg)"/>
+  
+  <!-- Palm leaf manuscript (Vedas were written on these) -->
+  <g transform="translate(100, 90)">
+    <!-- Stack of palm leaves -->
+    <rect x="-40" y="5" width="80" height="8" rx="2" fill="#FBBF24" opacity="0.6"/>
+    <rect x="-42" y="0" width="84" height="8" rx="2" fill="#F59E0B" opacity="0.7"/>
+    <rect x="-44" y="-5" width="88" height="8" rx="2" fill="#FBBF24" opacity="0.8"/>
+    
+    <!-- Main visible leaf with text -->
+    <rect x="-45" y="-10" width="90" height="10" rx="2" fill="#FCD34D" stroke="#F59E0B" stroke-width="2"/>
+    
+    <!-- Sanskrit-style text marks -->
+    <line x1="-35" y1="-7" x2="-15" y2="-7" stroke="#92400E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="-35" y1="-4" x2="-20" y2="-4" stroke="#92400E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="15" y1="-7" x2="35" y2="-7" stroke="#92400E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="15" y1="-4" x2="30" y2="-4" stroke="#92400E" stroke-width="1.5" opacity="0.4"/>
+  </g>
+  
+  <!-- Large Om symbol -->
+  <g transform="translate(100, 50)" filter="drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4))">
+    <circle cx="0" cy="0" r="25" fill="#FBBF24" opacity="0.3"/>
+    <text x="0" y="12" font-size="40" text-anchor="middle" fill="#F59E0B" font-family="serif" font-weight="bold">
+      ॐ
+    </text>
+  </g>
+  
+  <!-- Bhagavad Gita book representation -->
+  <g transform="translate(60, 140)" opacity="0.5">
+    <rect x="0" y="0" width="20" height="25" rx="2" fill="#D97706"/>
+    <rect x="1" y="1" width="18" height="23" rx="1" fill="#FBBF24"/>
+    <line x1="5" y1="8" x2="15" y2="8" stroke="#F59E0B" stroke-width="1"/>
+    <line x1="5" y1="12" x2="15" y2="12" stroke="#F59E0B" stroke-width="1"/>
+    <line x1="5" y1="16" x2="15" y2="16" stroke="#F59E0B" stroke-width="1"/>
+  </g>
+  
+  <g transform="translate(140, 140)" opacity="0.5">
+    <rect x="0" y="0" width="20" height="25" rx="2" fill="#D97706"/>
+    <rect x="1" y="1" width="18" height="23" rx="1" fill="#FBBF24"/>
+    <line x1="5" y1="8" x2="15" y2="8" stroke="#F59E0B" stroke-width="1"/>
+    <line x1="5" y1="12" x2="15" y2="12" stroke="#F59E0B" stroke-width="1"/>
+  </g>
+</svg>
+

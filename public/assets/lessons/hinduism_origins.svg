@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FEF3C7"/>
+  
+  <defs>
+    <radialGradient id="hinduOriginBg">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.03"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="85" fill="url(#hinduOriginBg)"/>
+  
+  <!-- Ancient temple (representing origins in India) -->
+  <g transform="translate(100, 100)">
+    <!-- Temple base -->
+    <rect x="-35" y="10" width="70" height="30" fill="#FBBF24" opacity="0.8"/>
+    
+    <!-- Stepped tower (Shikhara) -->
+    <path d="M -40 10 L 0 -45 L 40 10 Z" fill="#F59E0B" opacity="0.9"/>
+    <path d="M -30 10 L 0 -30 L 30 10 Z" fill="#FBBF24" opacity="0.8"/>
+    <path d="M -20 10 L 0 -18 L 20 10 Z" fill="#FCD34D" opacity="0.7"/>
+    
+    <!-- Pinnacle -->
+    <circle cx="0" cy="-48" r="5" fill="#F59E0B"/>
+    <rect x="-1.5" y="-58" width="3" height="10" fill="#F59E0B"/>
+    <circle cx="0" cy="-58" r="3" fill="#F59E0B"/>
+    
+    <!-- Entrance -->
+    <rect x="-8" y="20" width="16" height="20" rx="2" fill="#92400E" opacity="0.5"/>
+  </g>
+  
+  <!-- Ancient Vedic symbols -->
+  <g opacity="0.3">
+    <circle cx="40" cy="40" r="6" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="160" cy="40" r="6" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M 35 160 L 45 160 M 40 155 L 40 165" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  
+  <!-- Timeline -->
+  <line x1="30" y1="170" x2="170" y2="170" stroke="#F59E0B" stroke-width="2" opacity="0.2" stroke-dasharray="5 5"/>
+  <circle cx="50" cy="170" r="4" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="100" cy="170" r="4" fill="#F59E0B" opacity="0.5"/>
+  <circle cx="150" cy="170" r="4" fill="#F59E0B" opacity="0.6"/>
+</svg>
+
