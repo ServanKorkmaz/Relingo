@@ -41,10 +41,33 @@ export default function ProfileImageUpload({
         return;
       }
 
-      const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { width: 1280, height: 720, facingMode: 'user' },
-        audio: false,
-      });
+      // Try different camera configurations with fallbacks
+      let mediaStream: MediaStream | null = null;
+      const configs = [
+        // Try HD first
+        { video: { width: 1280, height: 720, facingMode: 'user' }, audio: false },
+        // Fallback to SD
+        { video: { width: 640, height: 480, facingMode: 'user' }, audio: false },
+        // Fallback without facingMode
+        { video: { width: 640, height: 480 }, audio: false },
+        // Fallback to basic video only
+        { video: true, audio: false },
+      ];
+
+      for (const config of configs) {
+        try {
+          mediaStream = await navigator.mediaDevices.getUserMedia(config);
+          console.log('Camera started with config:', config);
+          break; // Success, exit loop
+        } catch (e) {
+          console.log('Failed with config:', config, e);
+          // Try next config
+        }
+      }
+
+      if (!mediaStream) {
+        throw new Error('Could not start camera with any configuration');
+      }
       
       setStream(mediaStream);
       setShowCamera(true);
