@@ -35,6 +35,12 @@ export default function ProfileImageUpload({
 
   const startCamera = async () => {
     try {
+      // Check if mediaDevices is supported
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert('Din nettleser støtter ikke kamera-tilgang. Prøv Chrome, Firefox eller Edge.');
+        return;
+      }
+
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { width: 1280, height: 720, facingMode: 'user' },
         audio: false,
@@ -49,9 +55,26 @@ export default function ProfileImageUpload({
           videoRef.current.srcObject = mediaStream;
         }
       }, 100);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error accessing camera:', error);
-      alert('Kunne ikke få tilgang til kameraet. Sjekk at du har gitt tillatelse til kamera i nettleseren.');
+      
+      let errorMessage = 'Kunne ikke få tilgang til kameraet.\n\n';
+      
+      if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+        errorMessage += '❌ Tilgang nektet\n\nDu må gi tillatelse til kamera:\n1. Klikk på kamera-ikonet i adressefeltet\n2. Velg "Tillat"\n3. Oppdater siden';
+      } else if (error.name === 'NotFoundError' || error.name === 'DevicesNotFoundError') {
+        errorMessage += '❌ Ingen kamera funnet\n\nSjekk at:\n• Kameraet er tilkoblet (USB)\n• Kameraet fungerer i andre apper\n• Drivere er installert';
+      } else if (error.name === 'NotReadableError' || error.name === 'TrackStartError') {
+        errorMessage += '❌ Kameraet er opptatt\n\nLukk andre programmer som bruker kamera:\n• Zoom\n• Teams\n• Skype\n• Andre nettleser-faner';
+      } else if (error.name === 'OverconstrainedError') {
+        errorMessage += '❌ Kamera støtter ikke innstillingene\n\nPrøv "Velg fra filer" i stedet.';
+      } else if (error.name === 'SecurityError') {
+        errorMessage += '❌ Sikkerhetsfeil\n\nSjekk at du bruker HTTPS eller localhost.';
+      } else {
+        errorMessage += `Feil: ${error.message}\n\nPrøv "Velg fra filer" i stedet.`;
+      }
+      
+      alert(errorMessage);
     }
   };
 
