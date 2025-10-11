@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '../../lib/supabase';
+import { useDarkMode } from '../../contexts/DarkModeContext';
 import { 
   getUserPreferences, 
   updateUserPreferences,
@@ -18,6 +19,7 @@ export default function SettingsScreen() {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
   const queryClient = useQueryClient();
+  const { isDarkMode, setDarkMode: setDarkModeContext } = useDarkMode();
 
   // Get current user
   const { data: user } = useQuery({
@@ -39,7 +41,6 @@ export default function SettingsScreen() {
   const [notifications, setNotifications] = useState(preferences?.notifications_enabled ?? true);
   const [emailNotifications, setEmailNotifications] = useState(preferences?.email_notifications ?? true);
   const [soundEffects, setSoundEffects] = useState(preferences?.sound_effects ?? true);
-  const [darkMode, setDarkMode] = useState(preferences?.dark_mode ?? false);
 
   // Sync local state when preferences load
   useEffect(() => {
@@ -47,7 +48,6 @@ export default function SettingsScreen() {
       setNotifications(preferences.notifications_enabled);
       setEmailNotifications(preferences.email_notifications);
       setSoundEffects(preferences.sound_effects);
-      setDarkMode(preferences.dark_mode);
     }
   }, [preferences]);
 
@@ -76,14 +76,8 @@ export default function SettingsScreen() {
   };
 
   const handleDarkModeChange = (value: boolean) => {
-    setDarkMode(value);
+    setDarkModeContext(value);
     updatePreferencesMutation.mutate({ dark_mode: value });
-    // TODO: Actually implement dark mode theme switching
-    if (value) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
   };
 
   const handleLanguageChange = (lang: string) => {
@@ -176,7 +170,7 @@ export default function SettingsScreen() {
           label: 'Mørk modus',
           description: 'Reduser øyebelastning',
           type: 'toggle',
-          value: darkMode,
+          value: isDarkMode,
           onChange: handleDarkModeChange,
         },
         {
@@ -230,7 +224,7 @@ export default function SettingsScreen() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Header */}
         <motion.div
@@ -240,16 +234,16 @@ export default function SettingsScreen() {
         >
           <button
             onClick={() => navigate('/app/profile')}
-            className="flex items-center gap-2 text-gray-600 hover:text-brand mb-4 transition-colors group"
+            className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-brand dark:hover:text-brand-light mb-4 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Tilbake til profil</span>
           </button>
           
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+          <h1 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">
             Innstillinger
           </h1>
-          <p className="text-lg text-gray-600">Tilpass opplevelsen din</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">Tilpass opplevelsen din</p>
         </motion.div>
 
         {/* Settings Sections */}
@@ -263,13 +257,13 @@ export default function SettingsScreen() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: sectionIndex * 0.1 }}
-                className="bg-white rounded-3xl p-6 lg:p-8 shadow-medium border border-gray-100"
+                className="bg-white dark:bg-gray-800 rounded-3xl p-6 lg:p-8 shadow-medium border border-gray-100 dark:border-gray-700 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-brand/10 rounded-xl flex items-center justify-center">
-                    <SectionIcon className="w-5 h-5 text-brand" />
+                  <div className="w-10 h-10 bg-brand/10 dark:bg-brand/20 rounded-xl flex items-center justify-center">
+                    <SectionIcon className="w-5 h-5 text-brand dark:text-brand-light" />
                   </div>
-                  <h2 className="font-display text-xl lg:text-2xl font-bold text-gray-900">
+                  <h2 className="font-display text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
                     {section.title}
                   </h2>
                 </div>
@@ -278,11 +272,11 @@ export default function SettingsScreen() {
                   {section.items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 transition-colors"
+                      className="flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-gray-900">{item.label}</p>
-                        <p className="text-sm text-gray-600">{item.description}</p>
+                        <p className="font-semibold text-gray-900 dark:text-white">{item.label}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                       </div>
 
                       {item.type === 'toggle' && 'onChange' in item && 'value' in item && typeof item.value === 'boolean' && (
@@ -343,13 +337,13 @@ export default function SettingsScreen() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-gradient-to-br from-brand/5 to-brand/10 rounded-3xl p-8 border border-brand/20 text-center"
+            className="bg-gradient-to-br from-brand/5 to-brand/10 dark:from-brand/10 dark:to-brand/20 rounded-3xl p-8 border border-brand/20 dark:border-brand/30 text-center transition-colors duration-300"
           >
-            <HelpCircle className="w-12 h-12 text-brand mx-auto mb-4" />
-            <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
+            <HelpCircle className="w-12 h-12 text-brand dark:text-brand-light mx-auto mb-4" />
+            <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">
               Trenger du hjelp?
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               Vi er her for å hjelpe deg med eventuelle spørsmål
             </p>
             <button className="px-6 py-3 bg-brand text-white font-semibold rounded-xl hover:bg-brand-dark transition-colors shadow-md hover:shadow-lg">

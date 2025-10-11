@@ -45,10 +45,10 @@ export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
   const maxValue = Math.max(...chartData.map(d => d.value));
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-soft">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 shadow-soft transition-colors duration-300">
       <div className="flex items-center gap-2 mb-6">
-        <TrendingUp className="w-5 h-5 text-brand" />
-        <h3 className="font-bold text-lg text-gray-900">Ukentlig Fremgang</h3>
+        <TrendingUp className="w-5 h-5 text-brand dark:text-brand-light" />
+        <h3 className="font-bold text-lg text-gray-900 dark:text-white">Ukentlig Fremgang</h3>
       </div>
 
       {/* Chart */}
@@ -63,17 +63,17 @@ export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
                 w-full rounded-t-lg relative group cursor-default
                 ${item.isToday
                   ? 'bg-gradient-to-t from-brand to-brand-light shadow-glow'
-                  : 'bg-gradient-to-t from-gray-200 to-gray-300 hover:from-brand/30 hover:to-brand/40'
+                  : 'bg-gradient-to-t from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700 hover:from-brand/30 hover:to-brand/40 dark:hover:from-brand/40 dark:hover:to-brand/50'
                 }
                 transition-all duration-200
               `}
             >
               {/* Tooltip on hover */}
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                 {item.value} XP
               </div>
             </motion.div>
-            <span className={`text-xs font-medium ${item.isToday ? 'text-brand' : 'text-gray-600'}`}>
+            <span className={`text-xs font-medium ${item.isToday ? 'text-brand dark:text-brand-light' : 'text-gray-600 dark:text-gray-400'}`}>
               {item.day}
             </span>
           </div>
@@ -81,10 +81,10 @@ export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
       </div>
 
       {/* Summary */}
-      <div className="pt-4 border-t border-gray-200">
+      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
         <div className="flex justify-between items-center">
-          <span className="text-sm text-gray-600">Gjennomsnitt</span>
-          <span className="text-sm font-bold text-brand">
+          <span className="text-sm text-gray-600 dark:text-gray-400">Gjennomsnitt</span>
+          <span className="text-sm font-bold text-brand dark:text-brand-light">
             {Math.floor(chartData.reduce((sum, d) => sum + d.value, 0) / 7)} XP/dag
           </span>
         </div>

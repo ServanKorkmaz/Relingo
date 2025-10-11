@@ -51,16 +51,16 @@ export default function StreakCalendar({ streak, userId }: StreakCalendarProps) 
   }
 
   return (
-    <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border border-orange-100">
+    <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl p-6 border border-orange-100 dark:border-orange-800/30 transition-colors duration-300">
       <div className="flex items-center gap-2 mb-4">
-        <Flame className="w-5 h-5 text-orange-600" />
-        <h3 className="font-bold text-lg text-gray-900">Aktivitetskalender</h3>
+        <Flame className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+        <h3 className="font-bold text-lg text-gray-900 dark:text-white">Aktivitetskalender</h3>
       </div>
 
       {/* Day Labels */}
       <div className="grid grid-cols-7 gap-2 mb-2">
         {['M', 'T', 'O', 'T', 'F', 'L', 'S'].map((day, i) => (
-          <div key={i} className="text-center text-xs font-medium text-gray-500">
+          <div key={i} className="text-center text-xs font-medium text-gray-500 dark:text-gray-400">
             {day}
           </div>
         ))}
@@ -80,10 +80,10 @@ export default function StreakCalendar({ streak, userId }: StreakCalendarProps) 
                   aspect-square rounded-lg flex items-center justify-center text-xs font-semibold
                   transition-all duration-200 cursor-default
                   ${day.isToday
-                    ? 'bg-gradient-to-br from-brand to-brand-dark text-white shadow-md ring-2 ring-brand/50'
+                    ? 'bg-gradient-to-br from-brand to-brand-dark text-white shadow-md ring-2 ring-brand/50 dark:ring-brand-light/50'
                     : day.isActive
                     ? 'bg-gradient-to-br from-orange-400 to-orange-500 text-white shadow-sm hover:shadow-md'
-                    : 'bg-white text-gray-400 hover:bg-gray-50'
+                    : 'bg-white dark:bg-gray-700 text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-600'
                   }
                 `}
                 title={day.isActive ? 'Aktiv dag' : 'Ingen aktivitet'}
@@ -101,27 +101,27 @@ export default function StreakCalendar({ streak, userId }: StreakCalendarProps) 
       </div>
 
       {/* Legend */}
-      <div className="flex items-center justify-center gap-4 mt-4 text-xs text-gray-600">
+      <div className="flex items-center justify-center gap-4 mt-4 text-xs text-gray-600 dark:text-gray-400">
         <div className="flex items-center gap-1.5">
           <div className="w-4 h-4 bg-gradient-to-br from-orange-400 to-orange-500 rounded"></div>
           <span>Aktiv</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="w-4 h-4 bg-white border border-gray-200 rounded"></div>
+          <div className="w-4 h-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded"></div>
           <span>Inaktiv</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="w-4 h-4 bg-gradient-to-br from-brand to-brand-dark rounded ring-1 ring-brand/50"></div>
+          <div className="w-4 h-4 bg-gradient-to-br from-brand to-brand-dark rounded ring-1 ring-brand/50 dark:ring-brand-light/50"></div>
           <span>I dag</span>
         </div>
       </div>
 
       {/* Streak Info */}
-      <div className="mt-4 pt-4 border-t border-orange-200">
-        <p className="text-center text-sm text-gray-700">
-          <span className="font-bold text-orange-600 text-lg">{streak}</span> dagers streak! 🔥
+      <div className="mt-4 pt-4 border-t border-orange-200 dark:border-orange-800">
+        <p className="text-center text-sm text-gray-700 dark:text-gray-300">
+          <span className="font-bold text-orange-600 dark:text-orange-400 text-lg">{streak}</span> dagers streak! 🔥
         </p>
-        <p className="text-center text-xs text-gray-600 mt-1">
+        <p className="text-center text-xs text-gray-600 dark:text-gray-400 mt-1">
           Hold det gående for å nå nye milepæler!
         </p>
       </div>

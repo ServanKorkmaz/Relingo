@@ -68,7 +68,7 @@ export default function LearnScreen() {
   }).filter((group) => group.lessons.length > 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Header */}
         <motion.div
@@ -76,10 +76,10 @@ export default function LearnScreen() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
+          <h1 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3">
             {t('learn.title')}
           </h1>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('learn.description')}
           </p>
         </motion.div>
@@ -98,12 +98,12 @@ export default function LearnScreen() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: groupIndex * 0.05 }}
-              className="bg-white rounded-3xl shadow-medium hover:shadow-strong border border-gray-100 overflow-hidden transition-all duration-300"
+              className="bg-white dark:bg-gray-800 rounded-3xl shadow-medium hover:shadow-strong border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300"
             >
               {/* Accordion Header */}
               <button
                 onClick={() => toggleReligion(group.religion!.slug)}
-                className="w-full p-6 lg:p-8 flex items-center justify-between hover:bg-gray-50 transition-all duration-200 group"
+                className="w-full p-6 lg:p-8 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-5 lg:gap-6">
                   {/* Religion Icon */}
@@ -128,22 +128,22 @@ export default function LearnScreen() {
                     >
                       {t(`religions.${group.religion.slug}`)}
                     </h2>
-                    <div className="flex flex-wrap items-center gap-3 lg:gap-4 text-sm lg:text-base text-gray-600">
+                    <div className="flex flex-wrap items-center gap-3 lg:gap-4 text-sm lg:text-base text-gray-600 dark:text-gray-400">
                       <span className="font-medium">
                         {group.lessons.length} {group.lessons.length === 1 ? t('learn.lesson') : t('learn.lessons')}
                       </span>
                       {group.completedLessons > 0 && (
                         <>
-                          <span className="text-gray-400">•</span>
-                          <span className="text-brand font-semibold">
+                          <span className="text-gray-400 dark:text-gray-500">•</span>
+                          <span className="text-brand dark:text-brand-light font-semibold">
                             {group.completedLessons} {t('learn.completed')}
                           </span>
                         </>
                       )}
                       {group.totalStars > 0 && (
                         <>
-                          <span className="text-gray-400">•</span>
-                          <span className="text-amber-600 font-semibold flex items-center gap-1">
+                          <span className="text-gray-400 dark:text-gray-500">•</span>
+                          <span className="text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
                             <span className="text-lg">⭐</span> {group.totalStars}
                           </span>
                         </>
@@ -152,7 +152,7 @@ export default function LearnScreen() {
                     {/* Progress Bar */}
                     {group.lessons.length > 0 && (
                       <div className="mt-3 lg:mt-4">
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden w-48 lg:w-64">
+                        <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden w-48 lg:w-64">
                           <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{
@@ -161,7 +161,7 @@ export default function LearnScreen() {
                             }}
                           />
                         </div>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                           {Math.round((group.completedLessons / group.lessons.length) * 100)}% fullført
                         </p>
                       </div>
@@ -172,9 +172,9 @@ export default function LearnScreen() {
                 {/* Expand/Collapse Icon */}
                 <div className="flex-shrink-0">
                   {isExpanded ? (
-                    <ChevronDown className="w-7 h-7 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                    <ChevronDown className="w-7 h-7 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors" />
                   ) : (
-                    <ChevronRight className="w-7 h-7 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                    <ChevronRight className="w-7 h-7 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors" />
                   )}
                 </div>
               </button>
@@ -226,7 +226,7 @@ export default function LearnScreen() {
         {/* Empty State */}
         {groupedLessons.length === 0 && (
           <div className="text-center py-16 lg:py-20">
-            <p className="text-lg lg:text-xl text-gray-600">{t('learn.noLessons')}</p>
+            <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">{t('learn.noLessons')}</p>
           </div>
         )}
       </div>

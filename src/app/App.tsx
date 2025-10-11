@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
+import { DarkModeProvider } from '../contexts/DarkModeContext';
 import TopBar from '../components/TopBar';
 import Sidebar from '../components/Sidebar';
 import BottomTabs from '../components/BottomTabs';
@@ -60,7 +61,7 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {user ? (
         <>
           {!isFullScreen && <TopBar />}
@@ -95,10 +96,12 @@ function AppContent() {
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <AppContent />
-      </Router>
-      <ReactQueryDevtools initialIsOpen={false} />
+      <DarkModeProvider>
+        <Router>
+          <AppContent />
+        </Router>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </DarkModeProvider>
     </QueryClientProvider>
   );
 }
