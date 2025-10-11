@@ -192,6 +192,12 @@
     "edit": "Rediger",
     "close": "Lukk"
   },
+  "stats": {
+    "days": "dager",
+    "xp": "XP",
+    "hearts": "Hjerter",
+    "streak": "Streak"
+  },
   "religions": {
     "christianity": "Kristendom",
     "islam": "Islam",

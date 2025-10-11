@@ -192,6 +192,12 @@
     "edit": "Edit",
     "close": "Close"
   },
+  "stats": {
+    "days": "days",
+    "xp": "XP",
+    "hearts": "Hearts",
+    "streak": "Streak"
+  },
   "religions": {
     "christianity": "Christianity",
     "islam": "Islam",

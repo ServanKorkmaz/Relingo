@@ -1,8 +1,10 @@
 import { Heart, Zap, Flame } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useUserStats } from '../hooks/useUserStats';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function TopBar() {
+  const { t } = useTranslation();
   const { stats } = useUserStats();
 
   return (
@@ -17,7 +19,7 @@ export default function TopBar() {
             </div>
             <div className="hidden sm:block">
               <span className="font-display font-bold text-2xl text-brand dark:text-brand-light">Relingo</span>
-              <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Lær om religioner</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">{t('app.tagline')}</p>
             </div>
           </div>
 
@@ -28,7 +30,7 @@ export default function TopBar() {
               <Flame className="w-5 h-5 text-orange-600 dark:text-orange-400" />
               <div className="flex flex-col">
                 <span className="font-bold text-lg text-orange-900 dark:text-orange-200 leading-none">{stats?.streak || 0}</span>
-                <span className="text-[10px] text-orange-700 dark:text-orange-400">dager</span>
+                <span className="text-[10px] text-orange-700 dark:text-orange-400">{t('stats.days')}</span>
               </div>
             </div>
 

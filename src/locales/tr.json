@@ -192,6 +192,12 @@
     "edit": "Düzenle",
     "close": "Kapat"
   },
+  "stats": {
+    "days": "gün",
+    "xp": "XP",
+    "hearts": "Kalpler",
+    "streak": "Seri"
+  },
   "religions": {
     "christianity": "Hıristiyanlık",
     "islam": "İslam",

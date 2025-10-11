@@ -161,7 +161,7 @@ export default function LearnScreen() {
                           />
                         </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                          {Math.round((group.completedLessons / group.lessons.length) * 100)}% fullført
+                          {Math.round((group.completedLessons / group.lessons.length) * 100)}% {t('learn.completed')}
                         </p>
                       </div>
                     )}

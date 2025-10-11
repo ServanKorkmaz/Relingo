@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { DarkModeProvider } from '../contexts/DarkModeContext';
 import TopBar from '../components/TopBar';
 import Sidebar from '../components/Sidebar';
+import MobileNav from '../components/MobileNav';
 import LearnScreen from './learn';
 import QuestsScreen from './quests';
 import ProfileScreen from './profile';
@@ -65,7 +66,8 @@ function AppContent() {
         <>
           {!isFullScreen && <TopBar />}
           {!isFullScreen && <Sidebar />}
-          <main className={`${isFullScreen ? '' : 'pt-16 lg:pl-72'}`}>
+          {!isFullScreen && <MobileNav />}
+          <main className={`${isFullScreen ? '' : 'pt-16 lg:pl-72 pb-20 lg:pb-4'}`}>
             <Routes>
               <Route path="/app" element={<Navigate to="/app/learn" replace />} />
               <Route path="/app/learn" element={<LearnScreen />} />
