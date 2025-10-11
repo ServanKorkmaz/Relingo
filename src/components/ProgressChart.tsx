@@ -1,18 +1,36 @@
 import { motion } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { getDailyXPLog } from '../db/queries';
 
 interface ProgressChartProps {
   xp: number;
+  userId?: string;
 }
 
-export default function ProgressChart({ xp: _xp }: ProgressChartProps) {
-  // Generate last 7 days of XP (mock data - in real app, track daily)
+export default function ProgressChart({ xp: _xp, userId }: ProgressChartProps) {
+  // Fetch actual daily XP data
+  const { data: dailyXPData = [] } = useQuery({
+    queryKey: ['daily-xp-log', userId],
+    queryFn: () => userId ? getDailyXPLog(userId, 7) : Promise.resolve([]),
+    enabled: !!userId,
+  });
+
+  // Generate last 7 days of XP with actual data
   const generateChartData = () => {
     const data = [];
     const days = ['Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør', 'Søn'];
+    const today = new Date();
     
     for (let i = 6; i >= 0; i--) {
-      const value = Math.floor(Math.random() * 200) + 50; // Mock data
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateString = date.toISOString().split('T')[0];
+      
+      // Find XP for this date
+      const dayData = dailyXPData.find(entry => entry.date === dateString);
+      const value = dayData?.xp_earned || 0;
+      
       data.push({
         day: days[6 - i],
         value: value,

@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getQuizById } from '../../db/queries';
-import { setProgress } from '../../db/queries';
+import { getQuizById, setProgress, logDailyXP } from '../../db/queries';
 import { useUserStats } from '../../hooks/useUserStats';
 import QuizPlayer from '../../features/quiz/QuizPlayer';
 import { supabase } from '../../lib/supabase';
@@ -51,7 +50,13 @@ export default function QuizScreen() {
       // Award XP
       const baseXP = 10;
       const bonusXP = perfect ? 5 : 0;
-      awardXP(baseXP + bonusXP);
+      const totalXP = baseXP + bonusXP;
+      awardXP(totalXP);
+
+      // Log daily XP for progress chart
+      if (user?.id) {
+        await logDailyXP(user.id, totalXP, 1);
+      }
 
       // Update streak
       updateStreak();
@@ -61,6 +66,8 @@ export default function QuizScreen() {
       queryClient.invalidateQueries({ queryKey: ['published-lessons'] });
       queryClient.invalidateQueries({ queryKey: ['lesson'] });
       queryClient.invalidateQueries({ queryKey: ['user-progress'] });
+      queryClient.invalidateQueries({ queryKey: ['daily-xp-log'] });
+      queryClient.invalidateQueries({ queryKey: ['streak-log'] });
     },
   });
 

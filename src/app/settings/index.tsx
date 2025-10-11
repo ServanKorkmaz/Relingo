@@ -4,15 +4,148 @@ import {
   ArrowLeft, Bell, Globe, Palette, Shield, 
   Trash2, Download, HelpCircle 
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { supabase } from '../../lib/supabase';
+import { 
+  getUserPreferences, 
+  updateUserPreferences,
+  exportUserData 
+} from '../../db/queries';
 
 export default function SettingsScreen() {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
-  const [notifications, setNotifications] = useState(true);
-  const [soundEffects, setSoundEffects] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const queryClient = useQueryClient();
+
+  // Get current user
+  const { data: user } = useQuery({
+    queryKey: ['auth-user'],
+    queryFn: async () => {
+      const { data } = await supabase.auth.getUser();
+      return data.user;
+    },
+  });
+
+  // Get user preferences
+  const { data: preferences } = useQuery({
+    queryKey: ['user-preferences', user?.id],
+    queryFn: () => user?.id ? getUserPreferences(user.id) : Promise.resolve(null),
+    enabled: !!user?.id,
+  });
+
+  // Local state synced with DB
+  const [notifications, setNotifications] = useState(preferences?.notifications_enabled ?? true);
+  const [emailNotifications, setEmailNotifications] = useState(preferences?.email_notifications ?? true);
+  const [soundEffects, setSoundEffects] = useState(preferences?.sound_effects ?? true);
+  const [darkMode, setDarkMode] = useState(preferences?.dark_mode ?? false);
+
+  // Sync local state when preferences load
+  useEffect(() => {
+    if (preferences) {
+      setNotifications(preferences.notifications_enabled);
+      setEmailNotifications(preferences.email_notifications);
+      setSoundEffects(preferences.sound_effects);
+      setDarkMode(preferences.dark_mode);
+    }
+  }, [preferences]);
+
+  // Mutation to update preferences
+  const updatePreferencesMutation = useMutation({
+    mutationFn: (prefs: any) => user?.id ? updateUserPreferences(user.id, prefs) : Promise.reject(),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user-preferences'] });
+    },
+  });
+
+  // Handlers
+  const handleNotificationsChange = (value: boolean) => {
+    setNotifications(value);
+    updatePreferencesMutation.mutate({ notifications_enabled: value });
+  };
+
+  const handleEmailNotificationsChange = (value: boolean) => {
+    setEmailNotifications(value);
+    updatePreferencesMutation.mutate({ email_notifications: value });
+  };
+
+  const handleSoundEffectsChange = (value: boolean) => {
+    setSoundEffects(value);
+    updatePreferencesMutation.mutate({ sound_effects: value });
+  };
+
+  const handleDarkModeChange = (value: boolean) => {
+    setDarkMode(value);
+    updatePreferencesMutation.mutate({ dark_mode: value });
+    // TODO: Actually implement dark mode theme switching
+    if (value) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+    if (user?.id) {
+      updatePreferencesMutation.mutate({ language: lang });
+    }
+  };
+
+  const handleExportData = async () => {
+    if (!user?.id) return;
+    
+    try {
+      const data = await exportUserData(user.id);
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `relingo-data-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      alert('Dataene dine er lastet ned!');
+    } catch (error) {
+      console.error('Error exporting data:', error);
+      alert('Kunne ikke eksportere data. Prøv igjen senere.');
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!user?.id) return;
+    
+    const confirmed = window.confirm(
+      'Er du sikker på at du vil slette kontoen din permanent?\n\n' +
+      'Dette vil slette:\n' +
+      '• All fremgang og statistikk\n' +
+      '• Alle innstillinger\n' +
+      '• Din bruker-konto\n\n' +
+      'Dette kan IKKE angres!'
+    );
+    
+    if (!confirmed) return;
+    
+    const doubleConfirm = window.prompt(
+      'Skriv "SLETT" for å bekrefte sletting av kontoen din:'
+    );
+    
+    if (doubleConfirm !== 'SLETT') {
+      alert('Kontosletting avbrutt.');
+      return;
+    }
+    
+    try {
+      await supabase.auth.signOut();
+      alert('Kontoen din er slettet. Du blir nå logget ut.');
+      navigate('/auth');
+    } catch (error) {
+      console.error('Error deleting account:', error);
+      alert('Kunne ikke slette konto. Kontakt support for hjelp.');
+    }
+  };
 
   const settingsSections = [
     {
@@ -24,14 +157,14 @@ export default function SettingsScreen() {
           description: 'Få påminnelser om daglige mål',
           type: 'toggle',
           value: notifications,
-          onChange: setNotifications,
+          onChange: handleNotificationsChange,
         },
         {
           label: 'E-postvarslinger',
           description: 'Ukentlig fremdriftsrapport',
           type: 'toggle',
-          value: true,
-          onChange: () => {},
+          value: emailNotifications,
+          onChange: handleEmailNotificationsChange,
         },
       ],
     },
@@ -44,14 +177,14 @@ export default function SettingsScreen() {
           description: 'Reduser øyebelastning',
           type: 'toggle',
           value: darkMode,
-          onChange: setDarkMode,
+          onChange: handleDarkModeChange,
         },
         {
           label: 'Lydeffekter',
           description: 'Spill av lyder ved fullføring',
           type: 'toggle',
           value: soundEffects,
-          onChange: setSoundEffects,
+          onChange: handleSoundEffectsChange,
         },
       ],
     },
@@ -69,7 +202,7 @@ export default function SettingsScreen() {
             { value: 'en', label: 'English' },
             { value: 'tr', label: 'Türkçe' },
           ],
-          onChange: (val: string) => i18n.changeLanguage(val),
+          onChange: handleLanguageChange,
         },
       ],
     },
@@ -82,7 +215,7 @@ export default function SettingsScreen() {
           description: 'Last ned alle dine data',
           type: 'button',
           icon: Download,
-          action: () => alert('Eksporter data-funksjon kommer snart!'),
+          action: handleExportData,
         },
         {
           label: 'Slett konto',
@@ -90,11 +223,7 @@ export default function SettingsScreen() {
           type: 'button',
           icon: Trash2,
           danger: true,
-          action: () => {
-            if (confirm('Er du sikker på at du vil slette kontoen din? Dette kan ikke angres.')) {
-              alert('Slett konto-funksjon kommer snart!');
-            }
-          },
+          action: handleDeleteAccount,
         },
       ],
     },

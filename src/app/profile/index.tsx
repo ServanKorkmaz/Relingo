@@ -14,6 +14,7 @@ import { getUserProgress } from '../../db/queries';
 import ProfileImageUpload from '../../components/ProfileImageUpload';
 import StreakCalendar from '../../components/StreakCalendar';
 import ProgressChart from '../../components/ProgressChart';
+import { shareProgress, generateShareImage } from '../../utils/shareProgress';
 
 export default function ProfileScreen() {
   const navigate = useNavigate();
@@ -38,6 +39,41 @@ export default function ProfileScreen() {
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     navigate('/auth');
+  };
+
+  const handleShareProgress = async () => {
+    await shareProgress({
+      xp: stats?.xp || 0,
+      streak: stats?.streak || 0,
+      lessonsCompleted: totalLessonsCompleted,
+      totalStars: totalStars,
+      level: userLevel,
+    });
+  };
+
+  const handleDownloadCertificate = async () => {
+    try {
+      const image = await generateShareImage({
+        xp: stats?.xp || 0,
+        streak: stats?.streak || 0,
+        lessonsCompleted: totalLessonsCompleted,
+        totalStars: totalStars,
+        level: userLevel,
+      });
+      
+      const url = URL.createObjectURL(image);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `relingo-certificate-${new Date().toISOString().split('T')[0]}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      alert('📜 Sertifikatet ditt er lastet ned!');
+    } catch (error) {
+      console.error('Error generating certificate:', error);
+      alert('Kunne ikke generere sertifikat. Prøv igjen senere.');
+    }
   };
 
   const totalLessonsCompleted = userProgress.filter((p) => p.stars > 0).length;
@@ -268,8 +304,8 @@ export default function ProfileScreen() {
 
             {/* Right Column - Streak Calendar & Chart (1/3 width) */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <StreakCalendar streak={stats?.streak || 0} />
-              <ProgressChart xp={stats?.xp || 0} />
+              <StreakCalendar streak={stats?.streak || 0} userId={user?.id} />
+              <ProgressChart xp={stats?.xp || 0} userId={user?.id} />
             </motion.div>
           </div>
 
@@ -344,7 +380,10 @@ export default function ProfileScreen() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {/* Share Progress */}
-              <button className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-md transition-all group">
+              <button 
+                onClick={handleShareProgress}
+                className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-md transition-all group"
+              >
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                   <Share2 className="w-7 h-7 text-blue-600" />
                 </div>
@@ -352,7 +391,10 @@ export default function ProfileScreen() {
               </button>
 
               {/* Download Certificate */}
-              <button className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-md transition-all group">
+              <button 
+                onClick={handleDownloadCertificate}
+                className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-md transition-all group"
+              >
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                   <Download className="w-7 h-7 text-purple-600" />
                 </div>

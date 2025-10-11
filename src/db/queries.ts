@@ -307,3 +307,162 @@ export async function setProgress(params: {
     return data;
   }
 }
+
+// ============ User Preferences ============
+
+export interface UserPreferences {
+  user_id: string;
+  notifications_enabled: boolean;
+  email_notifications: boolean;
+  sound_effects: boolean;
+  dark_mode: boolean;
+  language: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export async function getUserPreferences(userId: string): Promise<UserPreferences | null> {
+  const { data, error } = await supabase
+    .from('user_preferences')
+    .select('*')
+    .eq('user_id', userId)
+    .single();
+  
+  if (error) {
+    // If not found, create default preferences
+    if (error.code === 'PGRST116') {
+      return createUserPreferences(userId);
+    }
+    throw error;
+  }
+  
+  return data;
+}
+
+export async function createUserPreferences(userId: string): Promise<UserPreferences> {
+  const { data, error } = await supabase
+    .from('user_preferences')
+    .insert({
+      user_id: userId,
+      notifications_enabled: true,
+      email_notifications: true,
+      sound_effects: true,
+      dark_mode: false,
+      language: 'no',
+    })
+    .select()
+    .single();
+  
+  if (error) throw error;
+  return data;
+}
+
+export async function updateUserPreferences(
+  userId: string,
+  preferences: Partial<Omit<UserPreferences, 'user_id' | 'created_at' | 'updated_at'>>
+): Promise<UserPreferences> {
+  const { data, error } = await supabase
+    .from('user_preferences')
+    .update({
+      ...preferences,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('user_id', userId)
+    .select()
+    .single();
+  
+  if (error) throw error;
+  return data;
+}
+
+// ============ Daily XP Tracking ============
+
+export interface DailyXPLog {
+  id: string;
+  user_id: string;
+  date: string;
+  xp_earned: number;
+  lessons_completed: number;
+  created_at: string;
+}
+
+export async function getDailyXPLog(userId: string, days: number = 7): Promise<DailyXPLog[]> {
+  const { data, error } = await supabase
+    .from('daily_xp_log')
+    .select('*')
+    .eq('user_id', userId)
+    .order('date', { ascending: false })
+    .limit(days);
+  
+  if (error) throw error;
+  return data || [];
+}
+
+export async function logDailyXP(userId: string, xpEarned: number, lessonsCompleted: number = 1): Promise<void> {
+  const { error } = await supabase.rpc('log_daily_xp', {
+    p_user_id: userId,
+    p_xp_earned: xpEarned,
+    p_lessons_completed: lessonsCompleted,
+  });
+  
+  if (error) throw error;
+}
+
+// ============ Streak Log ============
+
+export interface StreakLogEntry {
+  id: string;
+  user_id: string;
+  date: string;
+  delta: number;
+}
+
+export async function getStreakLog(userId: string, days: number = 28): Promise<StreakLogEntry[]> {
+  const { data, error } = await supabase
+    .from('streak_log')
+    .select('*')
+    .eq('user_id', userId)
+    .order('date', { ascending: false })
+    .limit(days);
+  
+  if (error) throw error;
+  return data || [];
+}
+
+// ============ Export User Data ============
+
+export async function exportUserData(userId: string): Promise<any> {
+  const [stats, progress, streakLog, preferences, dailyXP] = await Promise.all([
+    getUserStats(userId),
+    getUserProgress(userId),
+    getStreakLog(userId, 365),
+    getUserPreferences(userId),
+    getDailyXPLog(userId, 90),
+  ]);
+  
+  return {
+    user_id: userId,
+    exported_at: new Date().toISOString(),
+    stats,
+    progress,
+    streak_log: streakLog,
+    preferences,
+    daily_xp: dailyXP,
+  };
+}
+
+// ============ Delete User Account ============
+
+export async function deleteUserAccount(userId: string): Promise<void> {
+  // Delete user data (cascade will handle related tables)
+  const { error: statsError } = await supabase
+    .from('user_stats')
+    .delete()
+    .eq('user_id', userId);
+  
+  if (statsError) throw statsError;
+  
+  // Delete from Supabase Auth
+  const { error: authError } = await supabase.auth.admin.deleteUser(userId);
+  if (authError) throw authError;
+}

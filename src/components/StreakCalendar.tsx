@@ -1,11 +1,24 @@
 import { motion } from 'framer-motion';
 import { Flame } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { getStreakLog } from '../db/queries';
 
 interface StreakCalendarProps {
   streak: number;
+  userId?: string;
 }
 
-export default function StreakCalendar({ streak }: StreakCalendarProps) {
+export default function StreakCalendar({ streak, userId }: StreakCalendarProps) {
+  // Fetch actual streak log data
+  const { data: streakLogData = [] } = useQuery({
+    queryKey: ['streak-log', userId],
+    queryFn: () => userId ? getStreakLog(userId, 28) : Promise.resolve([]),
+    enabled: !!userId,
+  });
+
+  // Create a Set of active dates for O(1) lookup
+  const activeDates = new Set(streakLogData.map(entry => entry.date));
+
   // Generate last 28 days
   const generateDays = () => {
     const days = [];
@@ -15,8 +28,8 @@ export default function StreakCalendar({ streak }: StreakCalendarProps) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
       
-      // Mock data - in real app, fetch from streak_log table
-      const isActive = i < streak;
+      const dateString = date.toISOString().split('T')[0];
+      const isActive = activeDates.has(dateString);
       const dayName = date.toLocaleDateString('no', { weekday: 'short' });
       const dayNumber = date.getDate();
       
