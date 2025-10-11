@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .lesson-node {
+    @apply w-16 h-16 rounded-full border-4 flex items-center justify-center text-white font-bold text-sm shadow-lg transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .lesson-node.unlocked {
+    @apply bg-brand border-brand-dark cursor-pointer;
+  }
+  
+  .lesson-node.locked {
+    @apply bg-gray-300 border-gray-400 cursor-not-allowed;
+  }
+  
+  .quiz-card {
+    @apply bg-white rounded-2xl p-6 shadow-lg border border-gray-100 transition-all duration-200 hover:shadow-xl;
+  }
+  
+  .choice-button {
+    @apply w-full p-4 rounded-2xl border-2 border-gray-200 text-left font-medium transition-all duration-200 hover:border-brand hover:bg-brand/5 active:scale-[0.98];
+  }
+  
+  .choice-button.selected {
+    @apply border-brand bg-brand/10;
+  }
+  
+  .choice-button.correct {
+    @apply border-green-500 bg-green-50 text-green-800;
+  }
+  
+  .choice-button.incorrect {
+    @apply border-red-500 bg-red-50 text-red-800;
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none">
+  <defs>
+    <linearGradient id="christianGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="150" fill="url(#christianGrad)" rx="12"/>
+  <!-- Church building -->
+  <rect x="70" y="55" width="60" height="50" fill="#8B5CF6" opacity="0.8"/>
+  <!-- Church roof -->
+  <path d="M 65 55 L 100 30 L 135 55 Z" fill="#8B5CF6" opacity="0.9"/>
+  <!-- Cross on top -->
+  <rect x="97" y="15" width="6" height="18" rx="3" fill="#8B5CF6"/>
+  <rect x="90" y="22" width="20" height="6" rx="3" fill="#8B5CF6"/>
+  <!-- Windows -->
+  <rect x="85" y="70" width="12" height="18" rx="2" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="103" y="70" width="12" height="18" rx="2" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Door -->
+  <path d="M 95 90 Q 95 88 97 88 L 103 88 Q 105 88 105 90 L 105 105 L 95 105 Z" fill="#FFFFFF" opacity="0.5"/>
+  <!-- Title area -->
+  <rect x="30" y="110" width="140" height="30" rx="8" fill="#8B5CF6" opacity="0.15"/>
+  <text x="100" y="130" font-size="18" text-anchor="middle" fill="#8B5CF6" font-weight="700">Christianity</text>
+</svg>

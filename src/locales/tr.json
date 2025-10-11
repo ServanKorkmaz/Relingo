@@ -1,0 +1,202 @@
+{
+  "app": {
+    "name": "Relingo",
+    "tagline": "Dünya dinlerini saygı ve merakla öğrenin"
+  },
+  "landing": {
+    "hero": {
+      "title": "ücretsiz. eğlenceli. etkili.",
+      "description": "Relingo ile dünya dinleri hakkında bilgi edinmek eğlenceli ve etkilidir. Hızlı, küçük derslerle, çeşitli inançları saygı ve merakla keşfederken bilgi ve anlayış kazanacaksınız.",
+      "cta": "BAŞLA"
+    },
+    "backed": {
+      "title": "profesörlerin desteğiyle",
+      "description": "İçeriğimiz, doğruluk, saygı ve kültürel duyarlılık sağlamak için din bilimi profesörleri ve uzmanları tarafından oluşturulup incelenir.",
+      "expertReview": {
+        "title": "Uzman Onaylı İçerik",
+        "description": "Her ders, akademisyenler ve din uzmanları tarafından incelenir."
+      },
+      "culturallySensitive": {
+        "title": "Kültürel Duyarlılık",
+        "description": "Her inanç geleneğine saygı ve tarafsızlıkla yaklaşıyoruz."
+      },
+      "academicRigor": {
+        "title": "Akademik Titizlik",
+        "description": "Bilimsel kaynaklara ve otoriter metinlere dayanır."
+      }
+    },
+    "personalized": {
+      "title": "kişiselleştirilmiş öğrenme",
+      "description": "Kendi hızınızda öğrenin. Yolunuzu seçin. İlerlemenizi takip edin.",
+      "biteSized": {
+        "title": "Küçük Dersler",
+        "description": "Günlük rutininize uyan hızlı, ilgi çekici dersler. Sadece 5-10 dakikada öğrenin."
+      },
+      "gamified": {
+        "title": "Oyunlaştırılmış Deneyim",
+        "description": "Dersler boyunca ilerlerken XP kazanın, serileri koruyun ve yıldızlar toplayın."
+      },
+      "trackProgress": {
+        "title": "İlerlemeyi Takip Et",
+        "description": "Detaylı istatistikler ve başarılarla öğrenme yolculuğunuzu izleyin."
+      }
+    },
+    "religions": {
+      "title": "dünya dinlerini keşfedin",
+      "description": "Büyük dünya inançlarını saygı ve merakla öğrenin"
+    },
+    "cta": {
+      "title": "Öğrenme yolculuğunuza bugün başlayın",
+      "description": "Dünya dinlerini saygı ve anlayışla keşfeden binlerce öğrenciye katılın.",
+      "button": "ÜCRETSİZ BAŞLA",
+      "note": "Kredi kartı gerekmez • %100 ücretsiz"
+    },
+    "footer": {
+      "about": "Hakkında",
+      "mission": "Misyon",
+      "approach": "Yaklaşım",
+      "team": "Ekip",
+      "learn": "Öğren",
+      "support": "Destek",
+      "helpCenter": "Yardım Merkezi",
+      "faqs": "SSS",
+      "contact": "İletişim",
+      "legal": "Yasal",
+      "terms": "Şartlar",
+      "privacy": "Gizlilik",
+      "copyright": "© 2025 Relingo. Dünyanın her yerindeki meraklı zihinler için ❤️ ile yapıldı."
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Tekrar hoş geldiniz",
+      "email": "E-posta",
+      "password": "Şifre",
+      "button": "Giriş yap",
+      "switchToSignUp": "Hesabınız yok mu? Kayıt olun",
+      "forgotPassword": "Şifrenizi mi unuttunuz?"
+    },
+    "signUp": {
+      "title": "Hesap oluştur",
+      "button": "Kayıt ol",
+      "switchToSignIn": "Zaten hesabınız var mı? Giriş yapın",
+      "emailConfirm": "Giriş yapmadan önce hesabınızı onaylamak için e-postanızı kontrol edin."
+    },
+    "resetPassword": {
+      "title": "Şifreyi sıfırla",
+      "description": "E-posta adresinizi girin, size şifrenizi sıfırlamak için bir bağlantı gönderelim.",
+      "newPassword": "Yeni şifre",
+      "confirmPassword": "Şifreyi onayla",
+      "button": "Şifreyi güncelle",
+      "sendButton": "Sıfırlama bağlantısı gönder",
+      "cancel": "İptal",
+      "backToSignIn": "Girişe geri dön",
+      "success": "Şifre sıfırlama e-postası gönderildi! Gelen kutunuzu kontrol edin.",
+      "updated": "Şifre güncellendi!",
+      "updatedDescription": "Şifreniz başarıyla sıfırlandı. Uygulamaya yönlendiriliyor...",
+      "sending": "Gönderiliyor...",
+      "updating": "Güncelleniyor..."
+    },
+    "errors": {
+      "invalidEmail": "Geçersiz e-posta adresi",
+      "passwordTooShort": "Şifre en az 6 karakter olmalıdır",
+      "passwordsDontMatch": "Şifreler eşleşmiyor",
+      "general": "Bir hata oluştu"
+    },
+    "loading": "Yükleniyor..."
+  },
+  "onboarding": {
+    "title": "Relingo'ya hoş geldiniz",
+    "description": "Hangi din hakkında öğrenmeye başlamak istersiniz?",
+    "explore": "Veya tüm dinleri keşfedin",
+    "continue": "Devam et",
+    "learnFundamentals": "Temelleri öğrenin"
+  },
+  "learn": {
+    "title": "Öğrenme yolu",
+    "description": "Dünya dinlerini keşfedin ve kendi hızınızda öğrenin",
+    "lessons": "ders",
+    "lesson": "ders",
+    "completed": "tamamlandı",
+    "noLessons": "Henüz ders yok."
+  },
+  "lesson": {
+    "back": "Geri",
+    "bestScore": "En iyi",
+    "stars": "Yıldızlar",
+    "startLesson": "Derse başla",
+    "practiceAgain": "Tekrar pratik yap",
+    "level": "Seviye",
+    "notFound": "Ders bulunamadı"
+  },
+  "quiz": {
+    "loading": "Quiz yükleniyor...",
+    "noQuestions": "Soru yok",
+    "noQuestionsDescription": "Bu quizde henüz soru yok.",
+    "backToLearn": "Öğrenmeye geri dön",
+    "question": "Soru",
+    "of": "/",
+    "continue": "Devam et",
+    "checkAnswer": "Cevabı kontrol et",
+    "correctAnswer": "Doğru cevap",
+    "typeAnswer": "Cevabınızı yazın...",
+    "true": "Doğru",
+    "false": "Yanlış",
+    "result": {
+      "perfect": "Mükemmel!",
+      "wellDone": "Aferin!",
+      "youGot": "Doğru sayısı:",
+      "outOf": "/",
+      "correct": "doğru"
+    }
+  },
+  "quests": {
+    "title": "Günlük görevler",
+    "description": "Bonus XP kazanmak için görevleri tamamlayın",
+    "currentStreak": "Mevcut seri",
+    "days": "gün",
+    "totalXP": "Toplam XP",
+    "dailyLearner": {
+      "title": "Günlük öğrenci",
+      "description": "Bugün 1 ders tamamla"
+    },
+    "keepStreak": {
+      "title": "Seriyi koru",
+      "description": "Öğrenme serini sürdür"
+    },
+    "tripleThreat": {
+      "title": "Üçlü tehdit",
+      "description": "3 farklı ders tamamla"
+    }
+  },
+  "profile": {
+    "achievements": "Başarılar",
+    "lessons": "Dersler",
+    "stars": "Yıldızlar",
+    "hearts": "Kalpler",
+    "xp": "XP",
+    "signOut": "Çıkış yap"
+  },
+  "nav": {
+    "learn": "Öğren",
+    "quests": "Görevler",
+    "profile": "Profil"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "close": "Kapat"
+  },
+  "religions": {
+    "christianity": "Hıristiyanlık",
+    "islam": "İslam",
+    "hinduism": "Hinduizm",
+    "judaism": "Yahudilik"
+  }
+}
+

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FDF2F8"/>
+  
+  <!-- Gradient circle background -->
+  <defs>
+    <radialGradient id="bgGradient">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.05"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)"/>
+  
+  <!-- Bodhi tree silhouette -->
+  <path d="M 90 140 Q 90 130 100 110 Q 110 130 110 140 Z" fill="#EC4899" opacity="0.3"/>
+  <circle cx="100" cy="100" r="35" fill="#EC4899" opacity="0.2"/>
+  <circle cx="80" cy="95" r="25" fill="#EC4899" opacity="0.2"/>
+  <circle cx="120" cy="95" r="25" fill="#EC4899" opacity="0.2"/>
+  <circle cx="90" cy="80" r="20" fill="#EC4899" opacity="0.2"/>
+  <circle cx="110" cy="80" r="20" fill="#EC4899" opacity="0.2"/>
+  <rect x="97" y="110" width="6" height="30" fill="#EC4899" opacity="0.4" rx="1"/>
+  
+  <!-- Large Dharma Wheel -->
+  <circle cx="100" cy="95" r="40" stroke="#EC4899" stroke-width="4" fill="none" opacity="0.9"/>
+  <circle cx="100" cy="95" r="12" fill="#EC4899" opacity="0.9"/>
+  
+  <!-- 8 spokes -->
+  <line x1="100" y1="55" x2="100" y2="79" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  <line x1="100" y1="111" x2="100" y2="135" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  <line x1="60" y1="95" x2="84" y2="95" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  <line x1="116" y1="95" x2="140" y2="95" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  
+  <line x1="71.7" y1="66.7" x2="88.3" y2="83.3" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  <line x1="111.7" y1="106.7" x2="128.3" y2="123.3" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  <line x1="128.3" y1="66.7" x2="111.7" y2="83.3" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  <line x1="88.3" y1="106.7" x2="71.7" y2="123.3" stroke="#EC4899" stroke-width="3" opacity="0.9"/>
+  
+  <!-- Lotus flower at bottom -->
+  <ellipse cx="70" cy="165" rx="12" ry="6" fill="#EC4899" opacity="0.4"/>
+  <ellipse cx="85" cy="167" rx="14" ry="7" fill="#EC4899" opacity="0.5"/>
+  <ellipse cx="100" cy="168" rx="16" ry="8" fill="#EC4899" opacity="0.6"/>
+  <ellipse cx="115" cy="167" rx="14" ry="7" fill="#EC4899" opacity="0.5"/>
+  <ellipse cx="130" cy="165" rx="12" ry="6" fill="#EC4899" opacity="0.4"/>
+  
+  <!-- Center of lotus -->
+  <circle cx="100" cy="165" r="8" fill="#EC4899" opacity="0.7"/>
+  
+  <!-- Decorative dots on wheel rim -->
+  <circle cx="100" cy="55" r="4" fill="#EC4899" opacity="0.9"/>
+  <circle cx="100" cy="135" r="4" fill="#EC4899" opacity="0.9"/>
+  <circle cx="60" cy="95" r="4" fill="#EC4899" opacity="0.9"/>
+  <circle cx="140" cy="95" r="4" fill="#EC4899" opacity="0.9"/>
+  
+  <!-- Decorative corner elements -->
+  <circle cx="30" cy="30" r="3" fill="#EC4899" opacity="0.3"/>
+  <circle cx="170" cy="30" r="3" fill="#EC4899" opacity="0.3"/>
+  <circle cx="30" cy="170" r="3" fill="#EC4899" opacity="0.3"/>
+  <circle cx="170" cy="170" r="3" fill="#EC4899" opacity="0.3"/>
+</svg>
+
+

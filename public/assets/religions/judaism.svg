@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="58" fill="#14B8A6" opacity="0.1"/>
+  
+  <!-- Star of David (Magen David) -->
+  <path d="M 60 35 L 75 60 L 45 60 Z" fill="none" stroke="#14B8A6" stroke-width="4" stroke-linejoin="miter"/>
+  <path d="M 60 85 L 45 60 L 75 60 Z" fill="none" stroke="#14B8A6" stroke-width="4" stroke-linejoin="miter"/>
+  
+  <!-- Menorah (7-armed candelabrum) -->
+  <line x1="35" y1="90" x2="85" y2="90" stroke="#14B8A6" stroke-width="3"/>
+  <line x1="60" y1="90" x2="60" y2="80" stroke="#14B8A6" stroke-width="2.5"/>
+  
+  <!-- Candles -->
+  <line x1="35" y1="90" x2="35" y2="83" stroke="#14B8A6" stroke-width="2"/>
+  <circle cx="35" cy="82" r="1.5" fill="#F59E0B"/>
+  
+  <line x1="45" y1="90" x2="45" y2="85" stroke="#14B8A6" stroke-width="2"/>
+  <circle cx="45" cy="84" r="1.5" fill="#F59E0B"/>
+  
+  <line x1="53" y1="90" x2="53" y2="86" stroke="#14B8A6" stroke-width="2"/>
+  <circle cx="53" cy="85" r="1.5" fill="#F59E0B"/>
+  
+  <circle cx="60" cy="79" r="1.5" fill="#F59E0B"/>
+  
+  <line x1="67" y1="90" x2="67" y2="86" stroke="#14B8A6" stroke-width="2"/>
+  <circle cx="67" cy="85" r="1.5" fill="#F59E0B"/>
+  
+  <line x1="75" y1="90" x2="75" y2="85" stroke="#14B8A6" stroke-width="2"/>
+  <circle cx="75" cy="84" r="1.5" fill="#F59E0B"/>
+  
+  <line x1="85" y1="90" x2="85" y2="83" stroke="#14B8A6" stroke-width="2"/>
+  <circle cx="85" cy="82" r="1.5" fill="#F59E0B"/>
+  
+  <!-- Decorative border -->
+  <circle cx="60" cy="60" r="56" stroke="#14B8A6" stroke-width="2" fill="none" opacity="0.2"/>
+</svg>

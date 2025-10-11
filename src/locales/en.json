@@ -1,0 +1,202 @@
+{
+  "app": {
+    "name": "Relingo",
+    "tagline": "Learn about world religions with respect and curiosity"
+  },
+  "landing": {
+    "hero": {
+      "title": "free. fun. effective.",
+      "description": "Learning about world religions is fun and effective with Relingo. With quick, bite-sized lessons, you'll gain knowledge and understanding while exploring diverse faiths with respect and curiosity.",
+      "cta": "GET STARTED"
+    },
+    "backed": {
+      "title": "backed by professors",
+      "description": "Our content is created and reviewed by religious studies professors and experts to ensure accuracy, respect, and cultural sensitivity.",
+      "expertReview": {
+        "title": "Expert-Reviewed Content",
+        "description": "Every lesson is vetted by scholars and religious studies experts."
+      },
+      "culturallySensitive": {
+        "title": "Culturally Sensitive",
+        "description": "We approach each faith tradition with respect and neutrality."
+      },
+      "academicRigor": {
+        "title": "Academic Rigor",
+        "description": "Based on scholarly sources and authoritative texts."
+      }
+    },
+    "personalized": {
+      "title": "personalized learning",
+      "description": "Learn at your own pace. Choose your path. Track your progress.",
+      "biteSized": {
+        "title": "Bite-sized Lessons",
+        "description": "Quick, engaging lessons that fit into your daily routine. Learn in just 5-10 minutes."
+      },
+      "gamified": {
+        "title": "Gamified Experience",
+        "description": "Earn XP, maintain streaks, and collect stars as you progress through lessons."
+      },
+      "trackProgress": {
+        "title": "Track Progress",
+        "description": "Monitor your learning journey with detailed stats and achievements."
+      }
+    },
+    "religions": {
+      "title": "explore world religions",
+      "description": "Learn about major world faiths with respect and curiosity"
+    },
+    "cta": {
+      "title": "Start your learning journey today",
+      "description": "Join thousands of learners exploring world religions with respect and understanding.",
+      "button": "GET STARTED FOR FREE",
+      "note": "No credit card required • 100% free"
+    },
+    "footer": {
+      "about": "About",
+      "mission": "Mission",
+      "approach": "Approach",
+      "team": "Team",
+      "learn": "Learn",
+      "support": "Support",
+      "helpCenter": "Help Center",
+      "faqs": "FAQs",
+      "contact": "Contact",
+      "legal": "Legal",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "copyright": "© 2025 Relingo. Made with ❤️ for curious minds everywhere."
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welcome Back",
+      "email": "Email",
+      "password": "Password",
+      "button": "Sign In",
+      "switchToSignUp": "Don't have an account? Sign up",
+      "forgotPassword": "Forgot password?"
+    },
+    "signUp": {
+      "title": "Create Account",
+      "button": "Sign Up",
+      "switchToSignIn": "Already have an account? Sign in",
+      "emailConfirm": "Check your email to confirm your account before signing in."
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "description": "Enter your email address and we'll send you a link to reset your password.",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "button": "Update Password",
+      "sendButton": "Send Reset Link",
+      "cancel": "Cancel",
+      "backToSignIn": "Back to Sign In",
+      "success": "Password reset email sent! Check your inbox.",
+      "updated": "Password Updated!",
+      "updatedDescription": "Your password has been successfully reset. Redirecting to app...",
+      "sending": "Sending...",
+      "updating": "Updating..."
+    },
+    "errors": {
+      "invalidEmail": "Invalid email address",
+      "passwordTooShort": "Password must be at least 6 characters",
+      "passwordsDontMatch": "Passwords don't match",
+      "general": "An error occurred"
+    },
+    "loading": "Loading..."
+  },
+  "onboarding": {
+    "title": "Welcome to Relingo",
+    "description": "Which religion would you like to start learning about?",
+    "explore": "Or explore all religions",
+    "continue": "Continue",
+    "learnFundamentals": "Learn the fundamentals"
+  },
+  "learn": {
+    "title": "Learning Path",
+    "description": "Explore world religions and learn at your own pace",
+    "lessons": "lessons",
+    "lesson": "lesson",
+    "completed": "completed",
+    "noLessons": "No lessons available yet."
+  },
+  "lesson": {
+    "back": "Back",
+    "bestScore": "Best",
+    "stars": "Stars",
+    "startLesson": "Start Lesson",
+    "practiceAgain": "Practice Again",
+    "level": "Level",
+    "notFound": "Lesson not found"
+  },
+  "quiz": {
+    "loading": "Loading quiz...",
+    "noQuestions": "No Questions Available",
+    "noQuestionsDescription": "This quiz doesn't have any questions yet.",
+    "backToLearn": "Back to Learn",
+    "question": "Question",
+    "of": "of",
+    "continue": "Continue",
+    "checkAnswer": "Check Answer",
+    "correctAnswer": "Correct answer",
+    "typeAnswer": "Type your answer...",
+    "true": "True",
+    "false": "False",
+    "result": {
+      "perfect": "Perfect!",
+      "wellDone": "Well Done!",
+      "youGot": "You got",
+      "outOf": "out of",
+      "correct": "correct"
+    }
+  },
+  "quests": {
+    "title": "Daily Quests",
+    "description": "Complete quests to earn bonus XP",
+    "currentStreak": "Current Streak",
+    "days": "days",
+    "totalXP": "Total XP",
+    "dailyLearner": {
+      "title": "Daily Learner",
+      "description": "Complete 1 lesson today"
+    },
+    "keepStreak": {
+      "title": "Keep the Streak",
+      "description": "Maintain your learning streak"
+    },
+    "tripleThreat": {
+      "title": "Triple Threat",
+      "description": "Complete 3 different lessons"
+    }
+  },
+  "profile": {
+    "achievements": "Achievements",
+    "lessons": "Lessons",
+    "stars": "Stars",
+    "hearts": "Hearts",
+    "xp": "XP",
+    "signOut": "Sign Out"
+  },
+  "nav": {
+    "learn": "Learn",
+    "quests": "Quests",
+    "profile": "Profile"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close"
+  },
+  "religions": {
+    "christianity": "Christianity",
+    "islam": "Islam",
+    "hinduism": "Hinduism",
+    "judaism": "Judaism"
+  }
+}
+

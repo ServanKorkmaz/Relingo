@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="58" fill="#8B5CF6" opacity="0.1"/>
+  
+  <!-- Church building -->
+  <rect x="45" y="70" width="30" height="30" fill="#8B5CF6" opacity="0.9" rx="2"/>
+  
+  <!-- Church roof -->
+  <path d="M 40 70 L 60 50 L 80 70 Z" fill="#8B5CF6"/>
+  
+  <!-- Cross on roof -->
+  <rect x="58" y="38" width="4" height="15" rx="2" fill="#8B5CF6"/>
+  <rect x="53" y="43" width="14" height="4" rx="2" fill="#8B5CF6"/>
+  
+  <!-- Door -->
+  <rect x="55" y="85" width="10" height="15" rx="1" fill="#FFFFFF" opacity="0.7"/>
+  
+  <!-- Windows -->
+  <circle cx="52" cy="77" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="68" cy="77" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+  
+  <!-- Decorative border -->
+  <circle cx="60" cy="60" r="56" stroke="#8B5CF6" stroke-width="2" fill="none" opacity="0.2"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="58" fill="#0EA5E9" opacity="0.1"/>
+  
+  <!-- Mosque dome -->
+  <ellipse cx="60" cy="55" rx="22" ry="12" fill="#0EA5E9" opacity="0.9"/>
+  <rect x="45" y="55" width="30" height="25" fill="#0EA5E9" opacity="0.85"/>
+  
+  <!-- Minarets -->
+  <rect x="35" y="50" width="6" height="30" fill="#0EA5E9" opacity="0.7" rx="1"/>
+  <circle cx="38" cy="48" r="3" fill="#0EA5E9" opacity="0.8"/>
+  
+  <rect x="79" y="50" width="6" height="30" fill="#0EA5E9" opacity="0.7" rx="1"/>
+  <circle cx="82" cy="48" r="3" fill="#0EA5E9" opacity="0.8"/>
+  
+  <!-- Crescent moon on top -->
+  <path d="M 58 42 Q 56 35 58 28 Q 63 30 64 35 Q 63 40 58 42 Z" fill="#F59E0B"/>
+  
+  <!-- Star -->
+  <path d="M 66 33 L 67 36 L 70 36 L 68 38 L 69 41 L 66 39 L 63 41 L 64 38 L 62 36 L 65 36 Z" fill="#F59E0B"/>
+  
+  <!-- Archway -->
+  <path d="M 52 72 Q 52 68 55 68 L 65 68 Q 68 68 68 72 L 68 80 L 52 80 Z" fill="#FFFFFF" opacity="0.4"/>
+  
+  <!-- Decorative border -->
+  <circle cx="60" cy="60" r="56" stroke="#0EA5E9" stroke-width="2" fill="none" opacity="0.2"/>
+</svg>

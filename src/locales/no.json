@@ -1,0 +1,202 @@
+{
+  "app": {
+    "name": "Relingo",
+    "tagline": "Lær om verdensreligioner med respekt og nysgjerrighet"
+  },
+  "landing": {
+    "hero": {
+      "title": "gratis. gøy. effektivt.",
+      "description": "Å lære om verdensreligioner er gøy og effektivt med Relingo. Med raske, lettfordøyelige leksjoner får du kunnskap og forståelse mens du utforsker ulike trosretninger med respekt og nysgjerrighet.",
+      "cta": "KOM I GANG"
+    },
+    "backed": {
+      "title": "støttet av professorer",
+      "description": "Vårt innhold er laget og gjennomgått av professorer og eksperter innen religionsvitenskap for å sikre nøyaktighet, respekt og kulturell sensitivitet.",
+      "expertReview": {
+        "title": "Ekspertgodkjent innhold",
+        "description": "Hver leksjon er kvalitetssjekket av akademikere og religionseksperter."
+      },
+      "culturallySensitive": {
+        "title": "Kulturelt sensitiv",
+        "description": "Vi nærmer oss hver trostradisjon med respekt og nøytralitet."
+      },
+      "academicRigor": {
+        "title": "Akademisk strenghet",
+        "description": "Basert på vitenskapelige kilder og autoritative tekster."
+      }
+    },
+    "personalized": {
+      "title": "personlig læring",
+      "description": "Lær i ditt eget tempo. Velg din egen vei. Følg din fremgang.",
+      "biteSized": {
+        "title": "Korte leksjoner",
+        "description": "Raske, engasjerende leksjoner som passer inn i hverdagen din. Lær på bare 5-10 minutter."
+      },
+      "gamified": {
+        "title": "Spillifisert opplevelse",
+        "description": "Tjen XP, oppretthold streaks og samle stjerner mens du går gjennom leksjonene."
+      },
+      "trackProgress": {
+        "title": "Følg fremgang",
+        "description": "Overvåk din læringsreise med detaljert statistikk og prestasjoner."
+      }
+    },
+    "religions": {
+      "title": "utforsk verdensreligioner",
+      "description": "Lær om de store verdensreligionene med respekt og nysgjerrighet"
+    },
+    "cta": {
+      "title": "Start din læringsreise i dag",
+      "description": "Bli med tusenvis av elever som utforsker verdensreligioner med respekt og forståelse.",
+      "button": "KOM I GANG GRATIS",
+      "note": "Intet kredittkort nødvendig • 100% gratis"
+    },
+    "footer": {
+      "about": "Om oss",
+      "mission": "Oppdrag",
+      "approach": "Tilnærming",
+      "team": "Team",
+      "learn": "Lær",
+      "support": "Støtte",
+      "helpCenter": "Hjelpesenter",
+      "faqs": "Vanlige spørsmål",
+      "contact": "Kontakt",
+      "legal": "Juridisk",
+      "terms": "Vilkår",
+      "privacy": "Personvern",
+      "copyright": "© 2025 Relingo. Laget med ❤️ for nysgjerrige sinn overalt."
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Velkommen tilbake",
+      "email": "E-post",
+      "password": "Passord",
+      "button": "Logg inn",
+      "switchToSignUp": "Har du ikke konto? Registrer deg",
+      "forgotPassword": "Glemt passord?"
+    },
+    "signUp": {
+      "title": "Opprett konto",
+      "button": "Registrer deg",
+      "switchToSignIn": "Har du allerede konto? Logg inn",
+      "emailConfirm": "Sjekk e-posten din for å bekrefte kontoen før du logger inn."
+    },
+    "resetPassword": {
+      "title": "Tilbakestill passord",
+      "description": "Skriv inn e-postadressen din, så sender vi deg en lenke for å tilbakestille passordet.",
+      "newPassword": "Nytt passord",
+      "confirmPassword": "Bekreft passord",
+      "button": "Oppdater passord",
+      "sendButton": "Send tilbakestillingslenke",
+      "cancel": "Avbryt",
+      "backToSignIn": "Tilbake til innlogging",
+      "success": "E-post for tilbakestilling av passord sendt! Sjekk innboksen din.",
+      "updated": "Passord oppdatert!",
+      "updatedDescription": "Passordet ditt er tilbakestilt. Omdirigerer til appen...",
+      "sending": "Sender...",
+      "updating": "Oppdaterer..."
+    },
+    "errors": {
+      "invalidEmail": "Ugyldig e-postadresse",
+      "passwordTooShort": "Passordet må være minst 6 tegn",
+      "passwordsDontMatch": "Passordene stemmer ikke overens",
+      "general": "En feil oppstod"
+    },
+    "loading": "Laster..."
+  },
+  "onboarding": {
+    "title": "Velkommen til Relingo",
+    "description": "Hvilken religion vil du begynne å lære om?",
+    "explore": "Eller utforsk alle religioner",
+    "continue": "Fortsett",
+    "learnFundamentals": "Lær det grunnleggende"
+  },
+  "learn": {
+    "title": "Læringssti",
+    "description": "Utforsk verdensreligioner og lær i ditt eget tempo",
+    "lessons": "leksjoner",
+    "lesson": "leksjon",
+    "completed": "fullført",
+    "noLessons": "Ingen leksjoner tilgjengelig ennå."
+  },
+  "lesson": {
+    "back": "Tilbake",
+    "bestScore": "Beste",
+    "stars": "Stjerner",
+    "startLesson": "Start leksjon",
+    "practiceAgain": "Øv igjen",
+    "level": "Nivå",
+    "notFound": "Leksjon ikke funnet"
+  },
+  "quiz": {
+    "loading": "Laster quiz...",
+    "noQuestions": "Ingen spørsmål tilgjengelig",
+    "noQuestionsDescription": "Denne quizen har ingen spørsmål ennå.",
+    "backToLearn": "Tilbake til Lær",
+    "question": "Spørsmål",
+    "of": "av",
+    "continue": "Fortsett",
+    "checkAnswer": "Sjekk svar",
+    "correctAnswer": "Riktig svar",
+    "typeAnswer": "Skriv ditt svar...",
+    "true": "Sant",
+    "false": "Usant",
+    "result": {
+      "perfect": "Perfekt!",
+      "wellDone": "Godt gjort!",
+      "youGot": "Du fikk",
+      "outOf": "av",
+      "correct": "riktige"
+    }
+  },
+  "quests": {
+    "title": "Daglige oppdrag",
+    "description": "Fullfør oppdrag for å tjene bonus XP",
+    "currentStreak": "Nåværende streak",
+    "days": "dager",
+    "totalXP": "Totalt XP",
+    "dailyLearner": {
+      "title": "Daglig elev",
+      "description": "Fullfør 1 leksjon i dag"
+    },
+    "keepStreak": {
+      "title": "Hold streaken",
+      "description": "Oppretthold læringsstreaken din"
+    },
+    "tripleThreat": {
+      "title": "Trippel trussel",
+      "description": "Fullfør 3 forskjellige leksjoner"
+    }
+  },
+  "profile": {
+    "achievements": "Prestasjoner",
+    "lessons": "Leksjoner",
+    "stars": "Stjerner",
+    "hearts": "Hjerter",
+    "xp": "XP",
+    "signOut": "Logg ut"
+  },
+  "nav": {
+    "learn": "Lær",
+    "quests": "Oppdrag",
+    "profile": "Profil"
+  },
+  "common": {
+    "loading": "Laster...",
+    "error": "Feil",
+    "success": "Suksess",
+    "cancel": "Avbryt",
+    "save": "Lagre",
+    "delete": "Slett",
+    "edit": "Rediger",
+    "close": "Lukk"
+  },
+  "religions": {
+    "christianity": "Kristendom",
+    "islam": "Islam",
+    "hinduism": "Hinduisme",
+    "judaism": "Jødedom"
+  }
+}
+
