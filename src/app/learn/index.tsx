@@ -101,7 +101,7 @@ export default function LearnScreen() {
             >
               {/* Accordion Header */}
               <button
-                onClick={() => toggleReligion(group.religion.slug)}
+                onClick={() => toggleReligion(group.religion!.slug)}
                 className="w-full p-5 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
                 <div className="flex items-center gap-4">

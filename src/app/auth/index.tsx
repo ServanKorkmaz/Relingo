@@ -53,7 +53,7 @@ export default function AuthScreen() {
 
     try {
       if (isSignUp) {
-        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        const { error: signUpError } = await supabase.auth.signUp({
           email: data.email,
           password: data.password,
           options: {

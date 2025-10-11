@@ -29,7 +29,6 @@ export default function QuizScreen() {
   const completeQuizMutation = useMutation({
     mutationFn: async ({
       score,
-      totalQuestions,
       perfect,
     }: {
       score: number;

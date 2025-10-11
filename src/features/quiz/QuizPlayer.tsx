@@ -17,7 +17,7 @@ interface QuizPlayerProps {
   onComplete: (result: { score: number; totalQuestions: number; perfect: boolean }) => void;
 }
 
-export default function QuizPlayer({ quizId, lessonId, onComplete }: QuizPlayerProps) {
+export default function QuizPlayer({ quizId, lessonId: _lessonId, onComplete }: QuizPlayerProps) {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { stats, loseHeart } = useUserStats();

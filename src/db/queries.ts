@@ -7,7 +7,7 @@ import type {
   UserProgress, 
   UserStats 
 } from '../types';
-import { getUTCDateString, isToday } from '../utils/date';
+import { getUTCDateString } from '../utils/date';
 
 // ============ Public Content ============
 
