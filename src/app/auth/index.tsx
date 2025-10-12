@@ -57,7 +57,7 @@ export default function AuthScreen() {
           email: data.email,
           password: data.password,
           options: {
-            emailRedirectTo: `${window.location.origin}/app/learn`,
+            emailRedirectTo: `${window.location.origin}/onboarding`,
             data: {
               // Additional user metadata if needed
             }
@@ -66,8 +66,8 @@ export default function AuthScreen() {
 
         if (signUpError) throw signUpError;
 
-        // Navigate directly to learn page
-        navigate('/app/learn');
+        // Navigate to onboarding page
+        navigate('/onboarding');
       } else {
         const { error: signInError } = await supabase.auth.signInWithPassword({
           email: data.email,
