@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Question } from '../../types';
+import { useTranslate } from '../../hooks/useTranslate';
 
 interface TFCardProps {
   question: Question;
@@ -13,6 +14,9 @@ export default function TFCard({ question, onAnswer }: TFCardProps) {
   const { t } = useTranslation();
   const [selected, setSelected] = useState<boolean | null>(null);
   const [answered, setAnswered] = useState(false);
+  
+  // Auto-translate question prompt
+  const { translatedText: translatedPrompt } = useTranslate(question.prompt);
   
   const correctAnswer = question.meta.answer as boolean;
 
@@ -45,7 +49,7 @@ export default function TFCard({ question, onAnswer }: TFCardProps) {
     >
       {/* Prompt */}
       <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-        {question.prompt}
+        {translatedPrompt}
       </h2>
 
       {/* Media */}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Question } from '../../types';
+import { useTranslate } from '../../hooks/useTranslate';
 
 interface GapCardProps {
   question: Question;
@@ -13,6 +14,9 @@ export default function GapCard({ question, onAnswer }: GapCardProps) {
   const { t } = useTranslation();
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  
+  // Auto-translate question prompt
+  const { translatedText: translatedPrompt } = useTranslate(question.prompt);
   
   const correctAnswer = (question.meta.answer as string)?.toLowerCase().trim();
 
@@ -40,7 +44,7 @@ export default function GapCard({ question, onAnswer }: GapCardProps) {
     >
       {/* Prompt */}
       <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-        {question.prompt}
+        {translatedPrompt}
       </h2>
 
       {/* Media */}

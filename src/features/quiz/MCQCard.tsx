@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Question } from '../../types';
+import { useTranslate, useTranslateBatch } from '../../hooks/useTranslate';
 
 interface MCQCardProps {
   question: Question;
@@ -14,6 +15,13 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [answered, setAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  
+  // Auto-translate question prompt
+  const { translatedText: translatedPrompt } = useTranslate(question.prompt);
+  
+  // Auto-translate all choice texts
+  const choiceTexts = question.meta.choices?.map(c => c.text) || [];
+  const { translatedTexts: translatedChoices } = useTranslateBatch(choiceTexts);
 
   const handleChoice = (choice: { id: string; correct?: boolean }) => {
     if (answered) return;
@@ -35,7 +43,7 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
     >
       {/* Prompt */}
       <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-        {question.prompt}
+        {translatedPrompt}
       </h2>
 
       {/* Media */}
@@ -51,10 +59,11 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
 
       {/* Choices */}
       <div className="grid gap-3 mb-6">
-        {question.meta.choices?.map((choice) => {
+        {question.meta.choices?.map((choice, index) => {
           const isSelected = selectedId === choice.id;
           const showCorrect = answered && choice.correct;
           const showIncorrect = answered && isSelected && !choice.correct;
+          const translatedText = translatedChoices[index] || choice.text;
 
           return (
             <motion.button
@@ -70,7 +79,7 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
               whileTap={!answered ? { scale: 0.98 } : undefined}
             >
               <div className="flex items-center justify-between">
-                <span className="text-base">{choice.text}</span>
+                <span className="text-base">{translatedText}</span>
                 {showCorrect && <Check className="w-5 h-5 text-green-600" />}
                 {showIncorrect && <X className="w-5 h-5 text-red-600" />}
               </div>
