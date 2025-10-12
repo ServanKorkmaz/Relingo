@@ -244,7 +244,11 @@
       },
       "beliefs": {
         "title": "Temel İnançlar ve Öğretiler",
-        "description": "Beş şartı ve temel ilkeleri keşfedin"
+        "description": "İslam'ın temel inanç ilkelerini keşfedin"
+      },
+      "pillars": {
+        "title": "Beş Şart",
+        "description": "İslam'ın beş temel yükümlülüğünü keşfedin"
       },
       "practices": {
         "title": "Önemli Uygulamalar ve Ritüeller",

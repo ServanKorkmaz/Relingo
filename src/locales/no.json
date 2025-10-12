@@ -244,7 +244,11 @@
       },
       "beliefs": {
         "title": "Grunnleggende tro og læresetninger",
-        "description": "Utforsk de fem søylene og kjerneprinsippene"
+        "description": "Utforsk de sentrale trosprinsippene i islam"
+      },
+      "pillars": {
+        "title": "De fem søylene",
+        "description": "Oppdag islams fem grunnleggende plikter"
       },
       "practices": {
         "title": "Viktige praksiser og ritualer",

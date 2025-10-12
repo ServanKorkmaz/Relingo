@@ -244,7 +244,11 @@
       },
       "beliefs": {
         "title": "Core Beliefs and Teachings",
-        "description": "Explore the five pillars and core principles"
+        "description": "Explore the core principles of Islamic faith"
+      },
+      "pillars": {
+        "title": "The Five Pillars",
+        "description": "Discover Islam's five fundamental obligations"
       },
       "practices": {
         "title": "Important Practices and Rituals",
