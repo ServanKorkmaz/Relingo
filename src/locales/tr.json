@@ -327,6 +327,30 @@
       "intro": {
         "title": "Budizm'e Giriş",
         "description": "Temel terimler ve uygulamalar"
+      },
+      "origins": {
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "Budizm'in 2500 yıl önce Kuzey Hindistan'daki başlangıcını öğrenin"
+      },
+      "beliefs": {
+        "title": "Temel İnançlar ve Öğretiler",
+        "description": "Dört Asil Gerçek ve Sekiz Katlı Yol'u keşfedin"
+      },
+      "practices": {
+        "title": "Önemli Uygulamalar ve Ritüeller",
+        "description": "Meditasyon, dua ve Budist ritüelleri keşfedin"
+      },
+      "holidays": {
+        "title": "Tatiller ve Kutlamalar",
+        "description": "Vesak ve Yeni Yıl gibi Budist tatillerini keşfedin"
+      },
+      "texts": {
+        "title": "Kutsal Metinler ve Semboller",
+        "description": "Tripitaka, Dharma Çarkı ve nilüfer çiçeğini öğrenin"
+      },
+      "modern": {
+        "title": "Modern İfadeler ve Çeşitlilik",
+        "description": "Günümüz dünyasında Budizm'i ve çeşitli gelenekleri keşfedin"
       }
     }
   },

@@ -327,6 +327,30 @@
       "intro": {
         "title": "Introduction to Buddhism",
         "description": "Core terms and practices"
+      },
+      "origins": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Buddhism's beginning in North India 2500 years ago"
+      },
+      "beliefs": {
+        "title": "Core Beliefs and Teachings",
+        "description": "Explore the Four Noble Truths and the Eightfold Path"
+      },
+      "practices": {
+        "title": "Important Practices and Rituals",
+        "description": "Discover meditation, prayer, and Buddhist rituals"
+      },
+      "holidays": {
+        "title": "Holidays and Celebrations",
+        "description": "Explore Buddhist holidays like Vesak and New Year"
+      },
+      "texts": {
+        "title": "Sacred Texts and Symbols",
+        "description": "Learn about the Tripitaka, Dharma Wheel, and lotus flower"
+      },
+      "modern": {
+        "title": "Modern Expressions and Diversity",
+        "description": "Explore Buddhism in today's world and various traditions"
       }
     }
   },

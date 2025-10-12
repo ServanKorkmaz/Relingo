@@ -46,7 +46,7 @@ export default function LearnScreen() {
   }
 
   // Group lessons by religion and sort by religion size
-  const religionOrder = ['christianity', 'islam', 'hinduism', 'judaism'];
+  const religionOrder = ['christianity', 'islam', 'hinduism', 'buddhism', 'judaism'];
   
   const groupedLessons = religionOrder.map((slug) => {
     const religion = religions.find((r) => r.slug === slug);

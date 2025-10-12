@@ -327,6 +327,30 @@
       "intro": {
         "title": "Introduksjon til buddhismen",
         "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om buddhismens begynnelse i Nord-India for 2500 år siden"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk de fire edle sannheter og den åttedelte vei"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag meditasjon, bønn og buddhistiske ritualer"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk buddhistiske høytider som Vesak og nyttår"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Tripitaka, dharmahjulet og lotusblomsten"
+      },
+      "modern": {
+        "title": "Moderne uttrykk og mangfold",
+        "description": "Utforsk buddhisme i dagens verden og ulike tradisjoner"
       }
     }
   },
