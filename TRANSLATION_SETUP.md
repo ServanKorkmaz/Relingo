@@ -2,7 +2,9 @@
 
 ## 📚 Oversikt
 
-Relingo bruker nå **automatisk oversettelse** for å oversette alt innhold (leksjoner, quiz-spørsmål, etc.) fra norsk til valgt språk (engelsk eller tyrkisk).
+Relingo bruker **automatisk oversettelse** for å oversette quiz-innhold (spørsmål, svaralternativer) fra norsk til valgt språk (engelsk eller tyrkisk).
+
+**Viktig:** Nå bruker vi Google Translate REST API som fungerer i browseren!
 
 ## 🔑 Slik får du en Google Translate API-nøkkel:
 
@@ -42,7 +44,9 @@ Relingo bruker nå **automatisk oversettelse** for å oversette alt innhold (lek
    VITE_GOOGLE_TRANSLATE_API_KEY=din_api_nøkkel_her
    ```
 
-3. Restart dev-serveren:
+3. **VIKTIG:** Når du deployer til Vercel/Netlify, legg til samme environment variable der også!
+
+4. Restart dev-serveren:
    ```bash
    npm run dev
    ```
