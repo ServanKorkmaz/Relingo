@@ -313,6 +313,10 @@
       "texts": {
         "title": "Sacred Texts and Symbols",
         "description": "Learn about the Torah, Talmud and Jewish symbols"
+      },
+      "modern": {
+        "title": "Modern Expression and Diversity",
+        "description": "Explore Orthodox, Reform and Conservative Judaism"
       }
     },
     "buddhism": {

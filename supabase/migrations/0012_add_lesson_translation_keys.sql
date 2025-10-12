@@ -92,27 +92,32 @@ WHERE slug = 'hinduisme-moderne';
 UPDATE public.lessons SET 
   title_key = 'lessons.judaism.origins.title',
   description_key = 'lessons.judaism.origins.description'
-WHERE slug = 'judaisme-opprinnelse';
+WHERE slug = 'jodedom-opprinnelse';
 
 UPDATE public.lessons SET 
   title_key = 'lessons.judaism.beliefs.title',
   description_key = 'lessons.judaism.beliefs.description'
-WHERE slug = 'judaisme-tro';
+WHERE slug = 'jodedom-tro';
 
 UPDATE public.lessons SET 
   title_key = 'lessons.judaism.practices.title',
   description_key = 'lessons.judaism.practices.description'
-WHERE slug = 'judaisme-praksis';
+WHERE slug = 'jodedom-praksis';
 
 UPDATE public.lessons SET 
   title_key = 'lessons.judaism.holidays.title',
   description_key = 'lessons.judaism.holidays.description'
-WHERE slug = 'judaisme-hoytider';
+WHERE slug = 'jodedom-hoytider';
 
 UPDATE public.lessons SET 
   title_key = 'lessons.judaism.texts.title',
   description_key = 'lessons.judaism.texts.description'
-WHERE slug = 'judaisme-tekster';
+WHERE slug = 'jodedom-tekster';
+
+UPDATE public.lessons SET 
+  title_key = 'lessons.judaism.modern.title',
+  description_key = 'lessons.judaism.modern.description'
+WHERE slug = 'jodedom-moderne';
 
 -- Update intro lessons
 UPDATE public.lessons SET 

@@ -313,6 +313,10 @@
       "texts": {
         "title": "Hellige tekster og symboler",
         "description": "Lær om Tora, Talmud og jødiske symboler"
+      },
+      "modern": {
+        "title": "Moderne uttrykk og mangfold",
+        "description": "Utforsk ortodoks, reform og konservativ jødedom"
       }
     },
     "buddhism": {
