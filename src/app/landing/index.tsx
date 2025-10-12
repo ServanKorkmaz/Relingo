@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, Users, Award, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function LandingPage() {
   const navigate = useNavigate();
