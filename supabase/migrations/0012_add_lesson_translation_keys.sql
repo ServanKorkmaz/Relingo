@@ -43,9 +43,9 @@ UPDATE public.lessons SET
 WHERE slug = 'islam-tro';
 
 UPDATE public.lessons SET 
-  title_key = 'lessons.islam.practices.title',
-  description_key = 'lessons.islam.practices.description'
-WHERE slug = 'islam-praksis';
+  title_key = 'lessons.islam.pillars.title',
+  description_key = 'lessons.islam.pillars.description'
+WHERE slug = 'islam-soylene';
 
 UPDATE public.lessons SET 
   title_key = 'lessons.islam.holidays.title',
