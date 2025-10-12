@@ -64,10 +64,10 @@ function AppContent() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {user ? (
         <>
-          {!isFullScreen && <TopBar />}
-          {!isFullScreen && <Sidebar />}
-          {!isFullScreen && <MobileNav />}
-          <main className={`${isFullScreen ? '' : 'pt-16 lg:pl-72 pb-20 lg:pb-4'}`}>
+          {!isFullScreen && location.pathname !== '/onboarding' && <TopBar />}
+          {!isFullScreen && location.pathname !== '/onboarding' && <Sidebar />}
+          {!isFullScreen && location.pathname !== '/onboarding' && <MobileNav />}
+          <main className={`${isFullScreen || location.pathname === '/onboarding' ? '' : 'pt-16 lg:pl-72 pb-20 lg:pb-4'}`}>
             <Routes>
               <Route path="/app" element={<Navigate to="/app/learn" replace />} />
               <Route path="/app/learn" element={<LearnScreen />} />
@@ -76,6 +76,7 @@ function AppContent() {
               <Route path="/app/settings" element={<SettingsScreen />} />
               <Route path="/lesson/:lessonId" element={<LessonScreen />} />
               <Route path="/quiz/:quizId" element={<QuizScreen />} />
+              <Route path="/onboarding" element={<OnboardingScreen />} />
               <Route path="*" element={<Navigate to="/app/learn" replace />} />
             </Routes>
           </main>
@@ -85,7 +86,6 @@ function AppContent() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<AuthScreen />} />
           <Route path="/auth/update-password" element={<ResetPasswordScreen />} />
-          <Route path="/onboarding" element={<OnboardingScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       )}
