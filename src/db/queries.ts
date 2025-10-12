@@ -348,7 +348,7 @@ export async function createUserPreferences(userId: string): Promise<UserPrefere
       email_notifications: true,
       sound_effects: true,
       dark_mode: false,
-      language: 'no',
+      language: 'tr',
     })
     .select()
     .single();
