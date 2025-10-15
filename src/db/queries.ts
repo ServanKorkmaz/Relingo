@@ -95,7 +95,7 @@ export async function getQuizById(id: string): Promise<Quiz | null> {
   return data;
 }
 
-export async function getQuestions(quizId: string): Promise<Question[]> {
+export async function getQuestions(quizId: string, language: string = 'no'): Promise<Question[]> {
   const { data, error } = await supabase
     .from('questions')
     .select('*')
@@ -103,7 +103,27 @@ export async function getQuestions(quizId: string): Promise<Question[]> {
     .order('order_index');
   
   if (error) throw error;
-  return data || [];
+  
+  // Map questions to use language-specific columns
+  return (data || []).map(question => {
+    let prompt = question.prompt; // Default Norwegian
+    let meta = question.meta;
+    
+    // Use language-specific columns if available
+    if (language === 'en' && question.prompt_en) {
+      prompt = question.prompt_en;
+      meta = question.meta_en || question.meta;
+    } else if (language === 'tr' && question.prompt_tr) {
+      prompt = question.prompt_tr;
+      meta = question.meta_tr || question.meta;
+    }
+    
+    return {
+      ...question,
+      prompt,
+      meta
+    };
+  });
 }
 
 // ============ User Stats ============

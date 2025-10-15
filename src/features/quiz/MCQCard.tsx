@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Question } from '../../types';
-import { useTranslate, useTranslateBatch } from '../../hooks/useTranslate';
 
 interface MCQCardProps {
   question: Question;
@@ -16,12 +15,9 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
   const [answered, setAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   
-  // Auto-translate question prompt
-  const { translatedText: translatedPrompt } = useTranslate(question.prompt);
-  
-  // Auto-translate all choice texts
-  const choiceTexts = question.meta.choices?.map(c => c.text) || [];
-  const { translatedTexts: translatedChoices } = useTranslateBatch(choiceTexts);
+  // Questions are now pre-translated in the database, no need for useTranslate
+  const translatedPrompt = question.prompt;
+  const choices = question.meta.choices || [];
 
   const handleChoice = (choice: { id: string; correct?: boolean }) => {
     if (answered) return;
@@ -59,11 +55,10 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
 
       {/* Choices */}
       <div className="grid gap-3 mb-6">
-        {question.meta.choices?.map((choice, index) => {
+        {choices.map((choice) => {
           const isSelected = selectedId === choice.id;
           const showCorrect = answered && choice.correct;
           const showIncorrect = answered && isSelected && !choice.correct;
-          const translatedText = translatedChoices[index] || choice.text;
 
           return (
             <motion.button
@@ -79,7 +74,7 @@ export default function MCQCard({ question, onAnswer }: MCQCardProps) {
               whileTap={!answered ? { scale: 0.98 } : undefined}
             >
               <div className="flex items-center justify-between">
-                <span className="text-base">{translatedText}</span>
+                <span className="text-base">{choice.text}</span>
                 {showCorrect && <Check className="w-5 h-5 text-green-600" />}
                 {showIncorrect && <X className="w-5 h-5 text-red-600" />}
               </div>

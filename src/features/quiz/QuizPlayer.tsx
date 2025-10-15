@@ -19,17 +19,17 @@ interface QuizPlayerProps {
 
 export default function QuizPlayer({ quizId, lessonId: _lessonId, onComplete }: QuizPlayerProps) {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { stats, loseHeart } = useUserStats();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [showResult, setShowResult] = useState(false);
 
   const { data: questions = [], isLoading } = useQuery<Question[]>({
-    queryKey: ['questions', quizId],
+    queryKey: ['questions', quizId, i18n.language],
     queryFn: async () => {
-      console.log('Loading questions for quiz:', quizId);
-      const data = await getQuestions(quizId);
+      console.log('Loading questions for quiz:', quizId, 'in language:', i18n.language);
+      const data = await getQuestions(quizId, i18n.language);
       console.log('Loaded questions:', data);
       return data;
     },
