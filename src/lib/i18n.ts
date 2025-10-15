@@ -18,8 +18,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'tr', // Set Norwegian as default language (where content exists)
-    fallbackLng: 'tr',
+    lng: 'no', // Norwegian as default language
+    fallbackLng: 'no',
     supportedLngs: ['en', 'no', 'tr'],
     detection: {
       order: ['localStorage', 'navigator'],
