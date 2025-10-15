@@ -10,6 +10,15 @@ import {
 } from '../db/queries';
 import type { UserStats } from '../types';
 
+// Default guest stats
+const GUEST_STATS: UserStats = {
+  user_id: 'guest',
+  xp: 0,
+  hearts: 5,
+  streak: 0,
+  last_activity: new Date().toISOString(),
+};
+
 export function useUserStats() {
   const queryClient = useQueryClient();
   
@@ -22,28 +31,29 @@ export function useUserStats() {
   });
 
   const { data: stats, isLoading } = useQuery<UserStats | null>({
-    queryKey: ['user-stats', user?.id],
-    queryFn: () => user?.id ? getUserStats(user.id) : Promise.resolve(null),
-    enabled: !!user?.id,
+    queryKey: ['user-stats', user?.id || 'guest'],
+    queryFn: () => user?.id ? getUserStats(user.id) : Promise.resolve(GUEST_STATS),
+    enabled: true,
   });
 
   const updateStatsMutation = useMutation({
     mutationFn: (updates: Partial<Omit<UserStats, 'user_id'>>) => 
-      updateUserStats(user!.id, updates),
+      user?.id ? updateUserStats(user.id, updates) : Promise.resolve(),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 
   const awardXPMutation = useMutation({
-    mutationFn: (amount: number) => awardXP(user!.id, amount),
+    mutationFn: (amount: number) => user?.id ? awardXP(user.id, amount) : Promise.resolve(),
     onMutate: async (amount) => {
       // Optimistic update
-      await queryClient.cancelQueries({ queryKey: ['user-stats', user?.id] });
-      const previous = queryClient.getQueryData<UserStats>(['user-stats', user?.id]);
+      const userId = user?.id || 'guest';
+      await queryClient.cancelQueries({ queryKey: ['user-stats', userId] });
+      const previous = queryClient.getQueryData<UserStats>(['user-stats', userId]);
       
       if (previous) {
-        queryClient.setQueryData<UserStats>(['user-stats', user?.id], {
+        queryClient.setQueryData<UserStats>(['user-stats', userId], {
           ...previous,
           xp: previous.xp + amount,
         });
@@ -52,23 +62,25 @@ export function useUserStats() {
       return { previous };
     },
     onError: (_err, _variables, context) => {
+      const userId = user?.id || 'guest';
       if (context?.previous) {
-        queryClient.setQueryData(['user-stats', user?.id], context.previous);
+        queryClient.setQueryData(['user-stats', userId], context.previous);
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 
   const loseHeartMutation = useMutation({
-    mutationFn: () => loseHeart(user!.id),
+    mutationFn: () => user?.id ? loseHeart(user.id) : Promise.resolve(),
     onMutate: async () => {
-      await queryClient.cancelQueries({ queryKey: ['user-stats', user?.id] });
-      const previous = queryClient.getQueryData<UserStats>(['user-stats', user?.id]);
+      const userId = user?.id || 'guest';
+      await queryClient.cancelQueries({ queryKey: ['user-stats', userId] });
+      const previous = queryClient.getQueryData<UserStats>(['user-stats', userId]);
       
       if (previous) {
-        queryClient.setQueryData<UserStats>(['user-stats', user?.id], {
+        queryClient.setQueryData<UserStats>(['user-stats', userId], {
           ...previous,
           hearts: Math.max(0, previous.hearts - 1),
         });
@@ -77,26 +89,27 @@ export function useUserStats() {
       return { previous };
     },
     onError: (_err, _variables, context) => {
+      const userId = user?.id || 'guest';
       if (context?.previous) {
-        queryClient.setQueryData(['user-stats', user?.id], context.previous);
+        queryClient.setQueryData(['user-stats', userId], context.previous);
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 
   const refillHeartsMutation = useMutation({
-    mutationFn: () => refillHearts(user!.id),
+    mutationFn: () => user?.id ? refillHearts(user.id) : Promise.resolve(),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 
   const updateStreakMutation = useMutation({
-    mutationFn: () => updateStreak(user!.id),
+    mutationFn: () => user?.id ? updateStreak(user.id) : Promise.resolve(),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 

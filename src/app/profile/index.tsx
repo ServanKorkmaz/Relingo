@@ -31,14 +31,16 @@ export default function ProfileScreen() {
   });
 
   const { data: userProgress = [] } = useQuery({
-    queryKey: ['user-progress', user?.id],
+    queryKey: ['user-progress', user?.id || 'guest'],
     queryFn: () => (user?.id ? getUserProgress(user.id) : Promise.resolve([])),
-    enabled: !!user?.id,
+    enabled: true,
   });
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    navigate('/auth');
+    if (user) {
+      await supabase.auth.signOut();
+    }
+    navigate('/');
   };
 
   const handleShareProgress = async () => {
@@ -151,9 +153,9 @@ export default function ProfileScreen() {
                 {/* User Info */}
                 <div className="flex-1 text-center lg:text-left">
                   <h1 className="font-display text-4xl lg:text-5xl font-bold mb-2">
-                    {user?.email?.split('@')[0] || 'Learner'}
+                    {user?.email?.split('@')[0] || 'Guest Learner'}
                   </h1>
-                  <p className="text-white/90 text-lg mb-4">{user?.email}</p>
+                  <p className="text-white/90 text-lg mb-4">{user?.email || 'Guest Mode'}</p>
                   
                   {/* Level Badge */}
                   <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-5 py-2.5 rounded-full border border-white/30 shadow-md">
@@ -428,8 +430,12 @@ export default function ProfileScreen() {
                   <LogOut className="w-6 h-6 text-red-600 dark:text-red-400" />
                 </div>
                 <div className="text-left">
-                  <span className="font-semibold text-lg text-red-600 dark:text-red-400 block">{t('profile.signOut')}</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{t('profileExtended.signOutDesc')}</span>
+                  <span className="font-semibold text-lg text-red-600 dark:text-red-400 block">
+                    {user ? t('profile.signOut') : t('landing.hero.cta')}
+                  </span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {user ? t('profileExtended.signOutDesc') : 'Go back to landing page'}
+                  </span>
                 </div>
               </div>
               <ChevronRight className="w-6 h-6 text-red-600 dark:text-red-400 group-hover:translate-x-1 transition-transform" />

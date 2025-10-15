@@ -21,7 +21,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <button
-              onClick={() => navigate('/auth')}
+              onClick={() => navigate('/app/learn')}
               className="px-6 py-3 bg-brand text-white font-bold rounded-2xl hover:bg-brand-dark transition-all hover:scale-105 active:scale-95"
             >
               {t('landing.hero.cta')}
@@ -45,7 +45,7 @@ export default function LandingPage() {
               {t('landing.hero.description')}
             </p>
             <button
-              onClick={() => navigate('/auth')}
+              onClick={() => navigate('/app/learn')}
               className="px-8 py-4 bg-brand text-white font-bold text-lg rounded-2xl hover:bg-brand-dark transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2"
             >
               {t('landing.hero.cta')}
@@ -316,7 +316,7 @@ export default function LandingPage() {
               {t('landing.cta.description')}
             </p>
             <button
-              onClick={() => navigate('/auth')}
+              onClick={() => navigate('/app/learn')}
               className="px-12 py-5 bg-brand text-white font-bold text-xl rounded-2xl hover:bg-brand-dark transition-all hover:scale-105 active:scale-95 shadow-xl"
             >
               {t('landing.cta.button')}
