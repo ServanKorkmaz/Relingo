@@ -111,25 +111,27 @@ export async function getQuestions(quizId: string, language: string = 'no'): Pro
     let prompt = question.prompt; // Default Norwegian
     let meta = question.meta;
     
-    console.log(`Question ${index + 1}:`, {
-      language,
-      hasNorwegian: !!question.prompt,
+    console.log(`📝 Question ${index + 1}:`, {
+      requestedLanguage: language,
+      norwegianPrompt: question.prompt?.substring(0, 50),
+      englishPrompt: question.prompt_en?.substring(0, 50) || 'NULL',
+      turkishPrompt: question.prompt_tr?.substring(0, 50) || 'NULL',
       hasEnglish: !!question.prompt_en,
       hasTurkish: !!question.prompt_tr,
-      willUse: language === 'en' && question.prompt_en ? 'English' :
-               language === 'tr' && question.prompt_tr ? 'Turkish' :
-               'Norwegian (default)'
     });
     
     // Use language-specific columns if available, otherwise fall back to Norwegian
     if (language === 'en' && question.prompt_en) {
+      console.log(`  ✅ Using ENGLISH translation`);
       prompt = question.prompt_en;
       meta = question.meta_en || question.meta;
     } else if (language === 'tr' && question.prompt_tr) {
+      console.log(`  ✅ Using TURKISH translation`);
       prompt = question.prompt_tr;
       meta = question.meta_tr || question.meta;
+    } else {
+      console.log(`  ⚠️ Using NORWEGIAN fallback (${language} translation not available)`);
     }
-    // If language is 'no' OR if translation doesn't exist, use Norwegian (default)
     
     return {
       ...question,
