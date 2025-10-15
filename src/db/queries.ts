@@ -96,6 +96,8 @@ export async function getQuizById(id: string): Promise<Quiz | null> {
 }
 
 export async function getQuestions(quizId: string, language: string = 'no'): Promise<Question[]> {
+  console.log('🌍 getQuestions called with language:', language);
+  
   const { data, error } = await supabase
     .from('questions')
     .select('*')
@@ -105,11 +107,21 @@ export async function getQuestions(quizId: string, language: string = 'no'): Pro
   if (error) throw error;
   
   // Map questions to use language-specific columns
-  return (data || []).map(question => {
+  return (data || []).map((question, index) => {
     let prompt = question.prompt; // Default Norwegian
     let meta = question.meta;
     
-    // Use language-specific columns if available
+    console.log(`Question ${index + 1}:`, {
+      language,
+      hasNorwegian: !!question.prompt,
+      hasEnglish: !!question.prompt_en,
+      hasTurkish: !!question.prompt_tr,
+      willUse: language === 'en' && question.prompt_en ? 'English' :
+               language === 'tr' && question.prompt_tr ? 'Turkish' :
+               'Norwegian (default)'
+    });
+    
+    // Use language-specific columns if available, otherwise fall back to Norwegian
     if (language === 'en' && question.prompt_en) {
       prompt = question.prompt_en;
       meta = question.meta_en || question.meta;
@@ -117,6 +129,7 @@ export async function getQuestions(quizId: string, language: string = 'no'): Pro
       prompt = question.prompt_tr;
       meta = question.meta_tr || question.meta;
     }
+    // If language is 'no' OR if translation doesn't exist, use Norwegian (default)
     
     return {
       ...question,
