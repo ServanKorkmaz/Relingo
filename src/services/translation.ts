@@ -1,23 +1,24 @@
-// Google Translate API Key (browser-compatible)
-let apiKey: string | null = null;
+import { v2 } from '@google-cloud/translate';
+
+// Initialize Google Translate client
+let translateClient: v2.Translate | null = null;
 
 // Cache for translations to avoid repeated API calls
 const translationCache = new Map<string, Map<string, string>>();
 
 /**
- * Initialize the translation with API key
+ * Initialize the translation client with API key
  */
-export function initTranslation(key?: string) {
-  if (key) {
-    apiKey = key;
-    console.log('✅ Automatic translation enabled');
-  } else {
-    console.warn('⚠️ Google Translate API key not found - content will show in Norwegian');
+export function initTranslation(apiKey?: string) {
+  if (apiKey) {
+    translateClient = new v2.Translate({
+      key: apiKey,
+    });
   }
 }
 
 /**
- * Get cached translation or fetch from API using REST
+ * Get cached translation or fetch from API
  */
 async function getCachedTranslation(
   text: string,
@@ -38,33 +39,18 @@ async function getCachedTranslation(
     return langCache.get(text)!;
   }
   
-  // If no API key, return original text
-  if (!apiKey) {
+  // If no client, return original text
+  if (!translateClient) {
+    console.warn('Translation client not initialized. Returning original text.');
     return text;
   }
   
   try {
-    // Use Google Translate REST API (browser-compatible)
-    const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        q: text,
-        source: sourceLang,
-        target: targetLang,
-        format: 'text',
-      }),
+    // Translate using Google Translate API
+    const [translation] = await translateClient.translate(text, {
+      from: sourceLang,
+      to: targetLang,
     });
-    
-    if (!response.ok) {
-      throw new Error(`Translation API error: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    const translation = data.data.translations[0].translatedText;
     
     // Cache the result
     langCache.set(text, translation);
@@ -112,32 +98,16 @@ export async function translateBatch(
     return texts;
   }
   
-  if (!apiKey) {
+  if (!translateClient) {
+    console.warn('Translation client not initialized. Returning original texts.');
     return texts;
   }
   
   try {
-    // Use Google Translate REST API for batch
-    const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        q: texts,
-        source: sourceLang,
-        target: targetLang,
-        format: 'text',
-      }),
+    const [translations] = await translateClient.translate(texts, {
+      from: sourceLang,
+      to: targetLang,
     });
-    
-    if (!response.ok) {
-      throw new Error(`Translation API error: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    const translations = data.data.translations.map((t: any) => t.translatedText);
     
     // Cache all translations
     const cacheKey = `${sourceLang}-${targetLang}`;
@@ -150,7 +120,7 @@ export async function translateBatch(
       langCache.set(text, translations[index]);
     });
     
-    return translations;
+    return Array.isArray(translations) ? translations : [translations];
   } catch (error) {
     console.error('Batch translation error:', error);
     return texts;
