@@ -176,3 +176,84 @@ UPDATE public.questions SET
 WHERE prompt = 'What is the Christian day of worship?'
   AND type = 'mcq';
 
+-- ==================== HINDUISM INTRO QUIZ ====================
+
+-- Question 1 (from 0001_init.sql): In Hinduism, "___" refers to duty/ethical responsibility
+UPDATE public.questions SET
+  prompt = 'I hinduismen refererer "___" til plikt/etisk ansvar.',
+  prompt_en = 'In Hinduism, "___" refers to duty/ethical responsibility.',
+  prompt_tr = 'Hinduizm''de "___" görev/etik sorumluluğu ifade eder.',
+  meta = '{"answer":"dharma"}'::jsonb,
+  meta_en = '{"answer":"dharma"}'::jsonb,
+  meta_tr = '{"answer":"dharma"}'::jsonb
+WHERE prompt = 'In Hinduism, "___" refers to duty/ethical responsibility.'
+  AND type = 'gap';
+
+-- Question 2: Hinduism is one of the world's oldest religions
+UPDATE public.questions SET
+  prompt = 'Hinduismen er en av verdens eldste religioner.',
+  prompt_en = 'Hinduism is one of the world''s oldest religions.',
+  prompt_tr = 'Hinduizm dünyanın en eski dinlerinden biridir.',
+  meta = '{"answer": true}'::jsonb,
+  meta_en = '{"answer": true}'::jsonb,
+  meta_tr = '{"answer": true}'::jsonb
+WHERE prompt = 'Hinduism is one of the world''s oldest religions.'
+  AND type = 'tf';
+
+-- Question 3: What is the concept of rebirth in Hinduism called?
+UPDATE public.questions SET
+  prompt = 'Hva kalles konseptet med gjenfødelse i hinduismen?',
+  prompt_en = 'What is the concept of rebirth in Hinduism called?',
+  prompt_tr = 'Hinduizm''de yeniden doğuş kavramına ne denir?',
+  meta = '{"choices":[
+    {"id":"a","text":"Karma"},
+    {"id":"b","text":"Reinkarnasjon","correct":true},
+    {"id":"c","text":"Nirvana"}
+  ]}'::jsonb,
+  meta_en = '{"choices":[
+    {"id":"a","text":"Karma"},
+    {"id":"b","text":"Reincarnation","correct":true},
+    {"id":"c","text":"Nirvana"}
+  ]}'::jsonb,
+  meta_tr = '{"choices":[
+    {"id":"a","text":"Karma"},
+    {"id":"b","text":"Reenkarnasyon","correct":true},
+    {"id":"c","text":"Nirvana"}
+  ]}'::jsonb
+WHERE prompt = 'What is the concept of rebirth in Hinduism called?'
+  AND type = 'mcq';
+
+-- Question 4: In Hinduism, the concept of duty and righteous living is called ___
+UPDATE public.questions SET
+  prompt = 'I hinduismen kalles konseptet med plikt og rettferdig liv ___.',
+  prompt_en = 'In Hinduism, the concept of duty and righteous living is called ___.',
+  prompt_tr = 'Hinduizm''de görev ve doğru yaşam kavramına ___ denir.',
+  meta = '{"answer":"dharma"}'::jsonb,
+  meta_en = '{"answer":"dharma"}'::jsonb,
+  meta_tr = '{"answer":"dharma"}'::jsonb
+WHERE prompt = 'In Hinduism, the concept of duty and righteous living is called ___.'
+  AND type = 'gap';
+
+-- Question 5: Which river is considered sacred in Hinduism?
+UPDATE public.questions SET
+  prompt = 'Hvilken elv anses som hellig i hinduismen?',
+  prompt_en = 'Which river is considered sacred in Hinduism?',
+  prompt_tr = 'Hinduizm''de hangi nehir kutsal kabul edilir?',
+  meta = '{"choices":[
+    {"id":"a","text":"Nilen"},
+    {"id":"b","text":"Ganges","correct":true},
+    {"id":"c","text":"Jordan"}
+  ]}'::jsonb,
+  meta_en = '{"choices":[
+    {"id":"a","text":"Nile"},
+    {"id":"b","text":"Ganges","correct":true},
+    {"id":"c","text":"Jordan"}
+  ]}'::jsonb,
+  meta_tr = '{"choices":[
+    {"id":"a","text":"Nil"},
+    {"id":"b","text":"Ganj","correct":true},
+    {"id":"c","text":"Ürdün"}
+  ]}'::jsonb
+WHERE prompt = 'Which river is considered sacred in Hinduism?'
+  AND type = 'mcq';
+
