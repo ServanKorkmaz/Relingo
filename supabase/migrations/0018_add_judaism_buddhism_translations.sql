@@ -343,7 +343,7 @@ UPDATE public.questions SET
   prompt_tr = 'Tanah üç bölümden oluşur: Tevrat, Neviim (Peygamberler) ve Ketuvim (Yazılar).',
   meta_en = '{"answer": true}'::jsonb,
   meta_tr = '{"answer": true}'::jsonb
-WHERE prompt = 'Tanakh består av tre deler: Tora, Nevi'im (Profetene), og Ketuvim (Skriftene).'
+WHERE prompt = 'Tanakh består av tre deler: Tora, Nevi''im (Profetene), og Ketuvim (Skriftene).'
   AND type = 'tf';
 
 -- jodedom-tekster - Question 3
