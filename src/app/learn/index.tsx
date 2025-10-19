@@ -11,7 +11,7 @@ import { getReligionColor } from '../../utils/colors';
 export default function LearnScreen() {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [expandedReligions, setExpandedReligions] = useState<string[]>(['christianity']);
+  const [expandedReligions, setExpandedReligions] = useState<string[]>([]);
 
   const { data: lessons = [], isLoading: lessonsLoading } = useQuery({
     queryKey: ['published-lessons'],
@@ -46,7 +46,7 @@ export default function LearnScreen() {
   }
 
   // Group lessons by religion and sort by religion size
-  const religionOrder = ['christianity', 'islam', 'hinduism', 'buddhism', 'judaism'];
+  const religionOrder = ['islam', 'christianity', 'hinduism', 'buddhism', 'judaism'];
   
   const groupedLessons = religionOrder.map((slug) => {
     const religion = religions.find((r) => r.slug === slug);
