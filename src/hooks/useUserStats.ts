@@ -16,7 +16,7 @@ const GUEST_STATS: UserStats = {
   xp: 0,
   hearts: 5,
   streak: 0,
-  last_activity: new Date().toISOString(),
+  last_active_date: new Date().toISOString(),
 };
 
 export function useUserStats() {
@@ -36,16 +36,25 @@ export function useUserStats() {
     enabled: true,
   });
 
-  const updateStatsMutation = useMutation({
-    mutationFn: (updates: Partial<Omit<UserStats, 'user_id'>>) => 
-      user?.id ? updateUserStats(user.id, updates) : Promise.resolve(),
+  const updateStatsMutation = useMutation<UserStats, Error, Partial<Omit<UserStats, 'user_id'>>>({
+    mutationFn: async (updates: Partial<Omit<UserStats, 'user_id'>>) => {
+      if (user?.id) {
+        return updateUserStats(user.id, updates);
+      }
+      return GUEST_STATS;
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 
-  const awardXPMutation = useMutation({
-    mutationFn: (amount: number) => user?.id ? awardXP(user.id, amount) : Promise.resolve(),
+  const awardXPMutation = useMutation<number, Error, number, { previous: UserStats | undefined }>({
+    mutationFn: async (amount: number) => {
+      if (user?.id) {
+        return awardXP(user.id, amount);
+      }
+      return 0;
+    },
     onMutate: async (amount) => {
       // Optimistic update
       const userId = user?.id || 'guest';
@@ -72,8 +81,13 @@ export function useUserStats() {
     },
   });
 
-  const loseHeartMutation = useMutation({
-    mutationFn: () => user?.id ? loseHeart(user.id) : Promise.resolve(),
+  const loseHeartMutation = useMutation<number, Error, void, { previous: UserStats | undefined }>({
+    mutationFn: async () => {
+      if (user?.id) {
+        return loseHeart(user.id);
+      }
+      return 0;
+    },
     onMutate: async () => {
       const userId = user?.id || 'guest';
       await queryClient.cancelQueries({ queryKey: ['user-stats', userId] });
@@ -99,15 +113,25 @@ export function useUserStats() {
     },
   });
 
-  const refillHeartsMutation = useMutation({
-    mutationFn: () => user?.id ? refillHearts(user.id) : Promise.resolve(),
+  const refillHeartsMutation = useMutation<number, Error, void>({
+    mutationFn: async () => {
+      if (user?.id) {
+        return refillHearts(user.id);
+      }
+      return 0;
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
   });
 
-  const updateStreakMutation = useMutation({
-    mutationFn: () => user?.id ? updateStreak(user.id) : Promise.resolve(),
+  const updateStreakMutation = useMutation<number, Error, void>({
+    mutationFn: async () => {
+      if (user?.id) {
+        return updateStreak(user.id);
+      }
+      return 0;
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user-stats', user?.id || 'guest'] });
     },
