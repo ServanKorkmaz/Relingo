@@ -1,0 +1,449 @@
+{
+  "app": {
+    "name": "Relingo",
+    "tagline": "Learn about world religions with respect and curiosity"
+  },
+  "landing": {
+    "hero": {
+      "title": "free. fun. effective.",
+      "description": "Learning about world religions is fun and effective with Relingo. With quick, bite-sized lessons, you'll gain knowledge and understanding while exploring diverse faiths with respect and curiosity.",
+      "cta": "GET STARTED"
+    },
+    "backed": {
+      "title": "backed by professors",
+      "description": "Our content is created and reviewed by religious studies professors and experts to ensure accuracy, respect, and cultural sensitivity.",
+      "expertReview": {
+        "title": "Expert-Reviewed Content",
+        "description": "Every lesson is vetted by scholars and religious studies experts."
+      },
+      "culturallySensitive": {
+        "title": "Culturally Sensitive",
+        "description": "We approach each faith tradition with respect and neutrality."
+      },
+      "academicRigor": {
+        "title": "Academic Rigor",
+        "description": "Based on scholarly sources and authoritative texts."
+      }
+    },
+    "personalized": {
+      "title": "personalized learning",
+      "description": "Learn at your own pace. Choose your path. Track your progress.",
+      "biteSized": {
+        "title": "Bite-sized Lessons",
+        "description": "Quick, engaging lessons that fit into your daily routine. Learn in just 5-10 minutes."
+      },
+      "gamified": {
+        "title": "Gamified Experience",
+        "description": "Earn XP, maintain streaks, and collect stars as you progress through lessons."
+      },
+      "trackProgress": {
+        "title": "Track Progress",
+        "description": "Monitor your learning journey with detailed stats and achievements."
+      }
+    },
+    "religions": {
+      "title": "explore world religions",
+      "description": "Learn about major world faiths with respect and curiosity"
+    },
+    "cta": {
+      "title": "Start your learning journey today",
+      "description": "Join thousands of learners exploring world religions with respect and understanding.",
+      "button": "GET STARTED FOR FREE",
+      "note": "No credit card required • 100% free"
+    },
+    "footer": {
+      "about": "About",
+      "mission": "Mission",
+      "approach": "Approach",
+      "team": "Team",
+      "learn": "Learn",
+      "support": "Support",
+      "helpCenter": "Help Center",
+      "faqs": "FAQs",
+      "contact": "Contact",
+      "legal": "Legal",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "copyright": "© 2025 Relingo. Made for curious minds everywhere."
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welcome Back",
+      "email": "Email",
+      "password": "Password",
+      "button": "Sign In",
+      "switchToSignUp": "Don't have an account? Sign up",
+      "forgotPassword": "Forgot password?"
+    },
+    "signUp": {
+      "title": "Create Account",
+      "button": "Sign Up",
+      "switchToSignIn": "Already have an account? Sign in",
+      "emailConfirm": "Check your email to confirm your account before signing in."
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "description": "Enter your email address and we'll send you a link to reset your password.",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "button": "Update Password",
+      "sendButton": "Send Reset Link",
+      "cancel": "Cancel",
+      "backToSignIn": "Back to Sign In",
+      "success": "Password reset email sent! Check your inbox.",
+      "updated": "Password Updated!",
+      "updatedDescription": "Your password has been successfully reset. Redirecting to app...",
+      "sending": "Sending...",
+      "updating": "Updating..."
+    },
+    "errors": {
+      "invalidEmail": "Invalid email address",
+      "passwordTooShort": "Password must be at least 6 characters",
+      "passwordsDontMatch": "Passwords don't match",
+      "general": "An error occurred"
+    },
+    "loading": "Loading..."
+  },
+  "onboarding": {
+    "title": "Welcome to Relingo",
+    "description": "Which religion would you like to start learning about?",
+    "explore": "Or explore all religions",
+    "continue": "Continue",
+    "learnFundamentals": "Learn the fundamentals"
+  },
+  "learn": {
+    "title": "Learning Path",
+    "description": "Explore world religions and learn at your own pace",
+    "lessons": "lessons",
+    "lesson": "lesson",
+    "completed": "completed",
+    "noLessons": "No lessons available yet."
+  },
+  "lesson": {
+    "back": "Back",
+    "bestScore": "Best",
+    "stars": "Stars",
+    "startLesson": "Start Lesson",
+    "practiceAgain": "Practice Again",
+    "level": "Level",
+    "notFound": "Lesson not found"
+  },
+  "quiz": {
+    "loading": "Loading quiz...",
+    "noQuestions": "No Questions Available",
+    "noQuestionsDescription": "This quiz doesn't have any questions yet.",
+    "backToLearn": "Back to Learn",
+    "question": "Question",
+    "of": "of",
+    "continue": "Continue",
+    "checkAnswer": "Check Answer",
+    "correctAnswer": "Correct answer",
+    "typeAnswer": "Type your answer...",
+    "true": "True",
+    "false": "False",
+    "result": {
+      "perfect": "Perfect!",
+      "wellDone": "Well Done!",
+      "youGot": "You got",
+      "outOf": "out of",
+      "correct": "correct"
+    }
+  },
+  "quests": {
+    "title": "Daily Quests",
+    "description": "Complete quests to earn bonus XP",
+    "currentStreak": "Current Streak",
+    "days": "days",
+    "totalXP": "Total XP",
+    "dailyLearner": {
+      "title": "Daily Learner",
+      "description": "Complete 1 lesson today"
+    },
+    "keepStreak": {
+      "title": "Keep the Streak",
+      "description": "Maintain your learning streak"
+    },
+    "tripleThreat": {
+      "title": "Triple Threat",
+      "description": "Complete 3 different lessons"
+    }
+  },
+  "profile": {
+    "achievements": "Achievements",
+    "lessons": "Lessons",
+    "stars": "Stars",
+    "hearts": "Hearts",
+    "xp": "XP",
+    "signOut": "Sign Out"
+  },
+  "nav": {
+    "learn": "Learn",
+    "quests": "Quests",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close"
+  },
+  "stats": {
+    "days": "days",
+    "xp": "XP",
+    "hearts": "Hearts",
+    "streak": "Streak"
+  },
+  "religions": {
+    "christianity": "Christianity",
+    "islam": "Islam",
+    "hinduism": "Hinduism",
+    "judaism": "Judaism",
+    "buddhism": "Buddhism"
+  },
+  "lessons": {
+    "christianity": {
+      "intro": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Christianity's beginning in the first century"
+      },
+      "origins": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Christianity's beginning in the first century"
+      },
+      "beliefs": {
+        "title": "Core Beliefs and Teachings",
+        "description": "Explore central principles of Christian faith"
+      },
+      "practices": {
+        "title": "Important Practices and Rituals",
+        "description": "Discover Christian rituals and daily practices"
+      },
+      "holidays": {
+        "title": "Holidays and Celebrations",
+        "description": "Explore Christian holidays like Christmas, Easter and Pentecost"
+      },
+      "texts": {
+        "title": "Sacred Texts and Symbols",
+        "description": "Learn about the Bible and Christian symbols"
+      }
+    },
+    "islam": {
+      "intro": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Islam's beginning in the 7th century"
+      },
+      "origins": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Islam's beginning in the 7th century"
+      },
+      "beliefs": {
+        "title": "Core Beliefs and Teachings",
+        "description": "Explore the core principles of Islamic faith"
+      },
+      "pillars": {
+        "title": "The Five Pillars",
+        "description": "Discover Islam's five fundamental obligations"
+      },
+      "practices": {
+        "title": "Important Practices and Rituals",
+        "description": "Discover prayer, fasting and daily worship"
+      },
+      "holidays": {
+        "title": "Holidays and Celebrations",
+        "description": "Explore Ramadan, Eid and other festivals"
+      },
+      "texts": {
+        "title": "Sacred Texts and Symbols",
+        "description": "Learn about the Quran and Islamic symbols"
+      }
+    },
+    "hinduism": {
+      "intro": {
+        "title": "Introduction to Hinduism",
+        "description": "Core terms and practices"
+      },
+      "origins": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Hinduism's ancient roots"
+      },
+      "beliefs": {
+        "title": "Core Beliefs and Teachings",
+        "description": "Explore karma, reincarnation and moksha"
+      },
+      "practices": {
+        "title": "Important Practices and Rituals",
+        "description": "Discover puja, temples and daily worship"
+      },
+      "holidays": {
+        "title": "Holidays and Celebrations",
+        "description": "Explore Diwali, Holi and other festivals"
+      },
+      "texts": {
+        "title": "Sacred Texts and Symbols",
+        "description": "Learn about the Vedas, Bhagavad Gita and Om symbol"
+      },
+      "modern": {
+        "title": "Modern Expression and Diversity",
+        "description": "Explore Hinduism in today's world"
+      }
+    },
+    "judaism": {
+      "intro": {
+        "title": "Introduction to Judaism",
+        "description": "Core terms and practices"
+      },
+      "origins": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Judaism's ancient roots"
+      },
+      "beliefs": {
+        "title": "Core Beliefs and Teachings",
+        "description": "Explore central principles of Jewish faith"
+      },
+      "practices": {
+        "title": "Important Practices and Rituals",
+        "description": "Discover Shabbat, kosher and daily practices"
+      },
+      "holidays": {
+        "title": "Holidays and Celebrations",
+        "description": "Explore Hanukkah, Passover and other holidays"
+      },
+      "texts": {
+        "title": "Sacred Texts and Symbols",
+        "description": "Learn about the Torah, Talmud and Jewish symbols"
+      },
+      "modern": {
+        "title": "Modern Expression and Diversity",
+        "description": "Explore Orthodox, Reform and Conservative Judaism"
+      }
+    },
+    "buddhism": {
+      "intro": {
+        "title": "Introduction to Buddhism",
+        "description": "Core terms and practices"
+      },
+      "origins": {
+        "title": "Origins and Historical Background",
+        "description": "Learn about Buddhism's beginning in North India 2500 years ago"
+      },
+      "beliefs": {
+        "title": "Core Beliefs and Teachings",
+        "description": "Explore the Four Noble Truths and the Eightfold Path"
+      },
+      "practices": {
+        "title": "Important Practices and Rituals",
+        "description": "Discover meditation, prayer, and Buddhist rituals"
+      },
+      "holidays": {
+        "title": "Holidays and Celebrations",
+        "description": "Explore Buddhist holidays like Vesak and New Year"
+      },
+      "texts": {
+        "title": "Sacred Texts and Symbols",
+        "description": "Learn about the Tripitaka, Dharma Wheel, and lotus flower"
+      },
+      "modern": {
+        "title": "Modern Expressions and Diversity",
+        "description": "Explore Buddhism in today's world and various traditions"
+      }
+    }
+  },
+  "sidebar": {
+    "home": "Home",
+    "learn": "Learn",
+    "quests": "Quests",
+    "achievements": "Achievements",
+    "profile": "Profile",
+    "quickStats": "Quick Stats",
+    "dailyGoal": "Daily goal",
+    "quote": "Knowledge is the key to understanding and tolerance.",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Customize your experience",
+    "backToProfile": "Back to profile",
+    "notifications": {
+      "title": "Notifications",
+      "push": "Push notifications",
+      "pushDesc": "Get reminders about daily goals",
+      "email": "Email notifications",
+      "emailDesc": "Weekly progress report"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "darkMode": "Dark mode",
+      "darkModeDesc": "Reduce eye strain",
+      "soundEffects": "Sound effects",
+      "soundEffectsDesc": "Play sounds on completion"
+    },
+    "language": {
+      "title": "Language",
+      "interface": "Interface language",
+      "interfaceDesc": "Change the app language"
+    },
+    "privacy": {
+      "title": "Privacy",
+      "exportData": "Export data",
+      "exportDataDesc": "Download all your data",
+      "deleteAccount": "Delete account",
+      "deleteAccountDesc": "Permanently delete your account",
+      "execute": "Execute"
+    },
+    "help": {
+      "title": "Need help?",
+      "description": "We're here to help you with any questions",
+      "contactSupport": "Contact support"
+    }
+  },
+  "profileExtended": {
+    "level": "Level",
+    "progressToLevel": "Progress to Level",
+    "xpToNext": "XP to next level",
+    "totalXP": "Total XP",
+    "daysStreak": "Day Streak",
+    "keepGoing": "Keep it going!",
+    "lessons": "Lessons",
+    "completed": "Completed",
+    "stars": "Stars",
+    "collected": "Collected",
+    "seeAll": "See all",
+    "hearts": "Hearts",
+    "remainingLives": "Remaining lives",
+    "xp": "Experience points",
+    "perfect": "Perfect",
+    "threeStars": "3 stars",
+    "recentActivity": "Recent Activity",
+    "lessonCompleted": "Lesson completed",
+    "star": "star",
+    "stars_plural": "stars",
+    "noActivity": "No activity yet",
+    "noActivityDesc": "Start a lesson to see your progress here!",
+    "quickActions": "Quick Actions",
+    "shareProgress": "Share progress",
+    "downloadCertificate": "Download certificate",
+    "signOutDesc": "Log out of your account",
+    "changePhoto": "Change photo"
+  },
+  "streakCalendar": {
+    "title": "Activity Calendar",
+    "active": "Active",
+    "inactive": "Inactive",
+    "today": "Today",
+    "daysStreak": "day streak!",
+    "keepGoing": "Keep it going to reach new milestones!"
+  },
+  "progressChart": {
+    "title": "Weekly Progress",
+    "average": "Average",
+    "perDay": "XP/day"
+  }
+}
+

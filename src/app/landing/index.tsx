@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen, Users, Award, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../../components/LanguageSwitcher';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function LandingPage() {
             <span className="font-display font-bold text-2xl text-brand">{t('app.name')}</span>
           </div>
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <button
               onClick={() => navigate('/app/learn')}
               className="px-6 py-3 bg-brand text-white font-bold rounded-2xl hover:bg-brand-dark transition-all hover:scale-105 active:scale-95"

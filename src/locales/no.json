@@ -1,0 +1,449 @@
+{
+  "app": {
+    "name": "Relingo",
+    "tagline": "Lær om verdensreligioner med respekt og nysgjerrighet"
+  },
+  "landing": {
+    "hero": {
+      "title": "gratis. gøy. effektivt.",
+      "description": "Å lære om verdensreligioner er gøy og effektivt med Relingo. Med raske, lettfordøyelige leksjoner får du kunnskap og forståelse mens du utforsker ulike trosretninger med respekt og nysgjerrighet.",
+      "cta": "KOM I GANG"
+    },
+    "backed": {
+      "title": "støttet av professorer",
+      "description": "Vårt innhold er laget og gjennomgått av professorer og eksperter innen religionsvitenskap for å sikre nøyaktighet, respekt og kulturell sensitivitet.",
+      "expertReview": {
+        "title": "Ekspertgodkjent innhold",
+        "description": "Hver leksjon er kvalitetssjekket av akademikere og religionseksperter."
+      },
+      "culturallySensitive": {
+        "title": "Kulturelt sensitiv",
+        "description": "Vi nærmer oss hver trostradisjon med respekt og nøytralitet."
+      },
+      "academicRigor": {
+        "title": "Akademisk strenghet",
+        "description": "Basert på vitenskapelige kilder og autoritative tekster."
+      }
+    },
+    "personalized": {
+      "title": "personlig læring",
+      "description": "Lær i ditt eget tempo. Velg din egen vei. Følg din fremgang.",
+      "biteSized": {
+        "title": "Korte leksjoner",
+        "description": "Raske, engasjerende leksjoner som passer inn i hverdagen din. Lær på bare 5-10 minutter."
+      },
+      "gamified": {
+        "title": "Spillifisert opplevelse",
+        "description": "Tjen XP, oppretthold streaks og samle stjerner mens du går gjennom leksjonene."
+      },
+      "trackProgress": {
+        "title": "Følg fremgang",
+        "description": "Overvåk din læringsreise med detaljert statistikk og prestasjoner."
+      }
+    },
+    "religions": {
+      "title": "utforsk verdensreligioner",
+      "description": "Lær om de store verdensreligionene med respekt og nysgjerrighet"
+    },
+    "cta": {
+      "title": "Start din læringsreise i dag",
+      "description": "Bli med tusenvis av elever som utforsker verdensreligioner med respekt og forståelse.",
+      "button": "KOM I GANG GRATIS",
+      "note": "Intet kredittkort nødvendig • 100% gratis"
+    },
+    "footer": {
+      "about": "Om oss",
+      "mission": "Oppdrag",
+      "approach": "Tilnærming",
+      "team": "Team",
+      "learn": "Lær",
+      "support": "Støtte",
+      "helpCenter": "Hjelpesenter",
+      "faqs": "Vanlige spørsmål",
+      "contact": "Kontakt",
+      "legal": "Juridisk",
+      "terms": "Vilkår",
+      "privacy": "Personvern",
+      "copyright": "© 2025 Relingo. Laget for nysgjerrige sinn overalt."
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Velkommen tilbake",
+      "email": "E-post",
+      "password": "Passord",
+      "button": "Logg inn",
+      "switchToSignUp": "Har du ikke konto? Registrer deg",
+      "forgotPassword": "Glemt passord?"
+    },
+    "signUp": {
+      "title": "Opprett konto",
+      "button": "Registrer deg",
+      "switchToSignIn": "Har du allerede konto? Logg inn",
+      "emailConfirm": "Sjekk e-posten din for å bekrefte kontoen før du logger inn."
+    },
+    "resetPassword": {
+      "title": "Tilbakestill passord",
+      "description": "Skriv inn e-postadressen din, så sender vi deg en lenke for å tilbakestille passordet.",
+      "newPassword": "Nytt passord",
+      "confirmPassword": "Bekreft passord",
+      "button": "Oppdater passord",
+      "sendButton": "Send tilbakestillingslenke",
+      "cancel": "Avbryt",
+      "backToSignIn": "Tilbake til innlogging",
+      "success": "E-post for tilbakestilling av passord sendt! Sjekk innboksen din.",
+      "updated": "Passord oppdatert!",
+      "updatedDescription": "Passordet ditt er tilbakestilt. Omdirigerer til appen...",
+      "sending": "Sender...",
+      "updating": "Oppdaterer..."
+    },
+    "errors": {
+      "invalidEmail": "Ugyldig e-postadresse",
+      "passwordTooShort": "Passordet må være minst 6 tegn",
+      "passwordsDontMatch": "Passordene stemmer ikke overens",
+      "general": "En feil oppstod"
+    },
+    "loading": "Laster..."
+  },
+  "onboarding": {
+    "title": "Velkommen til Relingo",
+    "description": "Hvilken religion vil du begynne å lære om?",
+    "explore": "Eller utforsk alle religioner",
+    "continue": "Fortsett",
+    "learnFundamentals": "Lær det grunnleggende"
+  },
+  "learn": {
+    "title": "Læringssti",
+    "description": "Utforsk verdensreligioner og lær i ditt eget tempo",
+    "lessons": "leksjoner",
+    "lesson": "leksjon",
+    "completed": "fullført",
+    "noLessons": "Ingen leksjoner tilgjengelig ennå."
+  },
+  "lesson": {
+    "back": "Tilbake",
+    "bestScore": "Beste",
+    "stars": "Stjerner",
+    "startLesson": "Start leksjon",
+    "practiceAgain": "Øv igjen",
+    "level": "Nivå",
+    "notFound": "Leksjon ikke funnet"
+  },
+  "quiz": {
+    "loading": "Laster quiz...",
+    "noQuestions": "Ingen spørsmål tilgjengelig",
+    "noQuestionsDescription": "Denne quizen har ingen spørsmål ennå.",
+    "backToLearn": "Tilbake til Lær",
+    "question": "Spørsmål",
+    "of": "av",
+    "continue": "Fortsett",
+    "checkAnswer": "Sjekk svar",
+    "correctAnswer": "Riktig svar",
+    "typeAnswer": "Skriv ditt svar...",
+    "true": "Sant",
+    "false": "Usant",
+    "result": {
+      "perfect": "Perfekt!",
+      "wellDone": "Godt gjort!",
+      "youGot": "Du fikk",
+      "outOf": "av",
+      "correct": "riktige"
+    }
+  },
+  "quests": {
+    "title": "Daglige oppdrag",
+    "description": "Fullfør oppdrag for å tjene bonus XP",
+    "currentStreak": "Nåværende streak",
+    "days": "dager",
+    "totalXP": "Totalt XP",
+    "dailyLearner": {
+      "title": "Daglig elev",
+      "description": "Fullfør 1 leksjon i dag"
+    },
+    "keepStreak": {
+      "title": "Hold streaken",
+      "description": "Oppretthold læringsstreaken din"
+    },
+    "tripleThreat": {
+      "title": "Trippel trussel",
+      "description": "Fullfør 3 forskjellige leksjoner"
+    }
+  },
+  "profile": {
+    "achievements": "Prestasjoner",
+    "lessons": "Leksjoner",
+    "stars": "Stjerner",
+    "hearts": "Hjerter",
+    "xp": "XP",
+    "signOut": "Logg ut"
+  },
+  "nav": {
+    "learn": "Lær",
+    "quests": "Oppdrag",
+    "profile": "Profil",
+    "settings": "Innstillinger"
+  },
+  "common": {
+    "loading": "Laster...",
+    "error": "Feil",
+    "success": "Suksess",
+    "cancel": "Avbryt",
+    "save": "Lagre",
+    "delete": "Slett",
+    "edit": "Rediger",
+    "close": "Lukk"
+  },
+  "stats": {
+    "days": "dager",
+    "xp": "XP",
+    "hearts": "Hjerter",
+    "streak": "Streak"
+  },
+  "religions": {
+    "christianity": "Kristendom",
+    "islam": "Islam",
+    "hinduism": "Hinduisme",
+    "judaism": "Jødedom",
+    "buddhism": "Buddhisme"
+  },
+  "lessons": {
+    "christianity": {
+      "intro": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om kristendommens begynnelse i det første århundre"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om kristendommens begynnelse i det første århundre"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk de sentrale trosprinsippene i kristendommen"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag kristne ritualer og daglige praksiser"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk kristne høytider som jul, påske og pinse"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Bibelen og kristne symboler"
+      }
+    },
+    "islam": {
+      "intro": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om islams begynnelse på 600-tallet"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om islams begynnelse på 600-tallet"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk de sentrale trosprinsippene i islam"
+      },
+      "pillars": {
+        "title": "De fem søylene",
+        "description": "Oppdag islams fem grunnleggende plikter"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag bønn, faste og daglig tilbedelse"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk Ramadan, Eid og andre festivaler"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Koranen og islamske symboler"
+      }
+    },
+    "hinduism": {
+      "intro": {
+        "title": "Introduksjon til hinduismen",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om hinduismens eldgamle røtter"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk karma, reinkarnasjon og moksha"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag puja, templer og daglig tilbedelse"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk Divali, Holi og andre festivaler"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Vedaene, Bhagavad Gita og Om-symbolet"
+      },
+      "modern": {
+        "title": "Moderne uttrykk og mangfold",
+        "description": "Utforsk hinduisme i dagens verden"
+      }
+    },
+    "judaism": {
+      "intro": {
+        "title": "Introduksjon til jødedommen",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om jødedommens eldgamle røtter"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk sentrale prinsipper i jødisk tro"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag shabbat, kosher og daglige praksiser"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk Hanukkah, påske og andre høytider"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Tora, Talmud og jødiske symboler"
+      },
+      "modern": {
+        "title": "Moderne uttrykk og mangfold",
+        "description": "Utforsk ortodoks, reform og konservativ jødedom"
+      }
+    },
+    "buddhism": {
+      "intro": {
+        "title": "Introduksjon til buddhismen",
+        "description": "Grunnleggende begreper og praksiser"
+      },
+      "origins": {
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om buddhismens begynnelse i Nord-India for 2500 år siden"
+      },
+      "beliefs": {
+        "title": "Grunnleggende tro og læresetninger",
+        "description": "Utforsk de fire edle sannheter og den åttedelte vei"
+      },
+      "practices": {
+        "title": "Viktige praksiser og ritualer",
+        "description": "Oppdag meditasjon, bønn og buddhistiske ritualer"
+      },
+      "holidays": {
+        "title": "Høytider og merkedager",
+        "description": "Utforsk buddhistiske høytider som Vesak og nyttår"
+      },
+      "texts": {
+        "title": "Hellige tekster og symboler",
+        "description": "Lær om Tripitaka, dharmahjulet og lotusblomsten"
+      },
+      "modern": {
+        "title": "Moderne uttrykk og mangfold",
+        "description": "Utforsk buddhisme i dagens verden og ulike tradisjoner"
+      }
+    }
+  },
+  "sidebar": {
+    "home": "Hjem",
+    "learn": "Lær",
+    "quests": "Quests",
+    "achievements": "Prestasjoner",
+    "profile": "Profil",
+    "quickStats": "Hurtigstatistikk",
+    "dailyGoal": "Dagens mål",
+    "quote": "Kunnskap er nøkkelen til forståelse og toleranse.",
+    "settings": "Innstillinger",
+    "logout": "Logg ut"
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "subtitle": "Tilpass opplevelsen din",
+    "backToProfile": "Tilbake til profil",
+    "notifications": {
+      "title": "Varslinger",
+      "push": "Push-varslinger",
+      "pushDesc": "Få påminnelser om daglige mål",
+      "email": "E-postvarslinger",
+      "emailDesc": "Ukentlig fremdriftsrapport"
+    },
+    "appearance": {
+      "title": "Utseende",
+      "darkMode": "Mørk modus",
+      "darkModeDesc": "Reduser øyebelastning",
+      "soundEffects": "Lydeffekter",
+      "soundEffectsDesc": "Spill av lyder ved fullføring"
+    },
+    "language": {
+      "title": "Språk",
+      "interface": "Grensesnittspråk",
+      "interfaceDesc": "Endre språket for appen"
+    },
+    "privacy": {
+      "title": "Personvern",
+      "exportData": "Eksporter data",
+      "exportDataDesc": "Last ned alle dine data",
+      "deleteAccount": "Slett konto",
+      "deleteAccountDesc": "Permanent slett kontoen din",
+      "execute": "Utfør"
+    },
+    "help": {
+      "title": "Trenger du hjelp?",
+      "description": "Vi er her for å hjelpe deg med eventuelle spørsmål",
+      "contactSupport": "Kontakt support"
+    }
+  },
+  "profileExtended": {
+    "level": "Level",
+    "progressToLevel": "Fremgang til Level",
+    "xpToNext": "XP til neste level",
+    "totalXP": "Total XP",
+    "daysStreak": "Dagers Streak",
+    "keepGoing": "Hold det gående!",
+    "lessons": "Leksjoner",
+    "completed": "Fullført",
+    "stars": "Stjerner",
+    "collected": "Samlet",
+    "seeAll": "Se alle",
+    "hearts": "Hjerter",
+    "remainingLives": "Gjenværende liv",
+    "xp": "Erfaringspoeng",
+    "perfect": "Perfekte",
+    "threeStars": "3 stjerner",
+    "recentActivity": "Nylig Aktivitet",
+    "lessonCompleted": "Leksjon fullført",
+    "star": "stjerne",
+    "stars_plural": "stjerner",
+    "noActivity": "Ingen aktivitet ennå",
+    "noActivityDesc": "Start en leksjon for å se fremgangen din her!",
+    "quickActions": "Hurtighandlinger",
+    "shareProgress": "Del fremgang",
+    "downloadCertificate": "Last ned sertifikat",
+    "signOutDesc": "Logg ut av kontoen din",
+    "changePhoto": "Endre bilde"
+  },
+  "streakCalendar": {
+    "title": "Aktivitetskalender",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "today": "I dag",
+    "daysStreak": "dagers streak!",
+    "keepGoing": "Hold det gående for å nå nye milepæler!"
+  },
+  "progressChart": {
+    "title": "Ukentlig Fremgang",
+    "average": "Gjennomsnitt",
+    "perDay": "XP/dag"
+  }
+}
+
