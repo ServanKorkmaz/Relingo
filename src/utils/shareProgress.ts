@@ -10,15 +10,15 @@ export interface ShareData {
 }
 
 export async function shareProgress(data: ShareData): Promise<void> {
-  const text = `🌍 Relingo - Læring om Religioner
+  const text = `Relingo - Læring om Religioner
 
-📊 Min fremgang:
-⚡ Level ${data.level} - ${data.xp} XP
-🔥 ${data.streak} dagers streak
-📚 ${data.lessonsCompleted} leksjoner fullført
-⭐ ${data.totalStars} stjerner samlet
+Min fremgang:
+Level ${data.level} - ${data.xp} XP
+${data.streak} dagers streak
+${data.lessonsCompleted} leksjoner fullført
+${data.totalStars} stjerner samlet
 
-Bli med meg på Relingo og lær om verdensreligioner! 🙏
+Bli med meg på Relingo og lær om verdensreligioner!
 
 #Relingo #Læring #Religion #Kunnskap`;
 
@@ -46,7 +46,7 @@ function fallbackShare(text: string): void {
   // Fallback: Copy to clipboard
   navigator.clipboard.writeText(text).then(
     () => {
-      alert('📋 Fremgangen din er kopiert til utklippstavlen!\n\nLim inn hvor du vil dele.');
+      alert('Fremgangen din er kopiert til utklippstavlen!\n\nLim inn hvor du vil dele.');
     },
     () => {
       // If clipboard also fails, show text in alert
@@ -87,8 +87,8 @@ export async function generateShareImage(data: ShareData): Promise<Blob> {
   ctx.fillText(`Level ${data.level}`, 600, 200);
   
   ctx.font = '36px Inter, sans-serif';
-  ctx.fillText(`⚡ ${data.xp} XP  •  🔥 ${data.streak} dager streak`, 600, 280);
-  ctx.fillText(`📚 ${data.lessonsCompleted} leksjoner  •  ⭐ ${data.totalStars} stjerner`, 600, 340);
+  ctx.fillText(`${data.xp} XP  •  ${data.streak} dager streak`, 600, 280);
+  ctx.fillText(`${data.lessonsCompleted} leksjoner  •  ${data.totalStars} stjerner`, 600, 340);
   
   // Footer
   ctx.font = '28px Inter, sans-serif';

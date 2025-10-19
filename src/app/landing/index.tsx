@@ -71,21 +71,6 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              {/* Floating elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center text-3xl"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                ⭐
-              </motion.div>
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-2xl"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              >
-                ❤️
-              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -272,10 +257,10 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { key: 'christianity', icon: '✝️', color: 'bg-purple-500' },
-              { key: 'islam', icon: '☪️', color: 'bg-blue-500' },
-              { key: 'hinduism', icon: '🕉️', color: 'bg-orange-500' },
-              { key: 'judaism', icon: '✡️', color: 'bg-teal-500' },
+              { key: 'christianity', color: 'bg-purple-500' },
+              { key: 'islam', color: 'bg-blue-500' },
+              { key: 'hinduism', color: 'bg-orange-500' },
+              { key: 'judaism', color: 'bg-teal-500' },
             ].map((religion, index) => (
               <motion.div
                 key={religion.key}
@@ -285,8 +270,8 @@ export default function LandingPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-6 shadow-lg text-center hover:shadow-xl transition-all hover:scale-105"
               >
-                <div className={`w-20 h-20 ${religion.color} rounded-full flex items-center justify-center mx-auto mb-4 text-4xl`}>
-                  {religion.icon}
+                <div className={`w-20 h-20 ${religion.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <div className="w-12 h-12 bg-white/30 rounded-full"></div>
                 </div>
                 <h3 className="font-bold text-lg text-gray-900">
                   {t(`religions.${religion.key}`)}

@@ -143,7 +143,7 @@ export default function LearnScreen() {
                         <>
                           <span className="text-gray-400 dark:text-gray-500">•</span>
                           <span className="text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
-                            <span className="text-lg">⭐</span> {group.totalStars}
+                            {group.totalStars} stjerner
                           </span>
                         </>
                       )}
