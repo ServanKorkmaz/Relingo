@@ -209,8 +209,8 @@
   "lessons": {
     "christianity": {
       "intro": {
-        "title": "Introduksjon til kristendommen",
-        "description": "Grunnleggende begreper og praksiser"
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om kristendommens begynnelse i det første århundre"
       },
       "origins": {
         "title": "Opprinnelse og historisk bakgrunn",
@@ -235,12 +235,12 @@
     },
     "islam": {
       "intro": {
-        "title": "Introduksjon til islam",
-        "description": "Grunnleggende begreper og praksiser"
+        "title": "Opprinnelse og historisk bakgrunn",
+        "description": "Lær om islams begynnelse på 600-tallet"
       },
       "origins": {
         "title": "Opprinnelse og historisk bakgrunn",
-        "description": "Lær om islams eldgamle røtter"
+        "description": "Lær om islams begynnelse på 600-tallet"
       },
       "beliefs": {
         "title": "Grunnleggende tro og læresetninger",

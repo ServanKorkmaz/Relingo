@@ -209,8 +209,8 @@
   "lessons": {
     "christianity": {
       "intro": {
-        "title": "Introduction to Christianity",
-        "description": "Core terms and practices"
+        "title": "Origins and Historical Background",
+        "description": "Learn about Christianity's beginning in the first century"
       },
       "origins": {
         "title": "Origins and Historical Background",
@@ -235,12 +235,12 @@
     },
     "islam": {
       "intro": {
-        "title": "Introduction to Islam",
-        "description": "Core terms and practices"
+        "title": "Origins and Historical Background",
+        "description": "Learn about Islam's beginning in the 7th century"
       },
       "origins": {
         "title": "Origins and Historical Background",
-        "description": "Learn about Islam's ancient roots"
+        "description": "Learn about Islam's beginning in the 7th century"
       },
       "beliefs": {
         "title": "Core Beliefs and Teachings",

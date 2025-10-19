@@ -209,8 +209,8 @@
   "lessons": {
     "christianity": {
       "intro": {
-        "title": "Hıristiyanlığa Giriş",
-        "description": "Temel terimler ve uygulamalar"
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "Hıristiyanlığın birinci yüzyıldaki başlangıcını öğrenin"
       },
       "origins": {
         "title": "Kökenler ve Tarihsel Arka Plan",
@@ -235,12 +235,12 @@
     },
     "islam": {
       "intro": {
-        "title": "İslam'a Giriş",
-        "description": "Temel terimler ve uygulamalar"
+        "title": "Kökenler ve Tarihsel Arka Plan",
+        "description": "İslam'ın 7. yüzyıldaki başlangıcını öğrenin"
       },
       "origins": {
         "title": "Kökenler ve Tarihsel Arka Plan",
-        "description": "İslam'ın eski köklerini öğrenin"
+        "description": "İslam'ın 7. yüzyıldaki başlangıcını öğrenin"
       },
       "beliefs": {
         "title": "Temel İnançlar ve Öğretiler",
