@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import type { Lesson } from '../../types';
 import { getReligionColor } from '../../utils/colors';
-import { useTranslate } from '../../hooks/useTranslate';
 
 interface LessonNodeProps {
   lesson: Lesson;
@@ -16,14 +15,6 @@ export default function LessonNode({ lesson, isLocked, onClick }: LessonNodeProp
   const color = lesson.religion ? getReligionColor(lesson.religion.slug) : '#2ED573';
   const stars = lesson.user_progress?.stars || 0;
   const isCompleted = stars > 0;
-  
-  // Auto-translate title and description if no translation key exists
-  const { translatedText: autoTitle } = useTranslate(
-    !lesson.title_key ? lesson.title : undefined
-  );
-  const { translatedText: autoDescription } = useTranslate(
-    !lesson.description_key ? lesson.description : undefined
-  );
 
   return (
     <motion.button
@@ -100,12 +91,12 @@ export default function LessonNode({ lesson, isLocked, onClick }: LessonNodeProp
         {/* Content Section */}
         <div className="p-4">
           <h3 className="font-bold text-base text-gray-900 dark:text-white mb-2 line-clamp-2 text-left">
-            {lesson.title_key ? t(lesson.title_key) : autoTitle}
+            {lesson.title_key ? t(lesson.title_key) : lesson.title}
           </h3>
           
-          {(lesson.description_key || lesson.description || autoDescription) && (
+          {(lesson.description_key || lesson.description) && (
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 text-left">
-              {lesson.description_key ? t(lesson.description_key) : autoDescription}
+              {lesson.description_key ? t(lesson.description_key) : lesson.description}
             </p>
           )}
 
