@@ -6,7 +6,6 @@ import { z } from 'zod';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../../lib/supabase';
 import { motion, AnimatePresence } from 'framer-motion';
-import LanguageSwitcher from '../../components/LanguageSwitcher';
 
 export default function AuthScreen() {
   const navigate = useNavigate();
@@ -136,9 +135,6 @@ export default function AuthScreen() {
           <p className="text-gray-600">
             {t('app.tagline')}
           </p>
-          <div className="mt-4">
-            <LanguageSwitcher />
-          </div>
         </div>
 
         {/* Auth Form */}

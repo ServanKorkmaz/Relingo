@@ -1,7 +1,6 @@
 import { Heart, Zap, Flame } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useUserStats } from '../hooks/useUserStats';
-import LanguageSwitcher from './LanguageSwitcher';
 
 export default function TopBar() {
   const { t } = useTranslation();
@@ -48,12 +47,9 @@ export default function TopBar() {
               <Heart className="w-4 h-4 lg:w-5 lg:h-5 text-red-600 dark:text-red-400 fill-red-600 dark:fill-red-400 group-hover:scale-110 transition-transform" />
               <div className="flex flex-col">
                 <span className="font-bold text-base lg:text-lg text-red-900 dark:text-red-200 leading-none">{stats?.hearts || 0}</span>
-                <span className="text-[10px] text-red-700 dark:text-red-400 hidden lg:block">liv</span>
+                <span className="text-[10px] text-red-700 dark:text-red-400 hidden lg:block">Can</span>
               </div>
             </div>
-
-            {/* Language Switcher - Always visible */}
-            <LanguageSwitcher />
           </div>
         </div>
       </div>

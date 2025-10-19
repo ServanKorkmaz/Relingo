@@ -1,30 +1,20 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Import translations
-import en from '../locales/en.json';
-import no from '../locales/no.json';
+// Import Turkish translations
 import tr from '../locales/tr.json';
 
 const resources = {
-  en: { translation: en },
-  no: { translation: no },
   tr: { translation: tr },
 };
 
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'no', // Norwegian as default language
-    fallbackLng: 'no',
-    supportedLngs: ['en', 'no', 'tr'],
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
-    },
+    lng: 'tr', // Turkish as the only language
+    fallbackLng: 'tr',
+    supportedLngs: ['tr'],
     interpolation: {
       escapeValue: false,
     },
